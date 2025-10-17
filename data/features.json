@@ -1,0 +1,22 @@
+[
+  {
+    "icon": "LAP",
+    "title": "Lap Times",
+    "desc": "Precise lap timing with sector splits to identify where you gain or lose time."
+  },
+  {
+    "icon": "SPD",
+    "title": "Speed Tracking",
+    "desc": "Monitor your speed and analyze performance throughout each session."
+  },
+  {
+    "icon": "G-F",
+    "title": "G-Force Analysis",
+    "desc": "Measure acceleration, braking, and cornering forces in real-time."
+  },
+  {
+    "icon": "ANG",
+    "title": "Lean Angles",
+    "desc": "Track your lean angles to optimize every corner."
+  }
+]

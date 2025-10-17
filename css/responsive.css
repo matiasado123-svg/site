@@ -1,0 +1,74 @@
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px;
+  }
+
+  .navbar {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 250px;
+    height: calc(100vh - 70px);
+    background: #000;
+    flex-direction: column;
+    gap: 0;
+    padding: 2rem 0;
+    border-left: 2px solid #22d3ee;
+    transition: right 0.3s ease;
+    align-items: flex-start;
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-menu li {
+    width: 100%;
+  }
+
+  .nav-menu li a {
+    display: block;
+    padding: 1rem 2rem;
+    width: 100%;
+    font-size: 1.1rem;
+  }
+
+  .nav-menu li a::after {
+    display: none;
+  }
+
+  .nav-menu li a.nav-cta {
+    margin: 1rem 2rem;
+    width: calc(100% - 4rem);
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  .nav-logo img {
+    height: 40px;
+  }
+
+  .nav-logo-text {
+    font-size: 1.25rem;
+  }
+
+  /* Hide Learn More button on mobile */
+  .hero-content a.cta-button:first-of-type {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-logo-text {
+    display: none;
+  }
+}

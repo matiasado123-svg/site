@@ -1,0 +1,31 @@
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid rgba(34, 211, 238, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .performance-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-button {
+                display: block;        /* make each button take full width */
+                margin: 10px auto;     /* space between them + centered */
+                max-width: 250px;      /* optional: keeps them from being too wide */
+            }
+
+            .performance-image {
+                min-height: 300px;
+            }
+
+            .features, .data-showcase, .steps, .performance-visual {
+                padding: 4rem 1rem;
+            }
+        }
