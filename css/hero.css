@@ -51,7 +51,6 @@
 
         .hero h1 .highlight {
             color: #22d3ee;
-            /* text-shadow: 0 0 30px rgba(34, 211, 238, 0.6); */
         }
 
         .hero p {
@@ -75,7 +74,6 @@
             font-size: 1rem;
             font-weight: 600;
             transition: all 0.3s ease;
-            /* box-shadow: 0 10px 40px rgba(34, 211, 238, 0.4); */
             letter-spacing: 0.3px;
             margin: 0 8px;  /* top/bottom | left/right */
         }
@@ -96,7 +94,6 @@
             border-top: 3px solid #22d3ee;
             padding: 2rem;
             z-index: 10;
-            /* box-shadow: 0 -5px 30px rgba(34, 211, 238, 0.2); */
         }
 
         .stats-container {
@@ -116,7 +113,6 @@
             font-weight: 700;
             color: #22d3ee;
             margin-bottom: 0.5rem;
-            /* text-shadow: 0 0 20px rgba(34, 211, 238, 0.5); */
         }
 
         .stat-label {

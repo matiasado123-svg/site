@@ -1,0 +1,107 @@
+/* FAQ Section */
+.faq-section {
+    padding: 8rem 2rem;
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.3), rgba(10, 10, 10, 0.95));
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+
+.faq-item {
+    background: rgba(15, 15, 15, 0.9);
+    border: 2px solid rgba(34, 211, 238, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: #22d3ee;
+    box-shadow: 0 5px 20px rgba(34, 211, 238, 0.2);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 1.5rem 2rem;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    transition: color 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.faq-question:hover {
+    color: #22d3ee;
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #22d3ee;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.faq-question[aria-expanded="true"] .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-answer[aria-hidden="false"] {
+    max-height: 500px;
+    padding: 0 2rem 1.5rem 2rem;
+}
+
+.faq-answer p {
+    color: #aaa;
+    line-height: 1.7;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 4rem 1rem;
+    }
+
+    .faq-question {
+        padding: 1.25rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .faq-answer[aria-hidden="false"] {
+        padding: 0 1.5rem 1.25rem 1.5rem;
+    }
+
+    .faq-answer p {
+        font-size: 0.95rem;
+    }
+}
+
+.scroll-animate {
+  opacity: 1 !important;
+  transform: none !important;
+}

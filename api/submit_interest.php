@@ -1,9 +1,16 @@
 <?php
-// Config (move to env vars in production)
-$db_host = 'localhost';
-$db_name = 'c101ut3oa_onatechdb';
-$db_user = 'c101ut3oa_onatechdb';
-$db_pass = 'MKAdO&gt3'; // ensure this is the real password
+// Load database credentials from environment variables
+$db_host = getenv('DB_HOST') ?: 'localhost';
+$db_name = getenv('DB_NAME') ?: 'c101ut3oa_onatechdb';
+$db_user = getenv('DB_USER') ?: 'c101ut3oa_onatechdb';
+$db_pass = getenv('DB_PASS');
+
+if (!$db_pass) {
+  error_log('Database password not set in environment variables');
+  http_response_code(500);
+  echo json_encode(['success' => false, 'message' => 'Server configuration error']);
+  exit;
+}
 
 header('Content-Type: application/json');
 
@@ -39,7 +46,8 @@ try {
     PDO::ATTR_EMULATE_PREPARES => false,
   ]);
 
-  $stmt = $pdo->prepare('SELECT 1 FROM interests WHERE email = ?');
+  // Fixed table name to match database schema
+  $stmt = $pdo->prepare('SELECT 1 FROM interest_registrations WHERE email = ?');
   $stmt->execute([$email]);
   if ($stmt->fetch()) {
     http_response_code(409);
@@ -47,7 +55,7 @@ try {
     exit;
   }
 
-  $stmt = $pdo->prepare('INSERT INTO interests (name, email, country) VALUES (?, ?, ?)');
+  $stmt = $pdo->prepare('INSERT INTO interest_registrations (name, email, country) VALUES (?, ?, ?)');
   $stmt->execute([$name, $email, $country]);
 
   echo json_encode(['success' => true, 'message' => "Thanks, we'll notify you when OnaTrack launches."]);
