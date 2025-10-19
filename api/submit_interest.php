@@ -47,7 +47,7 @@ try {
   ]);
 
   // Fixed table name to match database schema
-  $stmt = $pdo->prepare('SELECT 1 FROM interest_registrations WHERE email = ?');
+  $stmt = $pdo->prepare('SELECT 1 FROM interests WHERE email = ?');
   $stmt->execute([$email]);
   if ($stmt->fetch()) {
     http_response_code(409);
@@ -55,7 +55,7 @@ try {
     exit;
   }
 
-  $stmt = $pdo->prepare('INSERT INTO interest_registrations (name, email, country) VALUES (?, ?, ?)');
+  $stmt = $pdo->prepare('INSERT INTO interests (name, email, country) VALUES (?, ?, ?)');
   $stmt->execute([$name, $email, $country]);
 
   echo json_encode(['success' => true, 'message' => "Thanks, we'll notify you when OnaTrack launches."]);
