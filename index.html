@@ -30,6 +30,7 @@
       </div>
       <ul class="nav-menu" id="navMenu">
         <li><a href="#product">Product</a></li>
+        <li><a href="#app">App</a></li>
         <li><a href="#features">Features</a></li>
         <li><a href="#performance">Performance</a></li>
         <li><a href="#data">Data</a></li>
@@ -127,6 +128,102 @@
       </div>
     </div>
   </section>
+
+<!-- App Showcase Section - Insert this after the Product Showcase section and before Features -->
+<section class="app-showcase" id="app">
+  <div class="app-showcase-container">
+    
+    <!-- Introduction -->
+    <div class="app-showcase-intro scroll-animate">
+      <h2>Your data, beautifully presented</h2>
+      <p>The OnaTrack companion app transforms raw telemetry into actionable insights. Analyze every aspect of your performance with intuitive visualizations and detailed breakdowns.</p>
+    </div>
+
+    <!-- Main Feature with Video -->
+    <div class="app-feature-display">
+      <div class="app-video-container fade-in-left">
+        <!-- Replace with your actual video file -->
+        <video controls poster="assets/images/app-video-poster.jpg">
+          <source src="assets/videos/onatrack-app-demo.mp4" type="video/mp4">
+          <source src="assets/videos/onatrack-app-demo.webm" type="video/webm">
+          Your browser does not support the video tag.
+        </video>
+        <!-- If you don't have the video yet, use this placeholder -->
+        <!-- <div class="video-placeholder">App Demo Video</div> -->
+      </div>
+
+      <div class="app-feature-text fade-in-right">
+        <span class="app-feature-label">THE APP</span>
+        <h3>Track analysis made simple</h3>
+        <p>Connect wirelessly to your OnaTrack device and dive deep into your session data. Compare laps, study racing lines, and identify areas for improvement with professional-grade analysis tools.</p>
+        
+        <div class="app-features-list">
+          <div class="app-feature-item">
+            <span class="app-feature-icon">✓</span>
+            <span>Real-time session monitoring</span>
+          </div>
+          <div class="app-feature-item">
+            <span class="app-feature-icon">✓</span>
+            <span>Detailed lap comparison tools</span>
+          </div>
+          <div class="app-feature-item">
+            <span class="app-feature-icon">✓</span>
+            <span>Interactive track maps with telemetry overlay</span>
+          </div>
+          <div class="app-feature-item">
+            <span class="app-feature-icon">✓</span>
+            <span>Share and compare with friends</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- App Screenshots Gallery -->
+    <div class="app-gallery">
+      <div class="app-gallery-header scroll-animate">
+        <h3>Explore the interface</h3>
+        <p>Swipe through to see the app in action</p>
+      </div>
+
+      <div class="app-gallery-grid">
+        <!-- Screenshot 1 -->
+        <div class="app-screenshot scroll-animate">
+          <img src="assets/images/app-screenshot-1.jpg" alt="OnaTrack App - Dashboard" loading="lazy">
+          <div class="app-screenshot-caption">Session Dashboard</div>
+          <!-- If you don't have images yet, use placeholder -->
+          <!-- <div class="screenshot-placeholder">Dashboard View</div> -->
+        </div>
+
+        <!-- Screenshot 2 -->
+        <div class="app-screenshot scroll-animate">
+          <img src="assets/images/app-screenshot-2.jpg" alt="OnaTrack App - Lap Analysis" loading="lazy">
+          <div class="app-screenshot-caption">Lap Time Analysis</div>
+          <!-- <div class="screenshot-placeholder">Lap Analysis</div> -->
+        </div>
+
+        <!-- Screenshot 3 -->
+        <div class="app-screenshot scroll-animate">
+          <img src="assets/images/app-screenshot-3.jpg" alt="OnaTrack App - Track Map" loading="lazy">
+          <div class="app-screenshot-caption">Track Map Overlay</div>
+          <!-- <div class="screenshot-placeholder">Track Map</div> -->
+        </div>
+
+        <!-- Screenshot 4 -->
+        <div class="app-screenshot scroll-animate">
+          <img src="assets/images/app-screenshot-4.jpg" alt="OnaTrack App - Telemetry" loading="lazy">
+          <div class="app-screenshot-caption">Telemetry Data</div>
+          <!-- <div class="screenshot-placeholder">Telemetry View</div> -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Optional: Lightbox overlay for full-screen image viewing -->
+<div class="lightbox-overlay" id="lightboxOverlay"></div>
+
+
 
   <!-- Features Section -->
   <section class="features" id="features">
@@ -525,7 +622,7 @@
   </script>
 
   <script src="js/faq.js"></script>
-
+  <script src="js/app-showcase.js"></script>
 
 </body>
 
