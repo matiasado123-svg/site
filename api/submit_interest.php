@@ -55,8 +55,11 @@ try {
     exit;
   }
 
-  $stmt = $pdo->prepare('INSERT INTO interests (name, email, country) VALUES (?, ?, ?)');
-  $stmt->execute([$name, $email, $country]);
+// Set current discount rate (change this value as you get closer to launch)
+$discount_percent = 15; // Change to 10, then 5 as launch approaches
+
+$stmt = $pdo->prepare('INSERT INTO interests (name, email, country, discount_percent) VALUES (?, ?, ?, ?)');
+$stmt->execute([$name, $email, $country, $discount_percent]);
 
   echo json_encode(['success' => true, 'message' => "Thanks, we'll notify you when OnaTrack launches."]);
 } catch (InvalidArgumentException $e) {

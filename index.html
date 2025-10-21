@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,11 +9,13 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body id="top">
   <!-- Navigation Bar -->
   <nav class="navbar">
@@ -26,9 +29,11 @@
         <span></span>
       </div>
       <ul class="nav-menu" id="navMenu">
+        <li><a href="#product">Product</a></li>
         <li><a href="#features">Features</a></li>
         <li><a href="#performance">Performance</a></li>
         <li><a href="#data">Data</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#interestForm" class="nav-cta">Register Interest</a></li>
       </ul>
     </div>
@@ -41,343 +46,447 @@
 
     <div class="hero-content">
       <h1>Master every corner<br>with <span class="highlight">data</span></h1>
-      <p>OnaTrack transforms your track sessions into valuable insights</p>
+      <p class="hero-tagline"
+        style="font-size: 1.3rem; color: #22d3ee; font-weight: 600; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">
+        Professional Motorcycle Datalogger</p>
+      <p>Track, analyze, and improve your performance with real-time telemetry from every session</p>
       <a href="#features" class="cta-button">Learn More</a>
       <a href="#interestForm" class="cta-button">Register your interest</a>
     </div>
 
     <div class="stats-bar">
       <div class="stats-container">
-        <div class="stat-item"><div class="stat-value">0.01s</div><div class="stat-label">Timing Accuracy</div></div>
-        <div class="stat-item"><div class="stat-value">100Hz</div><div class="stat-label">Data Sampling</div></div>
-        <div class="stat-item"><div class="stat-value">8+ hrs</div><div class="stat-label">Battery Life</div></div>
-        <div class="stat-item"><div class="stat-value">6-axis</div><div class="stat-label">IMU Sensor</div></div>
+        <div class="stat-item">
+          <div class="stat-value">0.01s</div>
+          <div class="stat-label">Timing Accuracy</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">100Hz</div>
+          <div class="stat-label">Data Sampling</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">8+ hrs</div>
+          <div class="stat-label">Battery Life</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">6-axis</div>
+          <div class="stat-label">IMU Sensor</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Showcase Section -->
+  <section class="product-showcase" id="product">
+    <div class="product-container">
+      <div class="product-content">
+        <div class="product-text">
+          <span class="product-label">THE PRODUCT</span>
+          <h2>Meet the OnaTrack Datalogger</h2>
+          <p>A professional-grade data acquisition device designed specifically for motorcycle track enthusiasts.
+            Compact, rugged, and packed with cutting-edge sensors.</p>
+
+          <div class="product-features-list">
+            <div class="product-feature-item">
+              <span class="check-icon">✓</span>
+              <span>Weather-resistant aluminum housing</span>
+            </div>
+            <div class="product-feature-item">
+              <span class="check-icon">✓</span>
+              <span>High-precision GPS & 6-axis IMU</span>
+            </div>
+            <div class="product-feature-item">
+              <span class="check-icon">✓</span>
+              <span>8+ hours battery life</span>
+            </div>
+            <div class="product-feature-item">
+              <span class="check-icon">✓</span>
+              <span>Wireless Bluetooth connectivity</span>
+            </div>
+          </div>
+
+          <a href="#interestForm" class="cta-button" style="margin-top: 2rem;">Pre-order Now - 15% Off</a>
+        </div>
+
+        <div class="product-media">
+          <div class="product-image-placeholder">
+            <div class="device-mockup">
+              <div class="device-body">
+                <div class="device-logo">OnaTrack</div>
+                <div class="device-indicator"></div>
+                <div class="device-ports">
+                  <div class="port"></div>
+                  <div class="port"></div>
+                </div>
+              </div>
+              <div class="device-shadow"></div>
+            </div>
+            <p class="placeholder-note">Actual product design may vary</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Features Section -->
- <section class="features" id="features">
-        <h2 class="section-title">Everything you need to improve</h2>
-        <p class="section-subtitle">Comprehensive data from every session to shave seconds off your lap times</p>
-        
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">LAP</div>
-                <h3 class="feature-title">Lap Times</h3>
-                <p class="feature-desc">Precise lap timing with sector splits to identify where you gain or lose time on track.</p>
-            </div>
+  <section class="features" id="features">
+    <h2 class="section-title">Everything you need to improve</h2>
+    <p class="section-subtitle">Comprehensive data from every session to shave seconds off your lap times</p>
 
-            <div class="feature-card">  
-                <div class="feature-icon">SPD</div>
-                <h3 class="feature-title">Speed Tracking</h3>
-                <p class="feature-desc">Monitor current, average, and maximum speeds throughout your session with detailed analytics.</p>
-            </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">LAP</div>
+        <h3 class="feature-title">Lap Times</h3>
+        <p class="feature-desc">Precise lap timing with sector splits to identify where you gain or lose time on track.
+        </p>
+      </div>
 
-            <div class="feature-card">
-                <div class="feature-icon">G-F</div>
-                <h3 class="feature-title">G-Force Analysis</h3>
-                <p class="feature-desc">Measure acceleration, braking, and cornering forces to understand your riding dynamics.</p>
-            </div>
+      <div class="feature-card">
+        <div class="feature-icon">SPD</div>
+        <h3 class="feature-title">Speed Tracking</h3>
+        <p class="feature-desc">Monitor current, average, and maximum speeds throughout your session with detailed
+          analytics.</p>
+      </div>
 
-            <div class="feature-card">
-                <div class="feature-icon">ANG</div>
-                <h3 class="feature-title">Lean Angles</h3>
-                <p class="feature-desc">Track your lean angles in real-time to push your limits safely and consistently.</p>
-            </div>
+      <div class="feature-card">
+        <div class="feature-icon">G-F</div>
+        <h3 class="feature-title">G-Force Analysis</h3>
+        <p class="feature-desc">Measure acceleration, braking, and cornering forces to understand your riding dynamics.
+        </p>
+      </div>
 
-            <div class="feature-card">
-                <div class="feature-icon">TRD</div>
-                <h3 class="feature-title">Performance Trends</h3>
-                <p class="feature-desc">Visualize your progress over time with comprehensive session comparisons and insights.</p>
-            </div>
+      <div class="feature-card">
+        <div class="feature-icon">ANG</div>
+        <h3 class="feature-title">Lean Angles</h3>
+        <p class="feature-desc">Track your lean angles in real-time to push your limits safely and consistently.</p>
+      </div>
 
-            <div class="feature-card">
-                <div class="feature-icon">LIVE</div>
-                <h3 class="feature-title">Live Telemetry</h3>
-                <p class="feature-desc">Access real-time data during your session for immediate feedback and adjustments.</p>
-            </div>
-        </div>
-    </section>
+      <div class="feature-card">
+        <div class="feature-icon">TRD</div>
+        <h3 class="feature-title">Performance Trends</h3>
+        <p class="feature-desc">Visualize your progress over time with comprehensive session comparisons and insights.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">LIVE</div>
+        <h3 class="feature-title">Live Telemetry</h3>
+        <p class="feature-desc">Access real-time data during your session for immediate feedback and adjustments.</p>
+      </div>
+    </div>
+  </section>
+
 
   <!-- Performance Section -->
   <section class="performance-visual" id="performance">
-        <div class="performance-content">
-            <div class="performance-text">
-                <h2>Data-driven performance insights</h2>
-                <p>Every millisecond counts on the track. OnaTrack provides professional-grade telemetry that helps you understand exactly where you can improve.</p>
-                <p>GPS-based timing accurate to 0.01 seconds with automatic lap detection and sector splits. Compare sessions, analyze racing lines, and identify braking points with detailed visualizations.</p>
-            </div>
-            <div class="performance-image">
-                <div class="telemetry-viz">
-                    <div class="chart-line">
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                    </div>
-                    <div class="data-points">
-                        <div class="data-point">
-                            <div class="data-point-value">1:32.4</div>
-                            <div class="data-point-label">Best Lap</div>
-                        </div>
-                        <div class="data-point">
-                            <div class="data-point-value">248</div>
-                            <div class="data-point-label">Max Speed</div>
-                        </div>
-                        <div class="data-point">
-                            <div class="data-point-value">1.8G</div>
-                            <div class="data-point-label">Max G-Force</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-  <!-- Data Showcase -->
-  <section class="data-showcase" id="data">
-        <h2 class="section-title">Complete data logging capabilities</h2>
-        <p class="section-subtitle">Professional-grade sensors capturing every aspect of your performance</p>
-        
-        <div class="data-grid">
-            <div class="data-category">
-                <h3>Timing & Position</h3>
-                <ul>
-                    <li>GPS-based lap timing (0.01s accuracy)</li>
-                    <li>Automatic lap detection</li>
-                    <li>Sector splits and analysis</li>
-                    <li>Racing line tracking</li>
-                    <li>Track position mapping</li>
-                    <li>GPS coordinates logging</li>
-                </ul>
-            </div>
-
-            <div class="data-category">
-                <h3>Speed & Acceleration</h3>
-                <ul>
-                    <li>Real-time speed monitoring</li>
-                    <li>Maximum speed per lap/session</li>
-                    <li>Average speed calculations</li>
-                    <li>Acceleration metrics</li>
-                    <li>Deceleration analysis</li>
-                    <li>Speed through corners</li>
-                </ul>
-            </div>
-
-            <div class="data-category">
-                <h3>G-Forces & Dynamics</h3>
-                <ul>
-                    <li>Longitudinal G-forces</li>
-                    <li>Lateral G-forces (cornering)</li>
-                    <li>Combined G-force analysis</li>
-                    <li>Braking force measurement</li>
-                    <li>Cornering force tracking</li>
-                    <li>G-force heat maps</li>
-                </ul>
-            </div>
-
-            <div class="data-category">
-                <h3>Lean Angle & Orientation</h3>
-                <ul>
-                    <li>Real-time lean angle</li>
-                    <li>Maximum lean per corner</li>
-                    <li>Left/right distribution</li>
-                    <li>Lean angle progression</li>
-                    <li>Body position insights</li>
-                    <li>Gyroscope data logging</li>
-                </ul>
-            </div>
-
-            <div class="data-category">
-                <h3>Analysis & Insights</h3>
-                <ul>
-                    <li>Session-to-session comparison</li>
-                    <li>Best lap analysis</li>
-                    <li>Sector time comparison</li>
-                    <li>Performance trend tracking</li>
-                    <li>Braking point identification</li>
-                    <li>Corner entry/exit speed analysis</li>
-                </ul>
-            </div>
-
-            <div class="data-category">
-                <h3>Technical Specifications</h3>
-                <ul>
-                    <li>100Hz data sampling</li>
-                    <li>Built-in GPS receiver</li>
-                    <li>6-axis IMU sensor</li>
-                    <li>Weather-resistant housing</li>
-                    <li>Long battery life (8+ hours)</li>
-                    <li>Wireless data transfer</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-  <!-- Steps -->
-  <section class="steps">
-        <h2 class="section-title">Simple setup, powerful results</h2>
-        <p class="section-subtitle">Get started in minutes and start improving immediately</p>
-        
-        <div class="steps-container">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h3>Mount & Connect</h3>
-                <p>Securely mount OnaTrack to your motorcycle and connect via Bluetooth to your smartphone.</p>
-            </div>
-
-            <div class="step">
-                <div class="step-number">2</div>
-                <h3>Hit the Track</h3>
-                <p>Start your session and let OnaTrack automatically record all your data in real-time.</p>
-            </div>
-
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3>Analyze & Improve</h3>
-                <p>Review detailed insights, compare laps, and identify areas for improvement after your session.</p>
-            </div>
-        </div>
-    </section>
-
-<!-- FAQ Section - Insert AFTER Steps section, BEFORE CTA Form -->
-    <section class="faq-section" id="faq" aria-labelledby="faq-heading">
-      <div class="faq-container">
-        <h2 id="faq-heading" class="section-title scroll-animate">Frequently Asked Questions</h2>
-        <p class="section-subtitle scroll-animate">Everything you need to know about OnaTrack</p>
-        
-        <div class="faq-grid">
-          <div class="faq-item scroll-animate">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq1">
-              <span>What motorcycles is OnaTrack compatible with?</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer" id="faq1" hidden aria-hidden="true">
-              <p>OnaTrack is compatible with all motorcycles and can be mounted securely on any bike. The device uses GPS and internal sensors, so it doesn't need to connect to your motorcycle's electronics.</p>
-            </div>
+    <div class="performance-content">
+      <div class="performance-text">
+        <h2>Data-driven performance insights</h2>
+        <p>Every millisecond counts on the track. OnaTrack provides professional-grade telemetry that helps you
+          understand exactly where you can improve.</p>
+        <p>GPS-based timing accurate to 0.01 seconds with automatic lap detection and sector splits. Compare sessions,
+          analyze racing lines, and identify braking points with detailed visualizations.</p>
+      </div>
+      <div class="performance-image">
+        <div class="telemetry-viz">
+          <div class="chart-line">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
           </div>
-
-          <div class="faq-item scroll-animate">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq2">
-              <span>How accurate is the GPS timing?</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer" id="faq2" hidden aria-hidden="true">
-              <p>OnaTrack provides professional-grade timing accuracy of 0.01 seconds (10 milliseconds), which is comparable to dedicated racing timing systems. The high-precision GPS module updates at 10Hz for reliable lap timing.</p>
+          <div class="data-points">
+            <div class="data-point">
+              <div class="data-point-value">1:32.4</div>
+              <div class="data-point-label">Best Lap</div>
             </div>
-          </div>
-
-          <div class="faq-item scroll-animate">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq3">
-              <span>How long does the battery last?</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer" id="faq3" hidden aria-hidden="true">
-              <p>The battery lasts over 8 hours of continuous use, which covers a full day at the track. It charges via USB-C and takes approximately 2 hours for a full charge. A battery indicator in the app keeps you informed.</p>
+            <div class="data-point">
+              <div class="data-point-value">248</div>
+              <div class="data-point-label">Max Speed</div>
             </div>
-          </div>
-
-          <div class="faq-item scroll-animate">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq4">
-              <span>Can I use OnaTrack in the rain?</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer" id="faq4" hidden aria-hidden="true">
-              <p>Yes! OnaTrack features a weather-resistant housing rated for harsh conditions. It's designed to handle rain, dust, and vibration that comes with track riding.</p>
-            </div>
-          </div>
-
-          <div class="faq-item scroll-animate">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq5">
-              <span>Do I need my phone during track sessions?</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer" id="faq5" hidden aria-hidden="true">
-              <p>No. OnaTrack records all data internally during your session. After you're done, you can connect via Bluetooth to transfer the data to your phone for analysis. This means you can leave your phone safely in the paddock.</p>
-            </div>
-          </div>
-
-          <div class="faq-item scroll-animate">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq6">
-              <span>What tracks does OnaTrack support?</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer" id="faq6" hidden aria-hidden="true">
-              <p>OnaTrack automatically detects most major racing circuits worldwide. If you're at a track that isn't pre-loaded, the device will create a custom track map based on your session, and you can name it for future use.</p>
-            </div>
-          </div>
-
-          <div class="faq-item scroll-animate">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq7">
-              <span>Can I compare my data with friends?</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer" id="faq7" hidden aria-hidden="true">
-              <p>Yes! The OnaTrack app allows you to export and share your session data. You can compare lap times, racing lines, and telemetry data with other riders to learn and improve together.</p>
-            </div>
-          </div>
-
-          <div class="faq-item scroll-animate">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq8">
-              <span>When will OnaTrack be available?</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer" id="faq8" hidden aria-hidden="true">
-              <p>We're currently in the final development phase. Register your interest above to be notified as soon as OnaTrack launches and to receive exclusive early-bird pricing.</p>
+            <div class="data-point">
+              <div class="data-point-value">1.8G</div>
+              <div class="data-point-label">Max G-Force</div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+
+  <!-- Data Showcase -->
+  <section class="data-showcase" id="data">
+    <h2 class="section-title">Complete data logging capabilities</h2>
+    <p class="section-subtitle">Professional-grade sensors capturing every aspect of your performance</p>
+
+    <div class="data-grid">
+      <div class="data-category">
+        <h3>Timing & Position</h3>
+        <ul>
+          <li>GPS-based lap timing (0.01s accuracy)</li>
+          <li>Automatic lap detection</li>
+          <li>Sector splits and analysis</li>
+          <li>Racing line tracking</li>
+          <li>Track position mapping</li>
+          <li>GPS coordinates logging</li>
+        </ul>
+      </div>
+
+      <div class="data-category">
+        <h3>Speed & Acceleration</h3>
+        <ul>
+          <li>Real-time speed monitoring</li>
+          <li>Maximum speed per lap/session</li>
+          <li>Average speed calculations</li>
+          <li>Acceleration metrics</li>
+          <li>Deceleration analysis</li>
+          <li>Speed through corners</li>
+        </ul>
+      </div>
+
+      <div class="data-category">
+        <h3>G-Forces & Dynamics</h3>
+        <ul>
+          <li>Longitudinal G-forces</li>
+          <li>Lateral G-forces (cornering)</li>
+          <li>Combined G-force analysis</li>
+          <li>Braking force measurement</li>
+          <li>Cornering force tracking</li>
+          <li>G-force heat maps</li>
+        </ul>
+      </div>
+
+      <div class="data-category">
+        <h3>Lean Angle & Orientation</h3>
+        <ul>
+          <li>Real-time lean angle</li>
+          <li>Maximum lean per corner</li>
+          <li>Left/right distribution</li>
+          <li>Lean angle progression</li>
+          <li>Body position insights</li>
+          <li>Gyroscope data logging</li>
+        </ul>
+      </div>
+
+      <div class="data-category">
+        <h3>Analysis & Insights</h3>
+        <ul>
+          <li>Session-to-session comparison</li>
+          <li>Best lap analysis</li>
+          <li>Sector time comparison</li>
+          <li>Performance trend tracking</li>
+          <li>Braking point identification</li>
+          <li>Corner entry/exit speed analysis</li>
+        </ul>
+      </div>
+
+      <div class="data-category">
+        <h3>Technical Specifications</h3>
+        <ul>
+          <li>100Hz data sampling</li>
+          <li>Built-in GPS receiver</li>
+          <li>6-axis IMU sensor</li>
+          <li>Weather-resistant housing</li>
+          <li>Long battery life (8+ hours)</li>
+          <li>Wireless data transfer</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps -->
+  <section class="steps">
+    <h2 class="section-title">Simple setup, powerful results</h2>
+    <p class="section-subtitle">Get started in minutes and start improving immediately</p>
+
+    <div class="steps-container">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Mount & Connect</h3>
+        <p>Securely mount OnaTrack to your motorcycle and connect via Bluetooth to your smartphone.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Hit the Track</h3>
+        <p>Start your session and let OnaTrack automatically record all your data in real-time.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Analyze & Improve</h3>
+        <p>Review detailed insights, compare laps, and identify areas for improvement after your session.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section - Insert AFTER Steps section, BEFORE CTA Form -->
+  <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+    <div class="faq-container">
+      <h2 id="faq-heading" class="section-title scroll-animate">Frequently Asked Questions</h2>
+      <p class="section-subtitle scroll-animate">Everything you need to know about OnaTrack</p>
+
+      <div class="faq-grid">
+        <div class="faq-item scroll-animate">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq1">
+            <span>What motorcycles is OnaTrack compatible with?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq1" hidden aria-hidden="true">
+            <p>OnaTrack is compatible with all motorcycles and can be mounted securely on any bike. The device uses GPS
+              and internal sensors, so it doesn't need to connect to your motorcycle's electronics.</p>
+          </div>
+        </div>
+
+        <div class="faq-item scroll-animate">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq2">
+            <span>How accurate is the GPS timing?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq2" hidden aria-hidden="true">
+            <p>OnaTrack provides professional-grade timing accuracy of 0.01 seconds (10 milliseconds), which is
+              comparable to dedicated racing timing systems. The high-precision GPS module updates at 10Hz for reliable
+              lap timing.</p>
+          </div>
+        </div>
+
+        <div class="faq-item scroll-animate">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq3">
+            <span>How long does the battery last?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq3" hidden aria-hidden="true">
+            <p>The battery lasts over 8 hours of continuous use, which covers a full day at the track. It charges via
+              USB-C and takes approximately 2 hours for a full charge. A battery indicator in the app keeps you
+              informed.</p>
+          </div>
+        </div>
+
+        <div class="faq-item scroll-animate">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq4">
+            <span>Can I use OnaTrack in the rain?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq4" hidden aria-hidden="true">
+            <p>Yes! OnaTrack features a weather-resistant housing rated for harsh conditions. It's designed to handle
+              rain, dust, and vibration that comes with track riding.</p>
+          </div>
+        </div>
+
+        <div class="faq-item scroll-animate">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq5">
+            <span>Do I need my phone during track sessions?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq5" hidden aria-hidden="true">
+            <p>No. OnaTrack records all data internally during your session. After you're done, you can connect via
+              Bluetooth to transfer the data to your phone for analysis. This means you can leave your phone safely in
+              the paddock.</p>
+          </div>
+        </div>
+
+        <div class="faq-item scroll-animate">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq6">
+            <span>What tracks does OnaTrack support?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq6" hidden aria-hidden="true">
+            <p>OnaTrack automatically detects most major racing circuits worldwide. If you're at a track that isn't
+              pre-loaded, the device will create a custom track map based on your session, and you can name it for
+              future use.</p>
+          </div>
+        </div>
+
+        <div class="faq-item scroll-animate">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq7">
+            <span>Can I compare my data with friends?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq7" hidden aria-hidden="true">
+            <p>Yes! The OnaTrack app allows you to export and share your session data. You can compare lap times, racing
+              lines, and telemetry data with other riders to learn and improve together.</p>
+          </div>
+        </div>
+
+        <div class="faq-item scroll-animate">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq8">
+            <span>When will OnaTrack be available?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq8" hidden aria-hidden="true">
+            <p>We're currently in the final development phase. Register your interest above to be notified as soon as
+              OnaTrack launches and to receive exclusive early-bird pricing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 
   <!-- CTA Form -->
   <section class="final-cta" id="interestForm">
-        <h2>Be the first to know</h2>
-        <p>Register your interest and get notified when OnaTrack launches</p>
-        
-        <div class="interest-form">
-            <form id="registerForm" method="POST">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required placeholder="Enter your name">
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required placeholder="Enter your email">
-                </div>
-                
-                <div class="form-group">
-                    <label for="country">Country</label>
-                    <select id="country" name="country" required>
-                        <option value="">Select your country</option>
-                        <option value="BE">Belgium</option>
-                        <option value="NL">Netherlands</option>
-                        <option value="FR">France</option>
-                        <option value="DE">Germany</option>
-                        <option value="GB">United Kingdom</option>
-                        <option value="IT">Italy</option>
-                        <option value="ES">Spain</option>
-                        <option value="US">United States</option>
-                        <option value="CA">Canada</option>
-                        <option value="AU">Australia</option>
-                        <option value="OTHER">Other</option>
-                    </select>
-                </div>
-                
-                <button type="submit" class="submit-btn">Register Interest</button>
-                
-                <p class="form-note">We'll only use your information to notify you about OnaTrack's launch. No spam, ever.</p>
-            </form>
+    <h2>Be the first to know</h2>
+    <p>Register now and receive <span style="color: #22d3ee; font-weight: 700;">15% discount</span> when we go live</p>
+
+    <div class="interest-form">
+      <form id="registerForm" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Enter your name">
         </div>
-    </section>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="Enter your email">
+        </div>
+
+        <div class="form-group">
+          <label for="country">Country</label>
+          <select id="country" name="country" required>
+            <option value="">Select your country</option>
+            <option value="AT">Austria</option>
+            <option value="BE">Belgium</option>
+            <option value="BG">Bulgaria</option>
+            <option value="HR">Croatia</option>
+            <option value="CY">Cyprus</option>
+            <option value="CZ">Czechia</option>
+            <option value="DK">Denmark</option>
+            <option value="EE">Estonia</option>
+            <option value="FI">Finland</option>
+            <option value="FR">France</option>
+            <option value="DE">Germany</option>
+            <option value="GR">Greece</option>
+            <option value="HU">Hungary</option>
+            <option value="IE">Ireland</option>
+            <option value="IT">Italy</option>
+            <option value="LV">Latvia</option>
+            <option value="LT">Lithuania</option>
+            <option value="LU">Luxembourg</option>
+            <option value="MT">Malta</option>
+            <option value="NL">Netherlands</option>
+            <option value="PL">Poland</option>
+            <option value="PT">Portugal</option>
+            <option value="RO">Romania</option>
+            <option value="SK">Slovakia</option>
+            <option value="SI">Slovenia</option>
+            <option value="ES">Spain</option>
+            <option value="SE">Sweden</option>
+            <option value="OTHER">Other</option>
+          </select>
+        </div>
+
+        <button type="submit" class="submit-btn">Register Interest</button>
+
+        <p class="form-note">Early registrations receive bigger discounts! We'll notify you with your exclusive 15%
+          discount code when OnaTrack launches. No spam, ever.</p>
+      </form>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer>
@@ -414,5 +523,10 @@
       });
     }
   </script>
+
+  <script src="js/faq.js"></script>
+
+
 </body>
+
 </html>
