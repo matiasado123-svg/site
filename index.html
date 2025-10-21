@@ -175,59 +175,79 @@
       </div>
     </div>
 
-    <!-- App Screenshots Carousel -->
-    <div class="app-gallery">
-      <div class="app-gallery-header scroll-animate">
-        <h3>Explore the interface</h3>
-        <p>Swipe through to see the app in action</p>
-      </div>
+   <!-- App Screenshots Gallery with Carousel -->
+<div class="app-gallery">
+  <div class="app-gallery-header scroll-animate">
+    <h3>Explore the interface</h3>
+    <p>Navigate through the app screens</p>
+  </div>
 
-      <div class="app-gallery-carousel">
-        <!-- Navigation Buttons -->
-        <button class="carousel-btn prev" aria-label="Previous screenshot">‹</button>
-        <button class="carousel-btn next" aria-label="Next screenshot">›</button>
-
-        <!-- Screenshots Track -->
-        <div class="app-gallery-track">
-          <!-- Screenshot 1 -->
+  <div class="carousel-container">
+    <div class="carousel-wrapper">
+      <!-- Previous Button -->
+      <button class="carousel-btn prev" aria-label="Previous slide">‹</button>
+      
+      <!-- Carousel Track -->
+      <div class="carousel-track">
+        <!-- Screenshot 1 -->
+        <div class="carousel-slide active">
           <div class="app-screenshot">
-            <img src="assets/images/app-screenshot-1.jpg" alt="OnaTrack App - Dashboard" loading="lazy">
+            <img src="assets/images/app-screenshot-1.jpg"
+                 alt="OnaTrack App - Dashboard" 
+                 loading="lazy">
             <div class="app-screenshot-caption">Session Dashboard</div>
             <!-- If you don't have images yet, use placeholder -->
             <!-- <div class="screenshot-placeholder">Dashboard View</div> -->
           </div>
+        </div>
 
-          <!-- Screenshot 2 -->
+        <!-- Screenshot 2 -->
+        <div class="carousel-slide">
           <div class="app-screenshot">
-            <img src="assets/images/app-screenshot-2.jpg" alt="OnaTrack App - Lap Analysis" loading="lazy">
+            <img src="assets/images/app-screenshot-2.jpg"
+                 alt="OnaTrack App - Lap Analysis" 
+                 loading="lazy">
             <div class="app-screenshot-caption">Lap Time Analysis</div>
             <!-- <div class="screenshot-placeholder">Lap Analysis</div> -->
           </div>
+        </div>
 
-          <!-- Screenshot 3 -->
+        <!-- Screenshot 3 -->
+        <div class="carousel-slide">
           <div class="app-screenshot">
-            <img src="assets/images/app-screenshot-3.jpg" alt="OnaTrack App - Track Map" loading="lazy">
+            <img src="assets/images/app-screenshot-3.jpg"
+                 alt="OnaTrack App - Track Map" 
+                 loading="lazy">
             <div class="app-screenshot-caption">Track Map Overlay</div>
             <!-- <div class="screenshot-placeholder">Track Map</div> -->
           </div>
+        </div>
 
-          <!-- Screenshot 4 -->
+        <!-- Screenshot 4 -->
+        <div class="carousel-slide">
           <div class="app-screenshot">
-            <img src="assets/images/app-screenshot-4.jpg" alt="OnaTrack App - Telemetry" loading="lazy">
+            <img src="assets/images/app-screenshot-4.jpg" 
+                 alt="OnaTrack App - Telemetry" 
+                 loading="lazy">
             <div class="app-screenshot-caption">Telemetry Data</div>
             <!-- <div class="screenshot-placeholder">Telemetry View</div> -->
           </div>
         </div>
       </div>
-
-      <!-- Carousel Indicators (dots) -->
-      <div class="carousel-indicators">
-        <button class="carousel-indicator active" aria-label="Go to screenshot 1"></button>
-        <button class="carousel-indicator" aria-label="Go to screenshot 2"></button>
-        <button class="carousel-indicator" aria-label="Go to screenshot 3"></button>
-        <button class="carousel-indicator" aria-label="Go to screenshot 4"></button>
-      </div>
+      
+      <!-- Next Button -->
+      <button class="carousel-btn next" aria-label="Next slide">›</button>
     </div>
+    
+    <!-- Carousel Indicators -->
+    <div class="carousel-indicators">
+      <button class="carousel-indicator active" aria-label="Go to slide 1"></button>
+      <button class="carousel-indicator" aria-label="Go to slide 2"></button>
+      <button class="carousel-indicator" aria-label="Go to slide 3"></button>
+      <button class="carousel-indicator" aria-label="Go to slide 4"></button>
+    </div>
+  </div>
+</div>
 
   </div>
 </section>

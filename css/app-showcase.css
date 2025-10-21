@@ -30,43 +30,14 @@
     line-height: 1.8;
 }
 
-/* Main Feature Display - Tekst links, video rechts */
+/* Main Feature Display */
 .app-feature-display {
-    display: flex;
-    flex-direction: row-reverse;  /* video rechts, tekst links */
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 4rem;
+    align-items: center;
     margin-bottom: 5rem;
-    flex-wrap: wrap;              /* zorgt voor responsive stacking */
 }
-
-/* Tekstblok links */
-.app-feature-text {
-    flex: 1 1 500px;
-    text-align: left;
-    padding: 1rem;
-}
-
-/* Videoblok rechts */
-.app-video-container {
-    flex: 1 1 350px;
-    max-width: 400px;
-    margin: 0;                    /* verwijder 'margin: 0 auto;' uit origineel */
-}
-
-/* Responsief gedrag */
-@media (max-width: 768px) {
-  .app-feature-display {
-    flex-direction: column;       /* onder elkaar op mobiel */
-    text-align: center;
-  }
-
-  .app-feature-text {
-    text-align: center;
-  }
-}
-
 
 .app-video-container {
     position: relative;
@@ -76,12 +47,6 @@
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     background: #000;
     transition: all 0.3s ease;
-    max-width: 275px;
-    /* Half the original size */
-    width: 100%;
-    margin: 0 auto;
-    max-height: 600px;
-    /* Crop the height */
 }
 
 .app-video-container:hover {
@@ -94,10 +59,6 @@
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover;
-    /* Crop to fit container */
-    min-height: 400px;
-    /* Match container height */
 }
 
 .video-placeholder {
@@ -112,8 +73,6 @@
 
 .app-feature-text {
     padding: 2rem 0;
-    text-align: center;
-    max-width: 800px;
 }
 
 .app-feature-label {
@@ -148,9 +107,6 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    align-items: flex-start;
-    max-width: 600px;
-    margin: 0 auto;
 }
 
 .app-feature-item {
@@ -176,7 +132,7 @@
     flex-shrink: 0;
 }
 
-/* Image Gallery - Carousel Style */
+/* Image Gallery with Carousel */
 .app-gallery {
     margin-top: 5rem;
 }
@@ -199,32 +155,75 @@
 }
 
 /* Carousel Container */
-.app-gallery-carousel {
+.carousel-container {
     position: relative;
-    max-width: 500px;
+    max-width: 1000px;
     margin: 0 auto;
-    overflow: hidden;
+    padding: 2rem 0;
 }
 
-.app-gallery-track {
+.carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding: 0 80px; /* Space for arrows */
+}
+
+.carousel-track {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
     transition: transform 0.5s ease;
 }
 
+.carousel-slide {
+    flex: 0 0 auto;
+    transition: all 0.5s ease;
+}
+
+/* Center slide (active) */
+.carousel-slide.active {
+    transform: scale(1);
+    opacity: 1;
+    z-index: 2;
+}
+
+/* Side slides (previous and next) */
+.carousel-slide.prev,
+.carousel-slide.next {
+    transform: scale(0.75);
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.carousel-slide.prev {
+    transform: scale(0.75) translateX(20px);
+}
+
+.carousel-slide.next {
+    transform: scale(0.75) translateX(-20px);
+}
+
 .app-screenshot {
-    min-width: 100%;
     position: relative;
+    width: 400px;
     border-radius: 16px;
     overflow: hidden;
     border: 2px solid rgba(34, 211, 238, 0.3);
     background: #000;
-    transition: border-color 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.carousel-slide.active .app-screenshot {
+    border-color: #22d3ee;
+    box-shadow: 0 15px 50px rgba(34, 211, 238, 0.4);
 }
 
 .app-screenshot img {
     width: 100%;
     height: auto;
     display: block;
+    transition: transform 0.3s ease;
 }
 
 .screenshot-placeholder {
@@ -249,44 +248,41 @@
     color: #fff;
     font-size: 0.9rem;
     font-weight: 600;
+    text-align: center;
 }
 
-/* Carousel Navigation Buttons */
+/* Carousel Controls */
 .carousel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(34, 211, 238, 0.8);
-    color: #000;
-    border: none;
     width: 50px;
     height: 50px;
+    background: rgba(34, 211, 238, 0.2);
+    border: 2px solid #22d3ee;
     border-radius: 50%;
-    cursor: pointer;
+    color: #22d3ee;
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
-    font-weight: bold;
+    cursor: pointer;
     transition: all 0.3s ease;
     z-index: 10;
 }
 
 .carousel-btn:hover {
     background: #22d3ee;
+    color: #000;
     transform: translateY(-50%) scale(1.1);
 }
 
-.carousel-btn:active {
-    transform: translateY(-50%) scale(0.95);
-}
-
 .carousel-btn.prev {
-    left: -25px;
+    left: 10px;
 }
 
 .carousel-btn.next {
-    right: -25px;
+    right: 10px;
 }
 
 /* Carousel Indicators */
@@ -298,24 +294,19 @@
 }
 
 .carousel-indicator {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background: rgba(34, 211, 238, 0.3);
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
-    padding: 0;
 }
 
 .carousel-indicator.active {
     background: #22d3ee;
     width: 30px;
-    border-radius: 6px;
-}
-
-.carousel-indicator:hover {
-    background: rgba(34, 211, 238, 0.6);
+    border-radius: 5px;
 }
 
 /* Mobile Responsive */
@@ -324,11 +315,8 @@
         padding: 4rem 1rem;
     }
 
-    .app-video-container {
-        max-width: 100%;
-    }
-
     .app-feature-display {
+        grid-template-columns: 1fr;
         gap: 2rem;
     }
 
@@ -344,6 +332,14 @@
         margin-bottom: 2rem;
     }
 
+    .carousel-wrapper {
+        padding: 0 60px;
+    }
+
+    .app-screenshot {
+        width: 280px;
+    }
+
     .carousel-btn {
         width: 40px;
         height: 40px;
@@ -351,27 +347,41 @@
     }
 
     .carousel-btn.prev {
-        left: 10px;
+        left: 5px;
     }
 
     .carousel-btn.next {
-        right: 10px;
+        right: 5px;
     }
 
-    .app-gallery-carousel {
-        margin: 0 1rem;
+    /* Hide side slides on very small screens */
+    .carousel-slide.prev,
+    .carousel-slide.next {
+        display: none;
     }
 }
 
-/* Touch swipe support */
-.app-gallery-track {
-    touch-action: pan-y;
+@media (max-width: 480px) {
+    .app-screenshot {
+        width: 240px;
+    }
 }
 
-/* Lightbox removed as we're using carousel */
+/* Lightbox for full-screen image viewing */
 .lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9998;
     display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
-
-
+.lightbox-overlay.active {
+    display: flex;
+}
