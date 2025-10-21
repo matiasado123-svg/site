@@ -30,14 +30,43 @@
     line-height: 1.8;
 }
 
-/* Main Feature Display */
+/* Main Feature Display - Tekst links, video rechts */
 .app-feature-display {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    display: flex;
+    flex-direction: row-reverse;  /* video rechts, tekst links */
     align-items: center;
+    justify-content: center;
+    gap: 4rem;
     margin-bottom: 5rem;
+    flex-wrap: wrap;              /* zorgt voor responsive stacking */
 }
+
+/* Tekstblok links */
+.app-feature-text {
+    flex: 1 1 500px;
+    text-align: left;
+    padding: 1rem;
+}
+
+/* Videoblok rechts */
+.app-video-container {
+    flex: 1 1 350px;
+    max-width: 400px;
+    margin: 0;                    /* verwijder 'margin: 0 auto;' uit origineel */
+}
+
+/* Responsief gedrag */
+@media (max-width: 768px) {
+  .app-feature-display {
+    flex-direction: column;       /* onder elkaar op mobiel */
+    text-align: center;
+  }
+
+  .app-feature-text {
+    text-align: center;
+  }
+}
+
 
 .app-video-container {
     position: relative;
@@ -47,6 +76,12 @@
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     background: #000;
     transition: all 0.3s ease;
+    max-width: 275px;
+    /* Half the original size */
+    width: 100%;
+    margin: 0 auto;
+    max-height: 600px;
+    /* Crop the height */
 }
 
 .app-video-container:hover {
@@ -59,6 +94,10 @@
     width: 100%;
     height: auto;
     display: block;
+    object-fit: cover;
+    /* Crop to fit container */
+    min-height: 400px;
+    /* Match container height */
 }
 
 .video-placeholder {
@@ -73,6 +112,8 @@
 
 .app-feature-text {
     padding: 2rem 0;
+    text-align: center;
+    max-width: 800px;
 }
 
 .app-feature-label {
@@ -107,6 +148,9 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    align-items: flex-start;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .app-feature-item {
@@ -132,7 +176,7 @@
     flex-shrink: 0;
 }
 
-/* Image Gallery */
+/* Image Gallery - Carousel Style */
 .app-gallery {
     margin-top: 5rem;
 }
@@ -154,37 +198,33 @@
     font-size: 1rem;
 }
 
-.app-gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+/* Carousel Container */
+.app-gallery-carousel {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.app-gallery-track {
+    display: flex;
+    transition: transform 0.5s ease;
 }
 
 .app-screenshot {
+    min-width: 100%;
     position: relative;
     border-radius: 16px;
     overflow: hidden;
     border: 2px solid rgba(34, 211, 238, 0.3);
     background: #000;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.app-screenshot:hover {
-    transform: translateY(-8px);
-    border-color: #22d3ee;
-    box-shadow: 0 15px 50px rgba(34, 211, 238, 0.4);
+    transition: border-color 0.3s ease;
 }
 
 .app-screenshot img {
     width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.3s ease;
-}
-
-.app-screenshot:hover img {
-    transform: scale(1.05);
 }
 
 .screenshot-placeholder {
@@ -209,12 +249,73 @@
     color: #fff;
     font-size: 0.9rem;
     font-weight: 600;
-    opacity: 0;
-    transition: opacity 0.3s ease;
 }
 
-.app-screenshot:hover .app-screenshot-caption {
-    opacity: 1;
+/* Carousel Navigation Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(34, 211, 238, 0.8);
+    color: #000;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: #22d3ee;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-btn.prev {
+    left: -25px;
+}
+
+.carousel-btn.next {
+    right: -25px;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.carousel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(34, 211, 238, 0.3);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.carousel-indicator.active {
+    background: #22d3ee;
+    width: 30px;
+    border-radius: 6px;
+}
+
+.carousel-indicator:hover {
+    background: rgba(34, 211, 238, 0.6);
 }
 
 /* Mobile Responsive */
@@ -223,14 +324,12 @@
         padding: 4rem 1rem;
     }
 
-    .app-feature-display {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+    .app-video-container {
+        max-width: 100%;
     }
 
-    .app-gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 1.5rem;
+    .app-feature-display {
+        gap: 2rem;
     }
 
     .app-showcase-intro {
@@ -244,31 +343,35 @@
     .app-gallery-header {
         margin-bottom: 2rem;
     }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .carousel-btn.prev {
+        left: 10px;
+    }
+
+    .carousel-btn.next {
+        right: 10px;
+    }
+
+    .app-gallery-carousel {
+        margin: 0 1rem;
+    }
 }
 
-/* Lightbox for full-screen image viewing (optional enhancement) */
-.app-screenshot.fullscreen {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-    max-width: 90vw;
-    max-height: 90vh;
-    border: 3px solid #22d3ee;
+/* Touch swipe support */
+.app-gallery-track {
+    touch-action: pan-y;
 }
 
+/* Lightbox removed as we're using carousel */
 .lightbox-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.95);
-    z-index: 9998;
     display: none;
 }
 
-.lightbox-overlay.active {
-    display: block;
-}
+
+
