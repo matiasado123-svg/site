@@ -50,7 +50,6 @@
     background: #000;
     transition: all 0.3s ease;
     max-width: 300px;
-    /* Half the original size */
     max-height: 600px;
     flex: 1 1 300px;
 }
@@ -174,43 +173,33 @@
     position: relative;
     overflow: hidden;
     padding: 0 80px;
-    /* Space for arrows */
 }
 
 .carousel-track {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 1rem;
+    justify-content: flex-start;
+    gap: 2rem;
     transition: transform 0.5s ease;
 }
 
 .carousel-slide {
-    flex: 0 0 auto;
-    transition: all 0.5s ease;
+    flex: 0 0 280px;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+    transform: scale(0.9);
 }
 
-/* Center slide (active) */
+/* Center (active) slide */
 .carousel-slide.active {
-    transform: scale(1);
     opacity: 1;
+    transform: scale(1);
     z-index: 2;
 }
 
-/* Side slides (previous and next) */
-.carousel-slide.prev,
-.carousel-slide.next {
-    transform: scale(0.8);
-    opacity: 0.4;
-    z-index: 1;
-}
-
-.carousel-slide.prev {
-    transform: scale(0.8) translateX(30px);
-}
-
-.carousel-slide.next {
-    transform: scale(0.8) translateX(-30px);
+.carousel-slide.active .app-screenshot {
+    border-color: #22d3ee;
+    box-shadow: 0 15px 50px rgba(34, 211, 238, 0.4);
 }
 
 .app-screenshot {
@@ -224,15 +213,11 @@
     transition: all 0.3s ease;
 }
 
-.carousel-slide.active .app-screenshot {
-    border-color: #22d3ee;
-    box-shadow: 0 15px 50px rgba(34, 211, 238, 0.4);
-}
-
 .app-screenshot img {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
+    object-fit: contain;
     transition: transform 0.3s ease;
 }
 
@@ -329,8 +314,15 @@
         grid-template-columns: 1fr;
         gap: 2rem;
         flex-direction: column;
-        /* onder elkaar op mobiel */
         text-align: center;
+    }
+
+    .app-video-container {
+        max-width: 90%;
+        width: 90%;
+        max-height: none;
+        margin: 0 auto;
+        flex: 1 1 auto;
     }
 
     .app-showcase-intro {
@@ -338,8 +330,8 @@
     }
 
     .app-feature-text {
-    text-align: center;
-  }
+        text-align: center;
+    }
 
     .app-gallery {
         margin-top: 3rem;
@@ -350,11 +342,19 @@
     }
 
     .carousel-wrapper {
-        padding: 0 60px;
+        padding: 0 50px;
+    }
+
+    .carousel-track {
+        gap: 1rem;
+    }
+
+    .carousel-slide {
+        flex: 0 0 240px;
     }
 
     .app-screenshot {
-        width: 280px;
+        width: 240px;
     }
 
     .carousel-btn {
@@ -370,17 +370,15 @@
     .carousel-btn.next {
         right: 5px;
     }
-
-    /* Hide side slides on very small screens */
-    .carousel-slide.prev,
-    .carousel-slide.next {
-        display: none;
-    }
 }
 
 @media (max-width: 480px) {
+    .carousel-slide {
+        flex: 0 0 220px;
+    }
+    
     .app-screenshot {
-        width: 240px;
+        width: 220px;
     }
 }
 
