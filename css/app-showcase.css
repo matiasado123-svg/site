@@ -32,11 +32,13 @@
 
 /* Main Feature Display */
 .app-feature-display {
-    display: grid;
+    display: flex;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
     margin-bottom: 5rem;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
 }
 
 .app-video-container {
@@ -47,6 +49,10 @@
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     background: #000;
     transition: all 0.3s ease;
+    max-width: 300px;
+    /* Half the original size */
+    max-height: 600px;
+    flex: 1 1 300px;
 }
 
 .app-video-container:hover {
@@ -72,6 +78,8 @@
 }
 
 .app-feature-text {
+    flex: 1 1 500px;
+    text-align: left;
     padding: 2rem 0;
 }
 
@@ -165,7 +173,8 @@
 .carousel-wrapper {
     position: relative;
     overflow: hidden;
-    padding: 0 80px; /* Space for arrows */
+    padding: 0 80px;
+    /* Space for arrows */
 }
 
 .carousel-track {
@@ -319,11 +328,18 @@
     .app-feature-display {
         grid-template-columns: 1fr;
         gap: 2rem;
+        flex-direction: column;
+        /* onder elkaar op mobiel */
+        text-align: center;
     }
 
     .app-showcase-intro {
         margin-bottom: 3rem;
     }
+
+    .app-feature-text {
+    text-align: center;
+  }
 
     .app-gallery {
         margin-top: 3rem;
