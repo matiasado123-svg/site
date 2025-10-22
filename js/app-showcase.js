@@ -62,17 +62,30 @@ document.addEventListener('DOMContentLoaded', function() {
     if (isTransitioning && animate) return;
     if (animate) isTransitioning = true;
     
-    // Get actual dimensions
+    // Get wrapper dimensions
     const wrapper = track.parentElement;
     const wrapperWidth = wrapper.offsetWidth;
     const wrapperStyle = window.getComputedStyle(wrapper);
     const paddingLeft = parseInt(wrapperStyle.paddingLeft) || 0;
     const paddingRight = parseInt(wrapperStyle.paddingRight) || 0;
-    const availableWidth = wrapperWidth - paddingLeft - paddingRight;
     
-    // Calculate offset to center the active slide
-    const centerOffset = paddingLeft + (availableWidth / 2) - (slideWidth / 2);
-    const translateX = centerOffset - (currentIndex * slideWidthWithGap);
+    let translateX;
+    
+    // Check if mobile (viewport width <= 768px)
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isMobile) {
+      // Mobile: Center the active slide in the viewport
+      const viewportCenter = wrapperWidth / 2;
+      const slideCenter = slideWidth / 2;
+      const slidePosition = currentIndex * slideWidthWithGap;
+      translateX = viewportCenter - slidePosition - slideCenter;
+    } else {
+      // Desktop: Use original calculation (which works fine)
+      const availableWidth = wrapperWidth - paddingLeft - paddingRight;
+      const centerOffset = paddingLeft + (availableWidth / 2) - (slideWidth / 2);
+      translateX = centerOffset - (currentIndex * slideWidthWithGap);
+    }
     
     track.style.transition = animate ? 'transform 0.5s ease' : 'none';
     track.style.transform = `translateX(${translateX}px)`;
