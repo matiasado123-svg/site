@@ -9,67 +9,101 @@ document.addEventListener('DOMContentLoaded', function() {
   
   if (!track || slidesContainer.length === 0) return;
   
-  // Clone slides for infinite loop
   const originalSlides = Array.from(slidesContainer);
   const numSlides = originalSlides.length;
   
-  // Clone slides before and after for seamless loop
-  originalSlides.forEach(slide => {
-    const cloneBefore = slide.cloneNode(true);
-    const cloneAfter = slide.cloneNode(true);
-    track.insertBefore(cloneBefore, track.firstChild);
-    track.appendChild(cloneAfter);
+  // Clear track and rebuild with proper structure
+  track.innerHTML = '';
+  
+  // Create all slides (clones + originals)
+  const allSlidesData = [];
+  
+  // Add clones before
+  originalSlides.forEach((slide, index) => {
+    const clone = slide.cloneNode(true);
+    clone.setAttribute('data-index', index);
+    clone.setAttribute('data-clone', 'before');
+    track.appendChild(clone);
+    allSlidesData.push({ element: clone, originalIndex: index });
+  });
+  
+  // Add original slides
+  originalSlides.forEach((slide, index) => {
+    const newSlide = slide.cloneNode(true);
+    newSlide.setAttribute('data-index', index);
+    newSlide.setAttribute('data-clone', 'false');
+    track.appendChild(newSlide);
+    allSlidesData.push({ element: newSlide, originalIndex: index });
+  });
+  
+  // Add clones after
+  originalSlides.forEach((slide, index) => {
+    const clone = slide.cloneNode(true);
+    clone.setAttribute('data-index', index);
+    clone.setAttribute('data-clone', 'after');
+    track.appendChild(clone);
+    allSlidesData.push({ element: clone, originalIndex: index });
   });
   
   const allSlides = Array.from(track.querySelectorAll('.carousel-slide'));
   let currentIndex = numSlides; // Start at first original slide
-  const slideWidth = 280 + 32; // slide width + gap (2rem = 32px)
+  const slideWidth = 280; // slide width
+  const gap = 32; // 2rem gap
+  const slideWidthWithGap = slideWidth + gap;
   let isTransitioning = false;
   
-  // Initialize: position track to show first original slide centered
+  // Initialize carousel
   function initCarousel() {
-    const offset = (track.parentElement.offsetWidth / 2) - (slideWidth / 2);
-    const translateX = offset - (currentIndex * slideWidth);
-    track.style.transition = 'none';
-    track.style.transform = `translateX(${translateX}px)`;
-    setTimeout(() => {
-      track.style.transition = 'transform 0.5s ease';
-      updateActiveStates();
-    }, 50);
+    updateCarousel(false);
   }
   
   // Update carousel position
   function updateCarousel(animate = true) {
-    if (isTransitioning) return;
-    isTransitioning = true;
+    if (isTransitioning && animate) return;
+    if (animate) isTransitioning = true;
     
-    const offset = (track.parentElement.offsetWidth / 2) - (slideWidth / 2);
-    const translateX = offset - (currentIndex * slideWidth);
+    // Get actual dimensions
+    const wrapper = track.parentElement;
+    const wrapperWidth = wrapper.offsetWidth;
+    const wrapperStyle = window.getComputedStyle(wrapper);
+    const paddingLeft = parseInt(wrapperStyle.paddingLeft) || 0;
+    const paddingRight = parseInt(wrapperStyle.paddingRight) || 0;
+    const availableWidth = wrapperWidth - paddingLeft - paddingRight;
     
-    if (!animate) {
-      track.style.transition = 'none';
-    } else {
-      track.style.transition = 'transform 0.5s ease';
-    }
+    // Calculate offset to center the active slide
+    const centerOffset = paddingLeft + (availableWidth / 2) - (slideWidth / 2);
+    const translateX = centerOffset - (currentIndex * slideWidthWithGap);
     
+    track.style.transition = animate ? 'transform 0.5s ease' : 'none';
     track.style.transform = `translateX(${translateX}px)`;
+    
     updateActiveStates();
     
-    setTimeout(() => {
-      isTransitioning = false;
-      checkLoop();
-    }, animate ? 500 : 50);
+    if (animate) {
+      setTimeout(() => {
+        isTransitioning = false;
+        checkLoop();
+      }, 500);
+    }
   }
   
   // Check if we need to loop
   function checkLoop() {
+    let needsJump = false;
+    let newIndex = currentIndex;
+    
     if (currentIndex >= numSlides * 2) {
-      // We're at the end clones, jump to start originals
-      currentIndex = numSlides;
-      updateCarousel(false);
+      // At end clones, jump to start originals
+      newIndex = numSlides;
+      needsJump = true;
     } else if (currentIndex < numSlides) {
-      // We're at the start clones, jump to end originals
-      currentIndex = numSlides * 2 - 1;
+      // At start clones, jump to end originals
+      newIndex = (numSlides * 2) - 1;
+      needsJump = true;
+    }
+    
+    if (needsJump) {
+      currentIndex = newIndex;
       updateCarousel(false);
     }
   }
@@ -80,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
       slide.classList.toggle('active', index === currentIndex);
     });
     
-    // Update indicators based on real position
+    // Update indicators
     const realIndex = ((currentIndex - numSlides) % numSlides + numSlides) % numSlides;
     indicators.forEach((indicator, index) => {
       indicator.classList.toggle('active', index === realIndex);
@@ -139,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
-  // Touch/Swipe support for mobile
+  // Touch/Swipe support
   let touchStartX = 0;
   let touchEndX = 0;
   
@@ -168,8 +202,12 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // Handle window resize
+  let resizeTimer;
   window.addEventListener('resize', () => {
-    updateCarousel(false);
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      updateCarousel(false);
+    }, 250);
   });
   
   // Initialize
@@ -180,23 +218,23 @@ document.addEventListener('DOMContentLoaded', function() {
   const lightboxOverlay = document.getElementById('lightboxOverlay');
   
   if (screenshots.length > 0 && lightboxOverlay) {
-    screenshots.forEach(screenshot => {
-      screenshot.addEventListener('click', function(e) {
-        if (this.closest('.carousel-slide').classList.contains('active')) {
-          const img = this.querySelector('img');
-          if (img) {
-            const fullscreenImg = img.cloneNode(true);
-            fullscreenImg.style.maxWidth = '90vw';
-            fullscreenImg.style.maxHeight = '90vh';
-            fullscreenImg.style.objectFit = 'contain';
-            
-            lightboxOverlay.classList.add('active');
-            lightboxOverlay.innerHTML = '';
-            lightboxOverlay.appendChild(fullscreenImg);
-            document.body.style.overflow = 'hidden';
-          }
+    // Delegate click event to track
+    track.addEventListener('click', function(e) {
+      const screenshot = e.target.closest('.app-screenshot');
+      if (screenshot && screenshot.closest('.carousel-slide').classList.contains('active')) {
+        const img = screenshot.querySelector('img');
+        if (img) {
+          const fullscreenImg = img.cloneNode(true);
+          fullscreenImg.style.maxWidth = '90vw';
+          fullscreenImg.style.maxHeight = '90vh';
+          fullscreenImg.style.objectFit = 'contain';
+          
+          lightboxOverlay.classList.add('active');
+          lightboxOverlay.innerHTML = '';
+          lightboxOverlay.appendChild(fullscreenImg);
+          document.body.style.overflow = 'hidden';
         }
-      });
+      }
     });
     
     lightboxOverlay.addEventListener('click', function() {
