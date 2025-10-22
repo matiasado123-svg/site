@@ -172,7 +172,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
     transition: transform 0.5s ease;
 }
 
@@ -191,22 +191,23 @@
 /* Side slides (previous and next) */
 .carousel-slide.prev,
 .carousel-slide.next {
-    transform: scale(0.75);
-    opacity: 0.5;
+    transform: scale(0.8);
+    opacity: 0.4;
     z-index: 1;
 }
 
 .carousel-slide.prev {
-    transform: scale(0.75) translateX(20px);
+    transform: scale(0.8) translateX(30px);
 }
 
 .carousel-slide.next {
-    transform: scale(0.75) translateX(-20px);
+    transform: scale(0.8) translateX(-30px);
 }
 
 .app-screenshot {
     position: relative;
-    width: 400px;
+    width: 280px;
+    max-height: 550px;
     border-radius: 16px;
     overflow: hidden;
     border: 2px solid rgba(34, 211, 238, 0.3);
