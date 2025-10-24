@@ -96,20 +96,15 @@
   justify-content: center;
 }
 
-/* Responsive card + subtle stage that matches your dark theme */
+/* Responsive card with no background - blends perfectly */
 .product-image-placeholder{
   --max-w: 560px;                         /* cap on desktops */
-  --min-w: 260px;                         /* don’t go too tiny on phones */
+  --min-w: 260px;                         /* don't go too tiny on phones */
   width: clamp(var(--min-w), 42vw, var(--max-w));
   margin: 0;
   position: relative;
   padding: 16px;
-  border-radius: 20px;
-  background:
-    radial-gradient(220px 120px at 65% 65%, rgba(0,0,0,.55), transparent 70%),
-    linear-gradient(180deg,#0c1217,#0a0f14);
-  border: 1px solid #131b22;
-  box-shadow: 0 30px 80px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.02) inset;
+  background: transparent;
 }
 
 /* The image scales with the card; aspect ratio comes from width/height attrs */

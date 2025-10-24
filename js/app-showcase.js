@@ -47,9 +47,14 @@ document.addEventListener('DOMContentLoaded', function() {
   
   const allSlides = Array.from(track.querySelectorAll('.carousel-slide'));
   let currentIndex = numSlides; // Start at first original slide
-  const slideWidth = 280; // slide width
-  const gap = 32; // 2rem gap
-  const slideWidthWithGap = slideWidth + gap;
+function getSlideMetrics() {
+  const firstSlide = track.querySelector('.carousel-slide');
+  const slideStyles = window.getComputedStyle(firstSlide);
+  const slideWidth = firstSlide.offsetWidth;
+  const gap = parseFloat(slideStyles.marginRight || slideStyles.columnGap || 0) || 
+              parseFloat(getComputedStyle(track).gap) || 0;
+  return { slideWidth, gap };
+}
   let isTransitioning = false;
   
   // Initialize carousel
@@ -61,6 +66,11 @@ document.addEventListener('DOMContentLoaded', function() {
   function updateCarousel(animate = true) {
     if (isTransitioning && animate) return;
     if (animate) isTransitioning = true;
+
+      // Get current slide width + gap dynamically (important for responsive)
+  const { slideWidth, gap } = getSlideMetrics();
+  const slideWidthWithGap = slideWidth + gap;
+
     
     // Get wrapper dimensions
     const wrapper = track.parentElement;
