@@ -5,6 +5,8 @@
     left: 0;
     right: 0;
     bottom: 0;
+    width: 100vw;  /* ADD THIS */
+    height: 100vh; /* ADD THIS */
     background: rgba(0, 0, 0, 0.9);
     display: none;
     justify-content: center;

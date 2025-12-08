@@ -55,3 +55,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    
+    // Don't prevent default for skip links or top links
+    if (href === '#top' || href === '#main') {
+      return; // Let browser handle it normally
+    }
+    
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+      
+      // Update URL without jumping
+      history.pushState(null, null, href);
+    }
+  });
+});
