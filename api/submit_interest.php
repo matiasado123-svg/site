@@ -1,8 +1,13 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // Load database credentials from environment variables
 $db_host = getenv('DB_HOST') ?: 'localhost';
-$db_name = getenv('DB_NAME') ?: 'c101ut3oa_onatechdb';
-$db_user = getenv('DB_USER') ?: 'c101ut3oa_onatechdb';
+$db_name = getenv('DB_NAME') ?: 'vldsuy_db1';
+$db_user = getenv('DB_USER') ?: 'vldsuy_db1';
 $db_pass = getenv('DB_PASS');
 
 if (!$db_pass) {
@@ -66,7 +71,6 @@ $stmt->execute([$name, $email, $country, $discount_percent]);
   http_response_code(400);
   echo json_encode(['success' => false, 'message' => $e->getMessage()]);
 } catch (PDOException $e) {
-  http_response_code(500);
-  echo json_encode(['success' => false, 'message' => 'Database error. Please try again later.']);
-  error_log('DB error: ' . $e->getMessage());
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => 'Database error: ' . $e->getMessage()]);
 }
