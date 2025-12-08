@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://onatrack.eu/sitemap.xml
+
+# Block backend files from being indexed
+User-agent: *
+Disallow: /api/
+Disallow: /database/
+Disallow: /js/
+Disallow: /css/

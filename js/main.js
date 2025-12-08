@@ -1,6 +1,7 @@
 // Form submission handler
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('registerForm');
+  const loadingOverlay = document.getElementById('loadingOverlay'); // Add this
   
   if (form) {
     form.addEventListener('submit', async function(e) {
@@ -9,11 +10,13 @@ document.addEventListener('DOMContentLoaded', function() {
       const submitBtn = form.querySelector('.submit-btn');
       const originalBtnText = submitBtn.textContent;
       
-      // Disable button and show loading state
+      // Show loading overlay
+      loadingOverlay.classList.add('active'); // Add this
+      
+      // Disable button
       submitBtn.disabled = true;
       submitBtn.textContent = 'Submitting...';
       
-      // Get form data
       const formData = new FormData(form);
       
       try {
@@ -24,8 +27,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const data = await response.json();
         
+        // Hide loading overlay
+        loadingOverlay.classList.remove('active'); // Add this
+        
         if (data.success) {
-          // Show success message
           form.innerHTML = `
             <div style="text-align: center; padding: 3rem 1rem;">
               <div style="font-size: 3rem; margin-bottom: 1rem;">✓</div>
@@ -36,31 +41,17 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
           `;
         } else {
-          // Show error message
           alert(data.message || 'An error occurred. Please try again.');
           submitBtn.disabled = false;
           submitBtn.textContent = originalBtnText;  
         }
       } catch (error) {
         console.error('Form submission error:', error);
+        loadingOverlay.classList.remove('active'); // Add this
         alert('Network error. Please check your connection and try again.');
         submitBtn.disabled = false;
         submitBtn.textContent = originalBtnText;
       }
     });
   }
-  
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    });
-  });
 });
