@@ -1,143 +1,124 @@
-/* Accessibility Enhancements */
+/* ===================================
+   ACCESSIBILITY IMPROVEMENTS
+   =================================== */
 
-/* Focus styles for keyboard navigation */
-*:focus-visible {
-    outline: 3px solid #22d3ee;
-    outline-offset: 3px;
+/* Skip to main content link - HIDDEN */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #0ea5e9;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    z-index: 10000;
+    border-radius: 0 0 8px 0;
+    transition: top 0.2s ease;
+    /* Keep it hidden even on focus */
+    visibility: hidden;
+    opacity: 0;
 }
 
-/* Remove default focus for mouse users */
+/* Remove the focus behavior that shows it */
+.skip-link:focus {
+    /* Don't show on focus */
+    top: -40px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+/* Enhanced focus states for keyboard navigation */
+*:focus {
+    outline: 3px solid #22d3ee;
+    outline-offset: 2px;
+}
+
+/* Only show focus for keyboard navigation (not mouse clicks) */
 *:focus:not(:focus-visible) {
     outline: none;
 }
 
-/* Enhanced link focus states */
-a:focus-visible,
-button:focus-visible {
-    outline: 3px solid #22d3ee;
-    outline-offset: 3px;
-}
-
-/* Form input focus states */
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
+*:focus-visible {
     outline: 3px solid #22d3ee;
     outline-offset: 2px;
-    border-color: #22d3ee;
 }
 
-/* Skip to main content link (for screen readers) */
-.skip-to-main {
-    position: absolute;
-    top: -100px;
-    left: 0;
-    background: #22d3ee;
-    color: #000;
-    padding: 1rem 2rem;
-    text-decoration: none;
-    font-weight: 600;
-    z-index: 10000;
-    transition: top 0.3s;
+/* High contrast focus for interactive elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid #22d3ee;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 6px rgba(34, 211, 238, 0.2);
 }
 
-.skip-to-main:focus {
-    top: 0;
+/* Enhanced focus for navigation items */
+.nav-menu li a:focus-visible {
+    background: rgba(34, 211, 238, 0.15);
+    color: #0ea5e9;
 }
 
-/* Error message styling for better visibility */
-.error-message {
-    color: #ef4444;
-    font-size: 0.875rem;
-    margin-top: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+/* Enhanced focus for cards */
+.service-card:focus-within,
+.application-card:focus-within,
+.expertise-item:focus-within {
+    outline: 3px solid #22d3ee;
+    outline-offset: 4px;
 }
 
-.error-message::before {
-    content: '⚠';
-    font-size: 1rem;
+/* Hamburger menu accessibility */
+.hamburger:focus-visible {
+    outline: 3px solid #22d3ee;
+    outline-offset: 4px;
+    border-radius: 4px;
 }
 
-.input-error {
-    border-color: #ef4444 !important;
-    background: rgba(239, 68, 68, 0.05) !important;
+/* Cookie consent buttons focus */
+.cookie-btn:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
 }
 
-/* Success message styling */
-.success-message {
-    color: #22d3ee;
+/* Social links focus */
+.social-links a:focus-visible {
+    outline: 3px solid #22d3ee;
+    outline-offset: 4px;
+}
+
+/* Make sure focus is visible on CTA buttons */
+.cta-button:focus-visible,
+.header-cta:focus-visible,
+.btn:focus-visible {
+    outline: 3px solid #22d3ee;
+    outline-offset: 4px;
+}
+
+/* Improve logo focus state */
+.nav-logo:focus-visible {
+    outline: 3px solid #22d3ee;
+    outline-offset: 4px;
+    border-radius: 8px;
 }
 
 /* High contrast mode support */
 @media (prefers-contrast: high) {
-    body {
-        background: #000;
-        color: #fff;
-    }
-    
-    .feature-card,
-    .data-category,
-    .interest-form {
-        border: 3px solid #fff;
-    }
-    
-    .cta-button,
-    .submit-btn {
-        border: 3px solid #000;
+    *:focus-visible {
+        outline-width: 4px;
+        outline-offset: 3px;
     }
 }
 
-/* Screen reader only content */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-
-/* Focus trap for mobile menu */
-.nav-menu.active {
-    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
-}
-
-/* Improve button and link hit areas on mobile */
-@media (max-width: 768px) {
-    a, button {
-        min-height: 44px;
-        min-width: 44px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
-    
-    .nav-menu li a {
-        min-height: 48px;
-        padding: 1rem 2rem;
-    }
-}
-
-/* Loading state accessibility */
-[aria-busy="true"] {
-    cursor: wait;
-}
-
-/* Required field indicator */
-.form-group label[required]::after,
-.form-group label.required::after {
-    content: ' *';
-    color: #ef4444;
-}
-
-/* Form field descriptions for screen readers */
-.field-description {
-    font-size: 0.875rem;
-    color: #888;
-    margin-top: 0.25rem;
 }

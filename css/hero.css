@@ -1,167 +1,251 @@
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
+header {
+  background:#0ea5e9 ;
+  padding:30px 40px;
+  color:#fff;
+  max-width:1400px;
+  margin:20px auto;
+  border-radius:12px;
+  position:relative
 
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            background-image: url('../assets/images/onatrack_background.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+}
 
-        .hero-bg::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(10, 10, 10, 0.7) 0%, rgba(10, 10, 10, 0.85) 100%);
-        }
-
-        /* Subtle track lines */
-        .track-lines {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            display: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            padding: 2rem;
-            max-width: 1200px;
-            margin-bottom: 12rem;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 5rem);
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            color: #fff;
-            letter-spacing: -1px;
-        }
-
-        .hero h1 .highlight {
-            color: #22d3ee;
-        }
-
-        .hero p {
-            font-size: clamp(1rem, 2vw, 1.3rem);
-            color: #b0b0b0;
-            margin-bottom: 2.5rem;
-            font-weight: 400;
-            line-height: 1.6;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: #22d3ee;
-            color: #000;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            letter-spacing: 0.3px;
-            margin: 0 8px;  /* top/bottom | left/right */
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 50px rgba(34, 211, 238, 0.6);
-            background: #06b6d4;
-        }
-
-        /* Data Stats Bar */
-        .stats-bar {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.95);
-            border-top: 3px solid #22d3ee;
-            padding: 2rem;
-            z-index: 10;
-        }
-
-        .stats-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-value {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #22d3ee;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 500;
-        }
-
-@media (max-width: 768px) {
-  .hero {
-    height: 100vh;
-  }
-  
-  .hero-content {
-    margin-bottom: 6rem;
-    padding: 1rem;
-    margin-top: 0;
+.header {
     display: flex;
-    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    padding-right: 200px;
+}
+
+.header-cta {
+    background: #fff;
+    color: #0ea5e9;
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    min-height: calc(100vh - 19rem);
-  }
-  
-  .hero h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    line-height: 1.1;
-  }
-  
-  .hero p {
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-  }
-  
-  .cta-button {
-    padding: 0.7rem 1.5rem;
-    font-size: 0.85rem;
-    margin: 0.25rem 0.5rem;
+}
+
+.header-cta:hover {
+    transform: translateY(-50%) translateY(-3px);
+}
+
+/* Hero Content Section */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    max-width: 1400px;
+    margin: 60px auto;
+    padding: 40px;
+}
+
+.hero-image {
+    width: 45%;
+    max-width: 450px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+}
+
+.hero-content {
+    width: 50%;
+    text-align: left;
+    color: #1c1c1c;
+}
+
+.hero-content h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: #0ea5e9;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    line-height: 1.7;
+    color: #475569;
+}
+
+.benefits {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+}
+
+.benefits li {
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.05rem;
+    color: #334155;
+}
+
+.benefits li::before {
+    content: '✓';
+    color: #22d3ee;
+    font-weight: bold;
+    font-size: 1.3rem;
+    background: rgba(34, 211, 238, 0.1);
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.cta-button {
     display: inline-block;
-  }
-  
-  .stats-bar {
-    padding: 1.25rem 1rem;
-    max-height: 75px;
-  }
-  
-  .stats-container {
-    gap: 1.25rem;
-  }
+    padding: 16px 40px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border-radius: 12px;
+    background: #0ea5e9;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+    header {
+        padding: 25px 30px;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+        padding-right: 180px;
+    }
+
+    .header-cta {
+        font-size: 0.9rem;
+        padding: 10px 24px;
+        right: 30px;
+    }
+
+    .hero-content h2 {
+        font-size: 1.9rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    header {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .header h1 {
+        font-size: 1.3rem;
+        padding-right: 0;
+        line-height: 1.4;
+    }
+
+    .header-cta {
+        position: static;
+        transform: none;
+        font-size: 1rem;
+        padding: 14px 32px;
+    }
+
+    .header-cta:hover {
+        transform: translateY(-3px);
+    }
+
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+        margin: 40px 10px;
+    }
+
+    .hero-image,
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .benefits li {
+        font-size: 0.95rem;
+    }
+
+    .cta-button {
+        width: 100%;
+        max-width: 300px;
+        padding: 16px 24px;
+        font-size: 1rem;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.1rem;
+    }
+
+    .header-cta {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .benefits li {
+        font-size: 0.9rem;
+    }
 }

@@ -1,11 +1,32 @@
+# OnaTech robots.txt
+# Allow all search engines to crawl
+
 User-agent: *
 Allow: /
 
-Sitemap: https://onatrack.eu/sitemap.xml
+# Disallow admin and private areas (if you have them)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /cgi-bin/
+Disallow: /*.min.js$
+Disallow: /*.min.css$
 
-# Block backend files from being indexed
-User-agent: *
-Disallow: /api/
-Disallow: /database/
-Disallow: /js/
-Disallow: /css/
+# Crawl delay (optional - be nice to small servers)
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://onatech.be/sitemap.xml
+
+# Additional sitemaps (if you have them in the future)
+# Sitemap: https://onatech.be/sitemap-blog.xml
+# Sitemap: https://onatech.be/sitemap-products.xml
+
+# Block bad bots (optional)
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /

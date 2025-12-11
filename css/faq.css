@@ -1,24 +1,42 @@
-/* FAQ Section */
+/* FAQ Section - Fixed Version */
 .faq-section {
-    padding: 8rem 2rem;
-    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.3), rgba(10, 10, 10, 0.95));
+  margin:60px auto;
+  padding:80px 60px;
+  background:#f1f5f9;
+  border-radius:24px;
+  max-width:1400px
+}
+
+.faq {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.faq h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1c1c1c;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.faq .subtitle {
+    font-size: 1.2rem;
+    color: #64748b;
+    text-align: center;
+    margin-bottom: 50px;
 }
 
 .faq-container {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.faq-grid {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    margin-top: 4rem;
+    gap: 15px;
 }
 
 .faq-item {
-    background: rgba(15, 15, 15, 0.9);
-    border: 2px solid rgba(34, 211, 238, 0.3);
+    background: #fff;
+    border: 2px solid #e2e8f0;
     border-radius: 12px;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -26,37 +44,47 @@
 
 .faq-item:hover {
     border-color: #22d3ee;
-    box-shadow: 0 5px 20px rgba(34, 211, 238, 0.2);
+}
+
+.faq-item.active {
+    border-color: #22d3ee;
+    box-shadow: 0 4px 15px rgba(34, 211, 238, 0.1);
 }
 
 .faq-question {
     width: 100%;
-    padding: 1.5rem 2rem;
-    background: transparent;
+    padding: 24px 60px 24px 24px;
+    background: #fff;
     border: none;
-    color: #fff;
+    text-align: left;
     font-size: 1.1rem;
     font-weight: 600;
-    text-align: left;
+    color: #1c1c1c;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-    transition: color 0.3s ease;
-    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    position: relative;
+    font-family: inherit;
 }
 
 .faq-question:hover {
-    color: #22d3ee;
+    color: #0ea5e9;
+}
+
+.faq-question:focus-visible {
+    outline: 3px solid #22d3ee;
+    outline-offset: -3px;
 }
 
 .faq-icon {
-    font-size: 1.5rem;
-    font-weight: 300;
+    position: absolute;
+    right: 24px;
+    font-size: 1.8rem;
     color: #22d3ee;
     transition: transform 0.3s ease;
-    flex-shrink: 0;
+    font-weight: 300;
 }
 
 .faq-question[aria-expanded="true"] .faq-icon {
@@ -66,42 +94,76 @@
 .faq-answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
+    transition: max-height 0.4s ease;
+    padding: 0 24px;
 }
 
-.faq-answer[aria-hidden="false"] {
-    max-height: 500px;
-    padding: 0 2rem 1.5rem 2rem;
+.faq-answer[hidden] {
+    display: block; /* Override hidden to allow animation */
+    visibility: hidden;
+}
+
+.faq-answer:not([hidden]) {
+    visibility: visible;
+    padding: 0 24px 24px 24px;
 }
 
 .faq-answer p {
-    color: #aaa;
-    line-height: 1.7;
     font-size: 1rem;
+    line-height: 1.7;
+    color: #64748b;
     margin: 0;
+    padding-top: 10px;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    .faq-section {
-        padding: 4rem 1rem;
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+    .faq {
+        padding: 0 30px;
+    }
+
+    .faq h2 {
+        font-size: 2.2rem;
     }
 
     .faq-question {
-        padding: 1.25rem 1.5rem;
+        font-size: 1.05rem;
+        padding: 20px 50px 20px 20px;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 60px 0;
+    }
+
+    .faq {
+        padding: 0 20px;
+    }
+
+    .faq h2 {
+        font-size: 1.8rem;
+    }
+
+    .faq .subtitle {
         font-size: 1rem;
     }
 
-    .faq-answer[aria-hidden="false"] {
-        padding: 0 1.5rem 1.25rem 1.5rem;
+    .faq-question {
+        font-size: 1rem;
+        padding: 18px 50px 18px 18px;
+    }
+
+    .faq-icon {
+        right: 18px;
+    }
+
+    .faq-answer:not([hidden]) {
+        padding: 0 18px 18px 18px;
     }
 
     .faq-answer p {
         font-size: 0.95rem;
     }
-}
-
-.scroll-animate {
-  opacity: 1 !important;
-  transform: none !important;
 }
