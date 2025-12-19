@@ -11,3 +11,6 @@
 @import url('testimonials.css');
 @import url('faq.css');
 @import url('blog.css');
+@import url('blog/cybersecurity.css');
+@import url('blog/grafana.css');
+@import url('blog/scada.css');

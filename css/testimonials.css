@@ -28,14 +28,12 @@
     background: #fff;
     padding: 40px;
     border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     transition: all 0.3s ease;
     position: relative;
 }
 
 .testimonial-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
 .testimonial-card::before {

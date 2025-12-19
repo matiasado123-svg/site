@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De moderne data stack: Open-source alternatieven voor enterprise oplossingen | OnaTech</title>
+    <meta name="description"
+        content="Bouw een moderne data stack met Airflow, Airbyte, DBT & Superset. 85-95% kostenbesparing vs enterprise tools. Complete implementatie gids + praktijkvoorbeelden.">
+    <link rel="stylesheet" href="../css/style.min.css">
+    <link rel="icon" type="image/png" href="../assets/images/Onatech_Logo.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-F7V45R50GE');
+    </script>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" role="navigation">
+        <div class="nav-container">
+            <a href="../index.html#top" class="nav-logo">
+                <img src="../assets/images/Onatech_Logo.png" alt="OnaTech logo">
+                <span class="nav-logo-text">OnaTech</span>
+            </a>
+            <div class="hamburger" id="hamburger" role="button" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#info">About us</a></li>
+                <li><a href="../index.html#services">Services</a></li>
+                <li><a href="../index.html#faq">FAQ</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <article class="blog-article">
+        <a href="../index.html#blog" class="back-link">← Terug naar blog</a>
+
+        <div class="blog-header">
+            <div class="blog-meta">
+                <span class="blog-category-tag">Data Platform</span>
+                <time datetime="2025-01-22">22 januari 2025</time>
+            </div>
+            <h1>De moderne data stack: Open-source alternatieven voor enterprise oplossingen</h1>
+            <p class="blog-intro">
+                Bedrijven investeren vaak tienduizenden euro's in proprietaire data platforms. Maar wat als je dezelfde
+                functionaliteit kon bereiken met open-source tools? Ontdek hoe Airflow, Airbyte, DBT en Superset samen
+                een krachtig ecosysteem vormen voor data engineering en analytics.
+            </p>
+        </div>
+
+        <div class="featured-image">
+            <img src="../assets/images/data_platform.jpg" alt="Modern data platform architectuur met open-source tools">
+        </div>
+
+        <div class="blog-content">
+            <h2>De data engineering revolutie</h2>
+            <p>
+                De afgelopen jaren heeft zich een stille revolutie voltrokken in de wereld van data engineering.
+                Bedrijven die voorheen waren aangewezen op dure enterprise oplossingen zoals Informatica, Talend of
+                Microsoft SSIS, ontdekken nu dat open-source alternatieven niet alleen goedkoper zijn, maar vaak ook
+                flexibeler en krachtiger.
+            </p>
+            <p>
+                De moderne data stack - bestaande uit Apache Airflow, Airbyte, DBT en Apache Superset - vormt het hart
+                van deze beweging. Deze tools zijn niet alleen open-source en gratis te gebruiken, maar worden ook
+                actief ontwikkeld door duizenden engineers wereldwijd en gebruikt door bedrijven als Airbnb, Spotify en
+                Netflix.
+            </p>
+
+            <h2>De vier pijlers van de moderne data stack</h2>
+
+            <h3>1. Apache Airflow: De orkestrator</h3>
+            <p>
+                Apache Airflow is een platform voor het programmeren, plannen en monitoren van workflows. Oorspronkelijk
+                ontwikkeld door Airbnb, is het nu de de facto standaard voor data pipeline orchestration.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Waarom Airflow?</h4>
+                <ul>
+                    <li><strong>Code as configuration:</strong> Workflows worden gedefinieerd in Python, wat volledige
+                        flexibiliteit geeft</li>
+                    <li><strong>Visuele monitoring:</strong> Ingebouwde UI voor het tracken van job status en
+                        historische runs</li>
+                    <li><strong>Schaalbaarheid:</strong> Van enkele jobs tot duizenden parallelle taken</li>
+                    <li><strong>Extensibility:</strong> Honderden ready-made operators voor verschillende systemen</li>
+                    <li><strong>Error handling:</strong> Automatische retries, alerts en dependency management</li>
+                </ul>
+            </div>
+
+            <p>
+                Met Airflow definieer je je workflows als DAGs (Directed Acyclic Graphs). Een eenvoudig voorbeeld:
+            </p>
+
+            <div class="code-block">
+from airflow import DAG
+from airflow.operators.python import PythonOperator
+from datetime import datetime, timedelta
+
+default_args = {
+    'owner': 'onatech',
+    'retries': 3,
+    'retry_delay': timedelta(minutes=5)
+}
+
+with DAG(
+    'production_etl',
+    default_args=default_args,
+    schedule_interval='0 2 * * *',  # Daily at 2 AM
+    start_date=datetime(2025, 1, 1),
+    catchup=False
+) as dag:
+    
+    extract = PythonOperator(
+        task_id='extract_data',
+        python_callable=extract_from_source
+    )
+    
+    transform = PythonOperator(
+        task_id='transform_data',
+        python_callable=transform_logic
+    )
+    
+    load = PythonOperator(
+        task_id='load_to_warehouse',
+        python_callable=load_to_db
+    )
+    
+    extract >> transform >> load
+            </div>
+
+            <h3>2. Airbyte: De data connector</h3>
+            <p>
+                Airbyte is een open-source data integration platform dat data verplaatst van bronnen (databases, APIs,
+                files) naar bestemmingen (data warehouses, data lakes). Het is het open-source antwoord op tools zoals
+                Fivetran en Stitch.
+            </p>
+
+            <p>
+                Wat Airbyte bijzonder maakt is het aantal beschikbare connectors: meer dan 350 kant-en-klare integraties
+                met databases, SaaS-tools, APIs en bestanden. Van PostgreSQL en MySQL tot Salesforce, Google Analytics en
+                Stripe - vrijwel elke databron die je kunt bedenken heeft al een connector.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Voordelen van Airbyte:</h4>
+                <ul>
+                    <li><strong>No-code interface:</strong> Configureer connecties via een intuïtieve UI</li>
+                    <li><strong>Schema detection:</strong> Automatische detectie van databronstructuur</li>
+                    <li><strong>Incremental sync:</strong> Alleen gewijzigde data wordt verplaatst</li>
+                    <li><strong>Change Data Capture:</strong> Real-time data replicatie waar ondersteund</li>
+                    <li><strong>Custom connectors:</strong> Bouw je eigen connectors met hun SDK</li>
+                    <li><strong>Data transformatie:</strong> Basis transformaties tijdens het laden</li>
+                </ul>
+            </div>
+
+            <h3>3. DBT (Data Build Tool): De transformer</h3>
+            <p>
+                DBT heeft de manier waarop data engineers werken fundamenteel veranderd. Het brengt software engineering
+                best practices naar analytics: version control, testing, documentation en modularity.
+            </p>
+
+            <p>
+                In plaats van complexe ETL-scripts schrijf je met DBT eenvoudige SELECT statements. DBT zorgt voor de
+                rest: dependencies, incrementele updates, testing en documentatie.
+            </p>
+
+            <div class="code-block">
+-- models/staging/stg_orders.sql
+WITH source AS (
+    SELECT * FROM {{ source('raw', 'orders') }}
+),
+
+cleaned AS (
+    SELECT
+        order_id,
+        customer_id,
+        order_date,
+        CAST(total_amount AS DECIMAL(10,2)) as total_amount,
+        status
+    FROM source
+    WHERE order_date >= '2024-01-01'
+)
+
+SELECT * FROM cleaned
+
+-- Dit wordt een view of table in je warehouse
+            </div>
+
+            <p>
+                DBT compileert je SQL, beheert dependencies tussen modellen, en voert tests uit om data kwaliteit te
+                garanderen. Het genereert automatisch documentatie en data lineage grafieken.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Waarom DBT een game-changer is:</h4>
+                <ul>
+                    <li><strong>Version control:</strong> Alle transformaties in Git, met volledige historie</li>
+                    <li><strong>Automated testing:</strong> Ingebouwde tests voor data kwaliteit</li>
+                    <li><strong>Documentation:</strong> Automatische generatie van data catalogs</li>
+                    <li><strong>Modularity:</strong> Herbruikbare models en macros</li>
+                    <li><strong>Incremental models:</strong> Process alleen nieuwe/gewijzigde records</li>
+                </ul>
+            </div>
+
+            <h3>4. Apache Superset: De visualizer</h3>
+            <p>
+                Apache Superset is een modern data exploration en visualization platform. Het is het open-source
+                alternatief voor tools zoals Tableau, Power BI en Looker, oorspronkelijk ontwikkeld bij Airbnb.
+            </p>
+
+            <p>
+                Superset biedt een intuïtieve interface voor het maken van dashboards, het verkennen van data en het
+                delen van inzichten. Het ondersteunt tientallen databronnen en biedt krachtige visualisatie
+                mogelijkheden.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Superset features:</h4>
+                <ul>
+                    <li><strong>SQL IDE:</strong> Krachtige editor voor ad-hoc queries</li>
+                    <li><strong>Drag-and-drop interface:</strong> Maak charts zonder code te schrijven</li>
+                    <li><strong>Diverse visualisaties:</strong> 40+ chart types out of the box</li>
+                    <li><strong>Caching:</strong> Snelle dashboards door intelligente caching</li>
+                    <li><strong>Row-level security:</strong> Controleer wie welke data mag zien</li>
+                    <li><strong>Email reports:</strong> Automatische distributie van rapporten</li>
+                </ul>
+            </div>
+
+            <h2>Een complete data platform architectuur</h2>
+            <p>
+                Laten we kijken hoe deze tools samen een complete data platform vormen. Stel je een typische
+                e-commerce bedrijf voor:
+            </p>
+
+            <div class="highlight-box">
+                <h4>Data Flow:</h4>
+                <ol>
+                    <li><strong>Extraction (Airbyte):</strong> Data wordt automatisch geëxtraheerd uit:
+                        <ul>
+                            <li>PostgreSQL production database (orders, customers, products)</li>
+                            <li>Google Analytics API (website traffic)</li>
+                            <li>Stripe API (payments)</li>
+                            <li>Zendesk API (customer support tickets)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Loading (Airbyte):</strong> Ruwe data wordt geladen in een data warehouse (bijvoorbeeld
+                        PostgreSQL, Snowflake, of BigQuery)</li>
+                    <li><strong>Transformation (DBT):</strong> Data wordt getransformeerd:
+                        <ul>
+                            <li>Staging layer: Basic cleaning en type casting</li>
+                            <li>Intermediate layer: Business logic en joins</li>
+                            <li>Mart layer: Geaggregeerde metrics en KPIs</li>
+                        </ul>
+                    </li>
+                    <li><strong>Orchestration (Airflow):</strong> Het hele proces wordt gecoördineerd:
+                        <ul>
+                            <li>Trigger Airbyte syncs</li>
+                            <li>Run DBT models in de juiste volgorde</li>
+                            <li>Refresh Superset dashboards</li>
+                            <li>Send alerts bij failures</li>
+                        </ul>
+                    </li>
+                    <li><strong>Visualization (Superset):</strong> Business users krijgen toegang tot:
+                        <ul>
+                            <li>Real-time sales dashboards</li>
+                            <li>Customer behavior analytics</li>
+                            <li>Inventory management reports</li>
+                            <li>Financial KPI tracking</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <h2>Voordelen van de moderne data stack</h2>
+
+            <h3>1. Kostenbesparingen</h3>
+            <p>
+                De cijfers liegen er niet om. Een vergelijking met enterprise alternatieven:
+            </p>
+
+            <div class="highlight-box">
+                <h4>Jaarlijkse kosten vergelijking:</h4>
+                <p><strong>Traditionele Stack:</strong></p>
+                <ul>
+                    <li>Informatica PowerCenter: €50.000 - €150.000</li>
+                    <li>Tableau: €70 per user/maand (100 users = €84.000/jaar)</li>
+                    <li>Alteryx: €5.000 per user/jaar (10 users = €50.000)</li>
+                    <li><strong>Totaal: €184.000 - €284.000 per jaar</strong></li>
+                </ul>
+                <p><strong>Open-source Stack:</strong></p>
+                <ul>
+                    <li>Airflow: €0</li>
+                    <li>Airbyte: €0 (self-hosted) of vanaf €100/maand (cloud)</li>
+                    <li>DBT: €0 (core) of vanaf €100/maand (cloud)</li>
+                    <li>Superset: €0</li>
+                    <li>Infrastructure (AWS/GCP): €5.000 - €15.000/jaar</li>
+                    <li><strong>Totaal: €5.000 - €20.000 per jaar</strong></li>
+                </ul>
+                <p><strong>Besparing: 85-95% op software kosten!</strong></p>
+            </div>
+
+            <h3>2. Flexibiliteit en controle</h3>
+            <p>
+                Met open-source heb je volledige controle. Wil je een custom connector bouwen? Geen probleem. Een
+                specifieke transformatie logica implementeren? Ga je gang. De code is toegankelijk en aanpasbaar.
+            </p>
+
+            <h3>3. Geen vendor lock-in</h3>
+            <p>
+                Je bent niet afhankelijk van één leverancier. Als een tool niet meer voldoet, vervang je alleen die
+                component. Je data en workflows blijven behouden.
+            </p>
+
+            <h3>4. Community en innovatie</h3>
+            <p>
+                Deze tools worden ontwikkeld door duizenden contributors wereldwijd. Bugs worden snel gefixt, nieuwe
+                features worden constant toegevoegd, en er is een enorme community voor support.
+            </p>
+
+            <h3>5. Skills die de moeite waard zijn</h3>
+            <p>
+                Kennis van deze tools is zeer waardevol op de arbeidsmarkt. Data engineers met Airflow en DBT ervaring
+                zijn hot commodities, terwijl ervaring met verouderde proprietary tools steeds minder relevant wordt.
+            </p>
+
+            <h2>Uitdagingen en overwegingen</h2>
+            <p>
+                Natuurlijk is niet alles rozengeur en maneschijn. Er zijn ook uitdagingen:
+            </p>
+
+            <h3>1. Technische expertise vereist</h3>
+            <p>
+                Open-source tools vereisen meer technische kennis. Je team moet comfortabel zijn met:
+            </p>
+            <ul>
+                <li>Linux/Docker voor deployment</li>
+                <li>Python voor Airflow en custom scripts</li>
+                <li>SQL voor DBT</li>
+                <li>Git voor version control</li>
+                <li>Basis DevOps voor onderhoud</li>
+            </ul>
+
+            <h3>2. Geen out-of-the-box enterprise support</h3>
+            <p>
+                Er is geen vendor die je kunt bellen als iets niet werkt. Je bent afhankelijk van documentatie,
+                community forums en je eigen troubleshooting skills. Wel bieden veel tools commercial support opties
+                (Astronomer voor Airflow, DBT Labs voor DBT).
+            </p>
+
+            <h3>3. Infrastructure management</h3>
+            <p>
+                Je moet zelf de infrastructure beheren (of betalen voor managed versies). Dit betekent zorgen voor:
+            </p>
+            <ul>
+                <li>High availability en disaster recovery</li>
+                <li>Monitoring en alerting</li>
+                <li>Security en access control</li>
+                <li>Backups en updates</li>
+                <li>Scaling bij groei</li>
+            </ul>
+
+            <h3>4. Initial setup overhead</h3>
+            <p>
+                Het initieel opzetten van de stack kost tijd en effort. Enterprise tools zijn vaak sneller productief,
+                ook al betaal je daar de prijs voor op lange termijn.
+            </p>
+
+            <h2>Wanneer is de moderne data stack geschikt?</h2>
+
+            <div class="highlight-box">
+                <h4>Ideaal voor:</h4>
+                <ul>
+                    <li>Startups en scale-ups die budget bewust zijn</li>
+                    <li>Teams met solide technische skills</li>
+                    <li>Organisaties die flexibiliteit en aanpasbaarheid waarderen</li>
+                    <li>Bedrijven die data engineering als core competentie zien</li>
+                    <li>Projecten waar vendor lock-in vermeden moet worden</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h4>Minder geschikt voor:</h4>
+                <ul>
+                    <li>Organisaties zonder data engineering talent</li>
+                    <li>Bedrijven die 24/7 vendor support nodig hebben</li>
+                    <li>Zeer gereguleerde industrieën met strikte compliance eisen</li>
+                    <li>Legacy omgevingen met complexe bestaande systemen</li>
+                    <li>Teams die voorkeur geven aan GUI's boven code</li>
+            </ul>
+            </div>
+
+            <h2>Best practices voor implementatie</h2>
+
+            <h3>1. Start klein, scale geleidelijk</h3>
+            <p>
+                Begin niet met alle tools tegelijk. Een typische implementatie route:
+            </p>
+            <ol>
+                <li><strong>Week 1-2:</strong> Setup Airbyte, sync eerste databronnen naar warehouse</li>
+                <li><strong>Week 3-4:</strong> Implementeer DBT voor basic transformaties</li>
+                <li><strong>Week 5-6:</strong> Setup Airflow voor orchestration</li>
+                <li><strong>Week 7-8:</strong> Deploy Superset voor visualisaties</li>
+                <li><strong>Maand 3+:</strong> Itereer en optimaliseer</li>
+            </ol>
+
+            <h3>2. Invest in observability</h3>
+            <p>
+                Setup goede monitoring vanaf dag 1:
+            </p>
+            <ul>
+                <li>Data quality tests in DBT</li>
+                <li>Airflow alerts bij failures</li>
+                <li>Data freshness monitoring</li>
+                <li>Performance metrics tracking</li>
+            </ul>
+
+            <h3>3. Documentatie is key</h3>
+            <p>
+                Gebruik DBT's ingebouwde documentation features. Documenteer:
+            </p>
+            <ul>
+                <li>Business logic achter transformaties</li>
+                <li>Data sources en hun refresh schedules</li>
+                <li>Known limitations en assumptions</li>
+                <li>Troubleshooting guides</li>
+            </ul>
+
+            <h3>4. Kies de juiste deployment strategie</h3>
+            <p>
+                Je hebt drie opties:
+            </p>
+            <ul>
+                <li><strong>Fully self-hosted:</strong> Maximale controle, lagste kosten, hoogste maintenance</li>
+                <li><strong>Managed services:</strong> Astronomer (Airflow), Airbyte Cloud, DBT Cloud - balans tussen
+                    controle en convenience</li>
+                <li><strong>Hybrid:</strong> Managed services voor orchestration, self-hosted voor data processing</li>
+            </ul>
+
+            <h3>5. Invest in je team</h3>
+            <p>
+                Deze tools zijn krachtig maar hebben een leercurve. Investeer in:
+            </p>
+            <ul>
+                <li>Training en certificeringen</li>
+                <li>Tijd voor experimentation</li>
+                <li>Knowledge sharing sessies</li>
+                <li>Documentatie van lessons learned</li>
+            </ul>
+
+            <h2>Real-world succesverhaal</h2>
+            <p>
+                Een Belgisch e-commerce bedrijf stond voor de uitdaging om data uit 15+ verschillende bronnen samen te
+                brengen voor unified reporting. Hun bestaande setup met Excel macros en ad-hoc queries was niet meer
+                schaalbaar.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Implementatie:</h4>
+                <ul>
+                    <li><strong>Week 1-2:</strong> Airbyte ingezet om data van webshop, ERP, marketing tools te
+                        extraheren naar PostgreSQL warehouse</li>
+                    <li><strong>Week 3-4:</strong> DBT modellen gebouwd voor order analytics, customer segmentatie en
+                        inventory tracking</li>
+                    <li><strong>Week 5:</strong> Airflow pipelines opgezet voor dagelijkse refreshes</li>
+                    <li><strong>Week 6:</strong> Superset dashboards gemaakt voor verschillende stakeholders</li>
+                </ul>
+                <h4>Resultaten na 3 maanden:</h4>
+                <ul>
+                    <li>90% reductie in tijd besteed aan manual reporting</li>
+                    <li>Real-time inzicht in sales en inventory in plaats van week-oude Excel sheets</li>
+                    <li>€75.000 bespaard door geen dure BI tool te hoeven aanschaffen</li>
+                    <li>Data team kan zich focussen op analytics in plaats van data wrangling</li>
+                    <li>Grotere transparantie door gedocumenteerde data models</li>
+                </ul>
+            </div>
+
+            <h2>De toekomst van data platforms</h2>
+            <p>
+                De moderne data stack evolueert snel. Nieuwe ontwikkelingen waar je op moet letten:
+            </p>
+            <ul>
+                <li><strong>Real-time streaming:</strong> Integratie van Kafka en Flink voor event-driven architectures
+                </li>
+                <li><strong>ML integration:</strong> Naadloze integratie met ML platforms zoals MLflow</li>
+                <li><strong>Data quality:</strong> Tools zoals Great Expectations worden steeds belangrijker</li>
+                <li><strong>Reverse ETL:</strong> Tools om data uit warehouse terug te pushen naar operational systems
+                </li>
+                <li><strong>Data mesh:</strong> Decentralized data ownership met federated governance</li>
+            </ul>
+
+            <h2>Conclusie</h2>
+            <p>
+                De moderne data stack met Airflow, Airbyte, DBT en Superset biedt een krachtig, flexibel en
+                kosteneffectief alternatief voor traditionele enterprise data platforms. Voor organisaties met de juiste
+                technische skills is het een no-brainer.
+            </p>
+            <p>
+                Ja, er is een leercurve. Ja, het vereist meer hands-on management dan een fully managed enterprise
+                oplossing. Maar de voordelen - kostenbesparing, flexibiliteit, geen vendor lock-in, en een future-proof
+                tech stack - wegen ruimschoots op tegen de nadelen.
+            </p>
+            <p>
+                De vraag is niet meer of je moet overstappen naar open-source, maar wanneer. Want één ding is zeker: de
+                toekomst van data engineering is open-source.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Wil je starten met een moderne data stack?</h4>
+                <p>
+                    Bij OnaTech hebben we uitgebreide ervaring met het implementeren van Airflow, Airbyte, DBT en
+                    Superset. Van architectuur design tot volledige implementatie en team training - wij begeleiden je
+                    door het hele proces.
+                </p>
+                <a href="../index.html#contact" class="cta-button" style="margin-top: 20px;">Plan een
+                    kennismakingsgesprek</a>
+            </div>
+        </div>
+    </article>
+
+    <footer role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p><strong>Bedrijf:</strong> OnaTech BV</p>
+                <p><strong>Adres:</strong> Mesenstraat 86, 8940 Wervik, België</p>
+                <p><strong>BTW:</strong> BE1023047122</p>
+                <p><strong>Email:</strong> info@onatech.be</p>
+            </div>
+            <div class="footer-social">
+                <h4>Volg ons</h4>
+                <div class="social-links">
+                    <a href="https://linkedin.com/company/onatech" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 OnaTech. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

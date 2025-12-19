@@ -26,7 +26,6 @@
     padding: 40px;
     background: #f8fafc;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .contact-info h3 {
@@ -46,7 +45,6 @@
     background: #fff;
     padding: 50px;
     border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
 }
 
 form {
@@ -91,7 +89,6 @@ textarea {
 input:focus,
 textarea:focus {
     border-color: #22d3ee;
-    box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.1);
 }
 
 textarea {
@@ -123,14 +120,12 @@ textarea {
     cursor: pointer;
     transition: all 0.3s ease;
     font-size: 1rem;
-    box-shadow: 0 6px 20px rgba(34, 211, 238, 0.3);
     min-width: 44px;
     min-height: 44px;
 }
 
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(34, 211, 238, 0.4);
 }
 
 .btn:active {
@@ -141,7 +136,6 @@ textarea {
     background: transparent;
     color: #0ea5e9;
     border: 2px solid #0ea5e9;
-    box-shadow: none;
 }
 
 .btn.secondary:hover {

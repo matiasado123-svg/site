@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 essentiële cybersecurity maatregelen voor OT-netwerken | OnaTech</title>
+    <meta name="description"
+        content="5 essentiële cybersecurity maatregelen voor OT-netwerken: netwerksegmentatie, toegangscontrole, monitoring & meer. Bescherm productie tegen ransomware.">
+    <link rel="stylesheet" href="../css/style.min.css">
+    <link rel="icon" type="image/png" href="../assets/images/Onatech_Logo.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-F7V45R50GE'); // Replace with your actual ID
+    </script>
+
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" role="navigation">
+        <div class="nav-container">
+            <a href="../index.html#top" class="nav-logo">
+                <img src="../assets/images/Onatech_Logo.png" alt="OnaTech logo">
+                <span class="nav-logo-text">OnaTech</span>
+            </a>
+            <div class="hamburger" id="hamburger" role="button" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#info">About us</a></li>
+                <li><a href="../index.html#services">Services</a></li>
+                <li><a href="../index.html#faq">FAQ</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <article class="blog-article">
+        <a href="../index.html#blog" class="back-link">← Terug naar blog</a>
+
+        <div class="blog-header">
+            <div class="blog-meta">
+                <span class="blog-category-tag">Cybersecurity</span>
+                <time datetime="2025-01-15">15 januari 2025</time>
+            </div>
+            <h1>5 essentiële cybersecurity maatregelen voor OT-netwerken</h1>
+            <p class="blog-intro">
+                Operationele technologie wordt steeds vaker doelwit van cyberaanvallen. In dit artikel bespreken we de
+                belangrijkste beveiligingsmaatregelen die elk industrieel bedrijf moet implementeren om hun
+                OT-infrastructuur te beschermen.
+            </p>
+        </div>
+
+        <div class="featured-image">
+            <img src="../assets/images/cybersecurity.webp" alt="Cybersecurity concept met netwerkbeveiliging">
+        </div>
+
+        <div class="blog-content">
+            <h2>Waarom OT-beveiliging cruciaal is</h2>
+            <p>
+                De convergentie van IT en OT heeft nieuwe beveiligingsuitdagingen gecreëerd. Terwijl IT-systemen
+                traditioneel gefocust zijn op gegevensbeveiliging, gaat het bij OT om de bescherming van fysieke
+                processen en menselijke veiligheid. Een cyberaanval op OT-systemen kan leiden tot productiestoringen,
+                schade aan apparatuur en zelfs gevaarlijke situaties voor werknemers.
+            </p>
+            <p>
+                Volgens recent onderzoek heeft meer dan 60% van de industriële organisaties in de afgelopen twee jaar
+                een beveiligingsincident meegemaakt dat hun OT-omgeving beïnvloedde. De gemiddelde kosten van zo'n
+                incident kunnen oplopen tot miljoenen euro's aan productieverlies en herstelkosten.
+            </p>
+
+            <h2>Maatregel 1: Netwerksegmentatie en isolatie</h2>
+            <p>
+                De eerste en meest fundamentele maatregel is het implementeren van een gelaagde netwerkarchitectuur
+                volgens het Purdue Model. Dit betekent het opdelen van je netwerk in zones met verschillende
+                beveiligingsniveaus.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Belangrijkste zones:</h4>
+                <ul>
+                    <li><strong>Enterprise Zone:</strong> Bedrijfsnetwerk met kantoortoepassing</li>
+                    <li><strong>DMZ (Demilitarized Zone):</strong> Bufferzone tussen IT en OT</li>
+                    <li><strong>Supervisory Zone:</strong> SCADA-servers en HMI-systemen</li>
+                    <li><strong>Control Zone:</strong> PLC's en controllers</li>
+                    <li><strong>Field Zone:</strong> Sensoren en actuatoren</li>
+                </ul>
+            </div>
+
+            <p>
+                Tussen deze zones plaats je industriële firewalls die specifiek ontworpen zijn voor OT-protocollen zoals
+                Modbus, Profinet en OPC UA. Deze firewalls kunnen diepgaande inspectie uitvoeren op industriële
+                communicatie en ongebruikelijke patronen detecteren.
+            </p>
+
+            <h2>Maatregel 2: Toegangscontrole en authenticatie</h2>
+            <p>
+                Implementeer strikte toegangscontrole op alle niveaus van je OT-infrastructuur. Dit omvat:
+            </p>
+            <ul>
+                <li><strong>Multi-factor authenticatie (MFA)</strong> voor alle remote toegang tot OT-systemen</li>
+                <li><strong>Role-based access control (RBAC)</strong> om ervoor te zorgen dat gebruikers alleen toegang
+                    hebben tot de systemen die ze nodig hebben</li>
+                <li><strong>Privileged access management (PAM)</strong> voor beheeraccounts met verhoogde rechten</li>
+                <li><strong>Network Access Control (NAC)</strong> om ongeautoriseerde apparaten te blokkeren</li>
+            </ul>
+
+            <h3>Praktisch voorbeeld</h3>
+            <p>
+                Een productiebedrijf implementeerde een PAM-oplossing waarmee alle beheerderstoegang tot PLC's werd
+                gelogd en gemonitord. Binnen een maand detecteerden ze een poging tot ongeautoriseerde toegang van een
+                gecompromitteerd onderhoudsaccount. Dankzij de snelle respons kon verdere schade worden voorkomen.
+            </p>
+
+            <h2>Maatregel 3: Continue monitoring en detectie</h2>
+            <p>
+                Je kunt niet beschermen wat je niet kunt zien. Implementeer een Security Information and Event
+                Management (SIEM) systeem specifiek voor OT-omgevingen. Dit stelt je in staat om:
+            </p>
+            <ul>
+                <li>Real-time inzicht te krijgen in alle netwerkactiviteit</li>
+                <li>Abnormale communicatiepatronen te detecteren</li>
+                <li>Ongeautoriseerde configuratiewijzigingen te identificeren</li>
+                <li>Compliance te monitoren met industriële standaarden</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h4>Tools voor OT-monitoring:</h4>
+                <ul>
+                    <li><strong>Nozomi Networks:</strong> Gespecialiseerd in OT-zichtbaarheid en threat detection</li>
+                    <li><strong>Claroty:</strong> Platform voor industriële cybersecurity</li>
+                    <li><strong>Dragos:</strong> OT-specifieke threat intelligence</li>
+                    <li><strong>Open-source alternatieven:</strong> Zeek, Suricata voor netwerkmonitoring</li>
+                </ul>
+            </div>
+
+            <h2>Maatregel 4: Patch management en updates</h2>
+            <p>
+                OT-systemen zijn berucht om verouderde software en ontbrekende patches. Echter, patchen in OT-omgevingen
+                vereist een andere aanpak dan in IT:
+            </p>
+            <ul>
+                <li><strong>Inventarisatie:</strong> Maak een volledig overzicht van alle assets en hun softwareversies
+                </li>
+                <li><strong>Risicobeoordeling:</strong> Prioriteer patches op basis van kriticaliteit en
+                    exploiteerbaarheid</li>
+                <li><strong>Testing:</strong> Test patches altijd eerst in een staging omgeving</li>
+                <li><strong>Planned downtime:</strong> Plan patches tijdens geplande onderhoudsmomenten</li>
+                <li><strong>Compenserende maatregelen:</strong> Als patchen niet mogelijk is, implementeer alternatieve
+                    beveiligingslagen</li>
+            </ul>
+
+            <h2>Maatregel 5: Incident response planning</h2>
+            <p>
+                Bereid je voor op het onvermijdelijke. Elk bedrijf moet een gedetailleerd incident response plan hebben
+                dat specifiek is voor OT-omgevingen. Dit plan moet minimaal bevatten:
+            </p>
+            <ul>
+                <li><strong>Detectie en classificatie:</strong> Hoe identificeer je een beveiligingsincident?</li>
+                <li><strong>Containment:</strong> Hoe isoleer je getroffen systemen zonder productie te verstoren?</li>
+                <li><strong>Eradication:</strong> Hoe verwijder je de bedreiging?</li>
+                <li><strong>Recovery:</strong> Hoe herstel je veilig naar normale operaties?</li>
+                <li><strong>Lessons learned:</strong> Hoe voorkom je herhaling?</li>
+            </ul>
+
+            <h3>Tabletop exercises</h3>
+            <p>
+                Organiseer regelmatig oefeningen waarbij je verschillende scenario's doorneemt. Dit kan variëren van een
+                ransomware-aanval tot een gecompromitteerde PLC. Deze oefeningen helpen je team om effectief te reageren
+                onder druk en identificeren zwakke punten in je plan.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Belangrijke contacten in je incident response plan:</h4>
+                <ul>
+                    <li>Intern IT/OT security team</li>
+                    <li>Leveranciers van kritieke systemen</li>
+                    <li>Externe cybersecurity experts</li>
+                    <li>Lokale autoriteiten en CERT (Computer Emergency Response Team)</li>
+                    <li>PR en juridische teams voor communicatie</li>
+                </ul>
+            </div>
+
+            <h2>Implementatie: waar te beginnen?</h2>
+            <p>
+                Het implementeren van deze maatregelen kan overweldigend lijken, vooral voor kleinere organisaties.
+                Begin met een beveiligingsaudit om je huidige posture te begrijpen. Prioriteer vervolgens op basis van:
+            </p>
+            <ul>
+                <li><strong>Kriticaliteit van assets:</strong> Bescherm eerst wat het meest belangrijk is</li>
+                <li><strong>Gemak van implementatie:</strong> Quick wins kunnen momentum creëren</li>
+                <li><strong>Budget beschikbaarheid:</strong> Sommige maatregelen kunnen gefaseerd worden ingevoerd</li>
+                <li><strong>Compliance eisen:</strong> Voldoe aan wettelijke en industriële standaarden</li>
+            </ul>
+
+            <h2>De rol van IEC 62443</h2>
+            <p>
+                De IEC 62443 standaard biedt een uitgebreid framework voor industriële cybersecurity. Deze standaard
+                definieert security levels (SL 1-4) en biedt richtlijnen voor het hele lifecycle van OT-systemen, van
+                ontwerp tot decommissioning. Overweeg om certificering volgens deze standaard na te streven.
+            </p>
+
+            <h2>Conclusie</h2>
+            <p>
+                OT-cybersecurity is geen eenmalig project, maar een continu proces. De dreiging evolueert constant en je
+                beveiliging moet daarmee meegroeien. Door deze vijf essentiële maatregelen te implementeren, leg je een
+                solide basis voor de bescherming van je industriële infrastructuur.
+            </p>
+            <p>
+                Vergeet niet dat technologie slechts een deel van de oplossing is. Training van personeel, het creëren
+                van een security-aware cultuur en het onderhouden van goede relaties met leveranciers en partners zijn
+                net zo belangrijk.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Hulp nodig met OT-beveiliging?</h4>
+                <p>
+                    Bij OnaTech hebben we uitgebreide ervaring met het beveiligen van industriële omgevingen. Van
+                    security audits tot volledige implementatie van cybersecurity programma's - wij helpen je graag
+                    verder.
+                </p>
+                <a href="../index.html#contact" class="cta-button" style="margin-top: 20px;">Neem contact op</a>
+            </div>
+        </div>
+    </article>
+
+    <footer role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p><strong>Bedrijf:</strong> OnaTech BV</p>
+                <p><strong>Adres:</strong> Mesenstraat 86, 8940 Wervik, België</p>
+                <p><strong>BTW:</strong> BE1023047122</p>
+                <p><strong>Email:</strong> info@onatech.be</p>
+            </div>
+            <div class="footer-social">
+                <h4>Volg ons</h4>
+                <div class="social-links">
+                    <a href="https://linkedin.com/company/onatech" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 OnaTech. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

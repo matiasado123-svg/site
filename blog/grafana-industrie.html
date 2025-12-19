@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Van data naar inzicht: Grafana in de industrie | OnaTech</title>
+    <meta name="description"
+        content="Grafana voor industriële monitoring: OEE tracking, energiebeheer, real-time alerts. Praktische dashboard voorbeelden + 12% productiviteitsverbetering.">
+    <link rel="stylesheet" href="../css/style.min.css">
+    <link rel="icon" type="image/png" href="../assets/images/Onatech_Logo.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-F7V45R50GE'); // Replace with your actual ID
+    </script>
+
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" role="navigation">
+        <div class="nav-container">
+            <a href="../index.html#top" class="nav-logo">
+                <img src="../assets/images/Onatech_Logo.png" alt="OnaTech logo">
+                <span class="nav-logo-text">OnaTech</span>
+            </a>
+            <div class="hamburger" id="hamburger" role="button" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#info">About us</a></li>
+                <li><a href="../index.html#services">Services</a></li>
+                <li><a href="../index.html#faq">FAQ</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <article class="blog-article">
+        <a href="../index.html#blog" class="back-link">← Terug naar blog</a>
+
+        <div class="blog-header">
+            <div class="blog-meta">
+                <span class="blog-category-tag">Data Analytics</span>
+                <time datetime="2024-12-20">20 december 2024</time>
+            </div>
+            <h1>Van data naar inzicht: Grafana in de industrie</h1>
+            <p class="blog-intro">
+                Leer hoe Grafana industriële data omzet in bruikbare inzichten. Praktische voorbeelden en tips voor
+                effectieve dashboards in productieomgevingen.
+            </p>
+        </div>
+
+        <div class="featured-image">
+            <img src="../assets/images/data_visualisation.jpg" alt="Data analytics dashboard met Grafana">
+        </div>
+
+        <div class="blog-content">
+            <h2>Waarom Grafana perfect is voor industriële data</h2>
+            <p>
+                In de moderne industrie worden dagelijks enorme hoeveelheden data gegenereerd. Van temperatuurmetingen
+                en productietellers tot energieverbruik en kwaliteitscontroles - alles wordt geregistreerd. Maar data op
+                zich heeft geen waarde. Het is pas waardevol wanneer het wordt omgezet in inzichten die leiden tot
+                betere beslissingen.
+            </p>
+            <p>
+                Grafana is een open-source visualisatieplatform dat industriële data toegankelijk maakt voor iedereen in
+                de organisatie. Van operators op de werkvloer tot management in de boardroom - elk krijgt de informatie
+                die zij nodig hebben, gepresenteerd op een intuïtieve manier.
+            </p>
+
+            <h2>Wat maakt Grafana bijzonder?</h2>
+
+            <h3>1. Universele data source connectiviteit</h3>
+            <p>
+                Grafana kan verbinden met vrijwel elke databron die je kunt bedenken. Voor industriële toepassingen zijn
+                dit de meest relevante:
+            </p>
+            <ul>
+                <li><strong>Time-series databases:</strong> InfluxDB, TimescaleDB, Prometheus</li>
+                <li><strong>Relationele databases:</strong> PostgreSQL, MySQL, Microsoft SQL Server</li>
+                <li><strong>IoT platforms:</strong> MQTT, AWS IoT, Azure IoT Hub</li>
+                <li><strong>Industrial protocols:</strong> Via plugins voor Modbus, OPC UA, MQTT</li>
+                <li><strong>Cloud platforms:</strong> AWS CloudWatch, Google Cloud Monitoring</li>
+            </ul>
+
+            <h3>2. Real-time monitoring</h3>
+            <p>
+                Grafana biedt real-time updates van je dashboards. Dit is cruciaal in productieomgevingen waar seconden
+                tellen. Operators kunnen direct zien wanneer parameters buiten normale ranges vallen en proactief
+                ingrijpen voordat problemen escaleren.
+            </p>
+
+            <h3>3. Alerting en notifications</h3>
+            <p>
+                Grafana's alerting systeem kan automatisch waarschuwingen verzenden via email, Slack, Microsoft Teams,
+                PagerDuty en vele andere kanalen. Je kunt complexe alert rules definiëren die rekening houden met
+                meerdere condities en tijdsvensters.
+            </p>
+
+            <h3>4. Open-source en gratis</h3>
+            <p>
+                De core versie van Grafana is volledig gratis en open-source. Dit betekent geen licentiekosten, zelfs
+                niet als je het schaalt naar honderden gebruikers en duizenden dashboards. Voor advanced features zoals
+                enterprise plugins en official support bestaat Grafana Enterprise, maar de meeste bedrijven kunnen prima
+                uit de voeten met de gratis versie.
+            </p>
+
+            <h2>Praktijkvoorbeelden uit de industrie</h2>
+
+            <h3>Voorbeeld 1: Overall Equipment Effectiveness (OEE) Dashboard</h3>
+            <p>
+                Een metaalbewerkingsbedrijf wilde real-time inzicht in hun OEE metrics. Ze implementeerden een Grafana
+                dashboard dat data verzamelde van hun PLC's via OPC UA en deze combineerde met planning data uit hun ERP
+                systeem.
+            </p>
+            <div class="highlight-box">
+                <h4>Resultaten:</h4>
+                <ul>
+                    <li>Realtime OEE tracking per machine</li>
+                    <li>Automatische detectie van performance drops</li>
+                    <li>12% verbetering in overall productivity binnen 6 maanden</li>
+                    <li>Reduction van ongeplande stilstand met 28%</li>
+                </ul>
+            </div>
+
+            <h3>Voorbeeld 2: Energiemonitoring en optimalisatie</h3>
+            <p>
+                Een voedingsmiddelenfabriek wilde hun energiekosten verlagen. Ze plaatsten slimme meters op alle grote
+                verbruikers en visualiseerden de data in Grafana. Door patronen te identificeren ontdekten ze dat
+                bepaalde machines 's nachts onnodig energie verbruikten.
+            </p>
+            <div class="code-block">
+                # InfluxQL query voor energieverbruik per machine
+                SELECT mean("power") AS "avg_power"
+                FROM "energy_consumption"
+                WHERE $timeFilter
+                GROUP BY time($__interval), "machine"
+                FILL(null)
+            </div>
+            <p>
+                Het dashboard toonde niet alleen het verbruik, maar ook de kosten in real-time, rekening houdend met
+                variabele elektriciteitstarieven. Managers konden direct de impact van wijzigingen zien.
+            </p>
+
+            <h3>Voorbeeld 3: Kwaliteitscontrole en proces monitoring</h3>
+            <p>
+                Een chemisch bedrijf moest strikte kwaliteitsparameters handhaven. Ze gebruikten Grafana om temperatuur,
+                druk, pH-waarden en andere kritieke parameters te monitoren. Alerts werden geconfigureerd met
+                verschillende severity levels, waardoor operators exact wisten hoe urgent een interventie was.
+            </p>
+
+            <h2>Best practices voor industriële Grafana dashboards</h2>
+
+            <h3>1. Ontwerp voor je doelgroep</h3>
+            <p>
+                Verschillende gebruikers hebben verschillende behoeften:
+            </p>
+            <ul>
+                <li><strong>Operators:</strong> Grote visualisaties, real-time data, duidelijke alarmstatus</li>
+                <li><strong>Maintenance team:</strong> Historische trends, predictive maintenance indicators</li>
+                <li><strong>Management:</strong> KPI's, production targets, cost metrics</li>
+                <li><strong>Quality assurance:</strong> Compliance metrics, defect rates, trace</li>
+            </ul>
+
+            <h3>2. Gebruik de juiste visualisaties</h3>
+            <p>
+                Grafana biedt vele visualisatie types. Kies de juiste voor je data:
+            </p>
+            <ul>
+                <li><strong>Time series graphs:</strong> Voor continue metingen (temperatuur, druk, flow)</li>
+                <li><strong>Gauge panels:</strong> Voor huidige status ten opzichte van targets</li>
+                <li><strong>Stat panels:</strong> Voor single value metrics (totale productie, efficiency)</li>
+                <li><strong>Bar gauges:</strong> Voor vergelijking tussen machines of shifts</li>
+                <li><strong>Heatmaps:</strong> Voor patronen over tijd identificeren</li>
+                <li><strong>State timeline:</strong> Voor machine states (running, idle, alarm)</li>
+            </ul>
+
+            <h3>3. Implementeer effective alerting</h3>
+            <p>
+                Alert fatigue is een reëel probleem. Te veel alerts worden genegeerd. Volg deze richtlijnen:
+            </p>
+            <ul>
+                <li>Gebruik threshold-based alerts alleen voor kritieke parameters</li>
+                <li>Implementeer alert escalation (warning → critical)</li>
+                <li>Gebruik silence periods tijdens geplande onderhoud</li>
+                <li>Group gerelateerde alerts om spam te voorkomen</li>
+                <li>Test je alerts regelmatig</li>
+            </ul>
+
+            <div class="code-block">
+                # Voorbeeld alert query voor temperatuur monitoring
+                SELECT mean("temperature")
+                FROM "sensor_data"
+                WHERE machine = 'Line_A'
+                AND $timeFilter
+                GROUP BY time(1m)
+                HAVING mean("temperature") > 85
+            </div>
+
+            <h3>4. Optimaliseer voor performance</h3>
+            <p>
+                Dashboards met veel panels en hoge refresh rates kunnen traag worden. Optimalisatie tips:
+            </p>
+            <ul>
+                <li>Gebruik appropriate time ranges (niet altijd "Last 30 days")</li>
+                <li>Aggregate data waar mogelijk (1-second resolution is vaak niet nodig)</li>
+                <li>Gebruik query caching voor langzame queries</li>
+                <li>Limit het aantal series per graph</li>
+                <li>Gebruik variables om dashboards dynamisch te maken</li>
+            </ul>
+
+            <h3>5. Maintain consistency</h3>
+            <p>
+                Creëer een style guide voor je dashboards:
+            </p>
+            <ul>
+                <li>Consistent kleurgebruik (bijv. rood = alarm, groen = OK)</li>
+                <li>Standaard units (°C, bar, kW, etc.)</li>
+                <li>Naming conventions voor panels en queries</li>
+                <li>Standard layouts voor vergelijkbare dashboards</li>
+            </ul>
+
+            <h2>Integratie met industriële systemen</h2>
+
+            <h3>Verbinding met PLC's via OPC UA</h3>
+            <p>
+                OPC UA is de moderne standaard voor industriële communicatie. Je kunt Grafana verbinden via:
+            </p>
+            <ul>
+                <li><strong>OPC UA Plugin:</strong> Direct connection naar OPC UA servers</li>
+                <li><strong>Node-RED:</strong> Als middleware tussen OPC UA en InfluxDB</li>
+                <li><strong>Custom collectors:</strong> Python scripts die data verzamelen en pushen</li>
+            </ul>
+
+            <div class="code-block">
+                # Python voorbeeld: OPC UA naar InfluxDB
+                from opcua import Client
+                from influxdb_client import InfluxDBClient, Point
+
+                opc_client = Client("opc.tcp://192.168.1.100:4840")
+                opc_client.connect()
+
+                influx_client = InfluxDBClient(url="http://localhost:8086",
+                token="your-token")
+                write_api = influx_client.write_api()
+
+                # Read OPC UA node
+                node = opc_client.get_node("ns=2;i=1001")
+                value = node.get_value()
+
+                # Write to InfluxDB
+                point = Point("temperature")\
+                .tag("machine", "Line_A")\
+                .field("value", value)
+                write_api.write(bucket="production", record=point)
+            </div>
+
+            <h3>Integratie met SCADA systemen</h3>
+            <p>
+                Veel bedrijven hebben al een SCADA systeem. Grafana kan hier naast draaien en fungeren als enhanced
+                visualization layer. Typische setup:
+            </p>
+            <ul>
+                <li>SCADA systeem blijft verantwoordelijk voor control en alarms</li>
+                <li>SCADA schrijft data naar een gemeenschappelijke database</li>
+                <li>Grafana leest deze data voor advanced analytics en reporting</li>
+                <li>Users kunnen kiezen welke interface ze gebruiken</li>
+            </ul>
+
+            <h2>Advanced features voor power users</h2>
+
+            <h3>Transformations</h3>
+            <p>
+                Grafana's transformation engine laat je data manipuleren voordat het wordt gevisualiseerd:
+            </p>
+            <ul>
+                <li>Merge multiple queries</li>
+                <li>Calculate differences tussen series</li>
+                <li>Filter en rename fields</li>
+                <li>Organize fields in custom order</li>
+                <li>Add calculations (running totals, moving averages)</li>
+            </ul>
+
+            <h3>Provisioning</h3>
+            <p>
+                Voor grote deployments kun je dashboards en data sources configureren via code (Infrastructure as Code):
+            </p>
+            <div class="code-block">
+                # datasource.yml
+                apiVersion: 1
+
+                datasources:
+                - name: Production_InfluxDB
+                type: influxdb
+                access: proxy
+                url: http://influxdb:8086
+                database: production
+                isDefault: true
+                editable: false
+            </div>
+
+            <h3>Template variables</h3>
+            <p>
+                Maak je dashboards herbruikbaar met variables. Één dashboard kan dan worden gebruikt voor alle machines,
+                lijnen of locaties:
+            </p>
+            <div class="code-block">
+                # Query variable voor machine selectie
+                SELECT DISTINCT("machine") FROM "production_data"
+                WHERE $timeFilter
+
+                # Gebruik in panel query
+                SELECT mean("output")
+                FROM "production_data"
+                WHERE machine = '$machine'
+                AND $timeFilter
+            </div>
+
+            <h2>ROI van Grafana implementatie</h2>
+            <p>
+                Wat zijn de tastbare voordelen van een Grafana implementatie?
+            </p>
+
+            <div class="highlight-box">
+                <h4>Typische ROI binnen 12 maanden:</h4>
+                <ul>
+                    <li><strong>Kostenbesparing:</strong> €0 licentiekosten vs €10.000+ voor proprietaire alternatieven
+                    </li>
+                    <li><strong>Efficiency gains:</strong> 5-15% verbetering door betere inzichten</li>
+                    <li><strong>Downtime reductie:</strong> 10-30% door proactive alerts</li>
+                    <li><strong>Energy savings:</strong> 8-20% door geoptimaliseerd verbruik</li>
+                    <li><strong>Quality improvements:</strong> Minder defects door betere process control</li>
+                </ul>
+            </div>
+
+            <h2>Aan de slag met Grafana</h2>
+
+            <h3>Stap 1: Installatie</h3>
+            <p>
+                Grafana kan binnen minuten worden geïnstalleerd op Linux, Windows of Mac. Voor productie raden we een
+                Docker container of Kubernetes deployment aan.
+            </p>
+
+            <h3>Stap 2: Verbind je eerste data source</h3>
+            <p>
+                Begin simpel met een database die je al hebt. Bijvoorbeeld een PostgreSQL database met productiegegevens
+                of een CSV file die je importeert.
+            </p>
+
+            <h3>Stap 3: Creëer je eerste dashboard</h3>
+            <p>
+                Start met één kritieke metric. Bijvoorbeeld: production output per uur. Voeg panels toe naarmate je meer
+                inzichten wilt.
+            </p>
+
+            <h3>Stap 4: Itereer en verbeter</h3>
+            <p>
+                Vraag feedback van je gebruikers. Wat missen ze? Welke panels gebruiken ze het meest? Pas je dashboards
+                aan op basis van actual usage.
+            </p>
+
+            <h2>Veelvoorkomende valkuilen (en hoe ze te vermijden)</h2>
+            <ul>
+                <li><strong>Té veel informatie:</strong> Begin simpel, voeg complexity toe waar nodig</li>
+                <li><strong>Geen duidelijke eigenaar:</strong> Assign dashboard owners die verantwoordelijk zijn voor
+                    onderhoud</li>
+                <li><strong>Outdated dashboards:</strong> Review dashboards regelmatig, archive wat niet gebruikt wordt
+                </li>
+                <li><strong>Geen documentatie:</strong> Documenteer wat elke metric betekent en hoe het berekend wordt
+                </li>
+                <li><strong>Ignoreren van performance:</strong> Monitor je Grafana instance zelf ook!</li>
+            </ul>
+
+            <h2>De toekomst: Grafana en AI</h2>
+            <p>
+                Grafana evolueert constant. Recente ontwikkelingen die relevant zijn voor de industrie:
+            </p>
+            <ul>
+                <li><strong>Machine learning plugins:</strong> Automatic anomaly detection</li>
+                <li><strong>Predictive analytics:</strong> Voorspel wanneer onderhoud nodig is</li>
+                <li><strong>Natural language queries:</strong> Stel vragen in gewone taal</li>
+                <li><strong>Automated insights:</strong> Grafana die zelf patronen identificeert</li>
+            </ul>
+
+            <h2>Conclusie</h2>
+            <p>
+                Grafana is meer dan een visualisatie tool - het is een platform dat de manier waarop bedrijven met hun
+                data werken fundamenteel verandert. Door complexe industriële data toegankelijk te maken voor iedereen,
+                van operators tot executives, maakt Grafana datagedreven besluitvorming mogelijk op alle niveaus.
+            </p>
+            <p>
+                De combinatie van krachtige features, flexibiliteit en het feit dat het gratis en open-source is, maakt
+                Grafana de ideale keuze voor moderne industriële organisaties. Of je nu een klein productiebedrijf bent
+                of een multinational met meerdere vestigingen - Grafana schaalt met je mee.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Klaar om te starten met Grafana?</h4>
+                <p>
+                    Bij OnaTech helpen we bedrijven met het opzetten van complete monitoring en analytics stacks. Van
+                    data collectie tot dashboard design en training - wij begeleiden je door het hele proces.
+                </p>
+                <a href="../index.html#contact" class="cta-button" style="margin-top: 20px;">Vraag een demo aan</a>
+            </div>
+        </div>
+    </article>
+
+    <footer role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p><strong>Bedrijf:</strong> OnaTech BV</p>
+                <p><strong>Adres:</strong> Mesenstraat 86, 8940 Wervik, België</p>
+                <p><strong>BTW:</strong> BE1023047122</p>
+                <p><strong>Email:</strong> info@onatech.be</p>
+            </div>
+            <div class="footer-social">
+                <h4>Volg ons</h4>
+                <div class="social-links">
+                    <a href="https://linkedin.com/company/onatech" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 OnaTech. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

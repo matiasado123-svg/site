@@ -36,16 +36,14 @@
 }
 
 .portfolio-card {
-    background: #fff;
+    background: #f1f5f9;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.4s ease;
 }
 
 .portfolio-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(34, 211, 238, 0.15);
 }
 
 .portfolio-image {

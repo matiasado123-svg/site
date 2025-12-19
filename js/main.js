@@ -186,84 +186,61 @@ document.querySelectorAll('.service-card, .application-card, .expertise-item').f
 // FAQ ACCORDION - FIXED VERSION
 // ===================================
 (function() {
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    
-    if (faqQuestions.length === 0) {
-        console.log('⚠ No FAQ questions found');
-        return;
-    }
+  const faqQuestions = document.querySelectorAll('.faq-question');
 
-    function toggleFAQ(question) {
-        const faqItem = question.parentElement;
-        const answer = question.nextElementSibling;
-        const isExpanded = question.getAttribute('aria-expanded') === 'true';
-        
-        // Close all other FAQ items first
-        faqQuestions.forEach(q => {
-            if (q !== question) {
-                const otherItem = q.parentElement;
-                const otherAnswer = q.nextElementSibling;
-                
-                q.setAttribute('aria-expanded', 'false');
-                otherItem.classList.remove('active');
-                if (otherAnswer) {
-                    otherAnswer.setAttribute('hidden', '');
-                    otherAnswer.style.maxHeight = '0';
-                }
-            }
-        });
-        
-        // Toggle current item
-        if (isExpanded) {
-            // Close this item
-            question.setAttribute('aria-expanded', 'false');
-            faqItem.classList.remove('active');
-            if (answer) {
-                answer.style.maxHeight = '0';
-                // Wait for animation to complete before adding hidden
-                setTimeout(() => {
-                    answer.setAttribute('hidden', '');
-                }, 400);
-            }
-        } else {
-            // Open this item
-            question.setAttribute('aria-expanded', 'true');
-            faqItem.classList.add('active');
-            if (answer) {
-                answer.removeAttribute('hidden');
-                // Force reflow to ensure transition works
-                answer.offsetHeight;
-                // Set maxHeight to scrollHeight for smooth animation
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-            }
-        }
-    }
+  if (faqQuestions.length === 0) {
+    console.log('⚠ No FAQ questions found');
+    return;
+  }
 
-    // Initialize all answers as closed
-    faqQuestions.forEach(question => {
-        const answer = question.nextElementSibling;
-        if (answer) {
-            answer.setAttribute('hidden', '');
-            answer.style.maxHeight = '0';
-        }
-        
-        // Click handler
-        question.addEventListener('click', function(e) {
-            e.preventDefault();
-            toggleFAQ(question);
-        });
-        
-        // Keyboard handler
-        question.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                toggleFAQ(question);
-            }
-        });
+  function toggleFAQ(question) {
+    const faqItem = question.parentElement;
+    const answer = question.nextElementSibling;
+    const isExpanded = question.getAttribute('aria-expanded') === 'true';
+
+    // Close all other FAQ items
+    faqQuestions.forEach(q => {
+      const otherAnswer = q.nextElementSibling;
+      q.setAttribute('aria-expanded', 'false');
+      q.parentElement.classList.remove('active');
+      otherAnswer.classList.remove('open');
+      otherAnswer.setAttribute('hidden', '');
     });
 
-    console.log('✓ FAQ accordion loaded - ' + faqQuestions.length + ' questions found');
+    // Toggle current item
+    if (!isExpanded) {
+      question.setAttribute('aria-expanded', 'true');
+      faqItem.classList.add('active');
+      answer.classList.add('open');
+      answer.removeAttribute('hidden');
+    }
+  }
+
+  // Initialize all answers as closed
+  faqQuestions.forEach(question => {
+    const answer = question.nextElementSibling;
+    if (answer) {
+      answer.setAttribute('hidden', '');
+    }
+
+    // Click handler
+    question.addEventListener('click', e => {
+      e.preventDefault();
+      toggleFAQ(question);
+    });
+
+    // Keyboard handler
+    question.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleFAQ(question);
+      }
+    });
+  });
+
+  console.log('✓ FAQ accordion loaded - ' + faqQuestions.length + ' questions found');
 })();
+
 
 // ===================================
 // CONTACT FORM
