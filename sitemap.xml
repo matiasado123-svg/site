@@ -62,4 +62,30 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://onatech.onatrack.eu/blog/cybersecurity-ot-netwerken.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+    <url>
+    <loc>https://onatech.onatrack.eu/blog/data-platform.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+    <url>
+    <loc>https://onatech.onatrack.eu/blog/grafana-industrie.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+
+
+
+
+
 </urlset>

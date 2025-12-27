@@ -4,13 +4,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>De moderne data stack: Open-source alternatieven voor enterprise oplossingen | OnaTech</title>
+
+    <!-- Primary Meta Tags -->
+    <title>Open-source SCADA: Waarom bedrijven overstappen | OnaTech</title>
+    <meta name="title" content="Open-source SCADA: Waarom bedrijven overstappen | OnaTech">
     <meta name="description"
-        content="Bouw een moderne data stack met Airflow, Airbyte, DBT & Superset. 85-95% kostenbesparing vs enterprise tools. Complete implementatie gids + praktijkvoorbeelden.">
+        content="Ontdek waarom steeds meer bedrijven kiezen voor open-source SCADA-oplossingen. Voordelen, uitdagingen en beste praktijken voor een succesvolle implementatie. Bespaar 50-75% op kosten.">
+    <meta name="keywords"
+        content="open-source SCADA, ScadaBR, OpenSCADA, Ignition, industriële automatisering, SCADA alternatieven, SCADA kosten, vendor lock-in">
+    <meta name="author" content="OnaTech BV">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://onatech.onatrack.eu/blog/open-source-scada.html">
+    <meta property="og:title" content="Open-source SCADA: Waarom bedrijven overstappen">
+    <meta property="og:description"
+        content="Ontdek waarom steeds meer bedrijven kiezen voor open-source SCADA-oplossingen. Bespaar 50-75% op kosten zonder in te boeten op functionaliteit.">
+    <meta property="og:image" content="https://onatech.onatrack.eu/assets/images/scada.jpg">
+    <meta property="og:locale" content="nl_BE">
+    <meta property="article:published_time" content="2025-01-08T09:00:00+01:00">
+    <meta property="article:author" content="OnaTech BV">
+    <meta property="article:section" content="SCADA">
+    <meta property="article:tag" content="Open Source">
+    <meta property="article:tag" content="SCADA">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://onatech.onatrack.eu/blog/open-source-scada.html">
+    <meta name="twitter:title" content="Open-source SCADA: Waarom bedrijven overstappen">
+    <meta name="twitter:description"
+        content="Bespaar 50-75% op SCADA kosten met open-source oplossingen. Ontdek voordelen en best practices.">
+    <meta name="twitter:image" content="https://onatech.onatrack.eu/assets/images/scada.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://onatech.onatrack.eu/blog/open-source-scada.html">
+
     <link rel="stylesheet" href="../css/style.min.css">
     <link rel="icon" type="image/png" href="../assets/images/Onatech_Logo.png">
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- Structured Data - Blog Post -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Open-source SCADA: Waarom bedrijven overstappen",
+      "description": "Ontdek waarom steeds meer bedrijven kiezen voor open-source SCADA-oplossingen. Voordelen, uitdagingen en beste praktijken voor een succesvolle implementatie.",
+      "image": "https://onatech.onatrack.eu/assets/images/scada.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "OnaTech BV",
+        "url": "https://onatech.onatrack.eu"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "OnaTech BV",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://onatech.onatrack.eu/assets/images/Onatech_Logo.png"
+        }
+      },
+      "datePublished": "2025-01-08T09:00:00+01:00",
+      "dateModified": "2025-01-08T09:00:00+01:00",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://onatech.onatrack.eu/blog/open-source-scada.html"
+      },
+      "keywords": ["open-source SCADA", "ScadaBR", "OpenSCADA", "industriële automatisering"]
+    }
+    </script>
+
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://onatech.onatrack.eu/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://onatech.onatrack.eu/#blog"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Open-source SCADA",
+        "item": "https://onatech.onatrack.eu/blog/open-source-scada.html"
+      }]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F7V45R50GE"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -42,6 +130,16 @@
         </div>
     </nav>
 
+    <nav aria-label="Breadcrumb" style="max-width: 900px; margin: 100px auto 0; padding: 0 40px;">
+        <ol style="display: flex; gap: 10px; list-style: none; padding: 0; font-size: 0.9rem; color: #64748b;">
+            <li><a href="../index.html" style="color: #0ea5e9; text-decoration: none;">Home</a></li>
+            <li aria-hidden="true">›</li>
+            <li><a href="../index.html#blog" style="color: #0ea5e9; text-decoration: none;">Blog</a></li>
+            <li aria-hidden="true">›</li>
+            <li aria-current="page" style="color: #334155;">data-platform</li>
+        </ol>
+    </nav>
+
     <article class="blog-article">
         <a href="../index.html#blog" class="back-link">← Terug naar blog</a>
 
@@ -59,7 +157,7 @@
         </div>
 
         <div class="featured-image">
-            <img src="../assets/images/data_platform.jpg" alt="Modern data platform architectuur met open-source tools">
+            <img src="../assets/images/data_platform.jpg" alt="Modern data platform architectuur diagram met Airflow, Airbyte, DBT en Superset integratie" width="900" height="400">
         </div>
 
         <div class="blog-content">
@@ -103,40 +201,40 @@
             </p>
 
             <div class="code-block">
-from airflow import DAG
-from airflow.operators.python import PythonOperator
-from datetime import datetime, timedelta
+                from airflow import DAG
+                from airflow.operators.python import PythonOperator
+                from datetime import datetime, timedelta
 
-default_args = {
-    'owner': 'onatech',
-    'retries': 3,
-    'retry_delay': timedelta(minutes=5)
-}
+                default_args = {
+                'owner': 'onatech',
+                'retries': 3,
+                'retry_delay': timedelta(minutes=5)
+                }
 
-with DAG(
-    'production_etl',
-    default_args=default_args,
-    schedule_interval='0 2 * * *',  # Daily at 2 AM
-    start_date=datetime(2025, 1, 1),
-    catchup=False
-) as dag:
-    
-    extract = PythonOperator(
-        task_id='extract_data',
-        python_callable=extract_from_source
-    )
-    
-    transform = PythonOperator(
-        task_id='transform_data',
-        python_callable=transform_logic
-    )
-    
-    load = PythonOperator(
-        task_id='load_to_warehouse',
-        python_callable=load_to_db
-    )
-    
-    extract >> transform >> load
+                with DAG(
+                'production_etl',
+                default_args=default_args,
+                schedule_interval='0 2 * * *', # Daily at 2 AM
+                start_date=datetime(2025, 1, 1),
+                catchup=False
+                ) as dag:
+
+                extract = PythonOperator(
+                task_id='extract_data',
+                python_callable=extract_from_source
+                )
+
+                transform = PythonOperator(
+                task_id='transform_data',
+                python_callable=transform_logic
+                )
+
+                load = PythonOperator(
+                task_id='load_to_warehouse',
+                python_callable=load_to_db
+                )
+
+                extract >> transform >> load
             </div>
 
             <h3>2. Airbyte: De data connector</h3>
@@ -148,7 +246,8 @@ with DAG(
 
             <p>
                 Wat Airbyte bijzonder maakt is het aantal beschikbare connectors: meer dan 350 kant-en-klare integraties
-                met databases, SaaS-tools, APIs en bestanden. Van PostgreSQL en MySQL tot Salesforce, Google Analytics en
+                met databases, SaaS-tools, APIs en bestanden. Van PostgreSQL en MySQL tot Salesforce, Google Analytics
+                en
                 Stripe - vrijwel elke databron die je kunt bedenken heeft al een connector.
             </p>
 
@@ -176,25 +275,25 @@ with DAG(
             </p>
 
             <div class="code-block">
--- models/staging/stg_orders.sql
-WITH source AS (
-    SELECT * FROM {{ source('raw', 'orders') }}
-),
+                -- models/staging/stg_orders.sql
+                WITH source AS (
+                SELECT * FROM {{ source('raw', 'orders') }}
+                ),
 
-cleaned AS (
-    SELECT
-        order_id,
-        customer_id,
-        order_date,
-        CAST(total_amount AS DECIMAL(10,2)) as total_amount,
-        status
-    FROM source
-    WHERE order_date >= '2024-01-01'
-)
+                cleaned AS (
+                SELECT
+                order_id,
+                customer_id,
+                order_date,
+                CAST(total_amount AS DECIMAL(10,2)) as total_amount,
+                status
+                FROM source
+                WHERE order_date >= '2024-01-01'
+                )
 
-SELECT * FROM cleaned
+                SELECT * FROM cleaned
 
--- Dit wordt een view of table in je warehouse
+                -- Dit wordt een view of table in je warehouse
             </div>
 
             <p>
@@ -397,7 +496,7 @@ SELECT * FROM cleaned
                     <li>Zeer gereguleerde industrieën met strikte compliance eisen</li>
                     <li>Legacy omgevingen met complexe bestaande systemen</li>
                     <li>Teams die voorkeur geven aan GUI's boven code</li>
-            </ul>
+                </ul>
             </div>
 
             <h2>Best practices voor implementatie</h2>

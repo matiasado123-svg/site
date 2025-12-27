@@ -73,63 +73,89 @@
 
   <!-- Structured Data / JSON-LD for SEO -->
   <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "OnaTech BV",
+  "image": "https://onatech.onatrack.eu/assets/images/Onatech_Logo.png",
+  "logo": "https://onatech.onatrack/assets/images/Onatech_Logo.png",
+  "@id": "https://onatech.onatrack",
+  "url": "https://onatech.onatrack",
+  "telephone": "+32-123-456-789",
+  "priceRange": "€€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Mesenstraat 86",
+    "addressLocality": "Wervik",
+    "postalCode": "8940",
+    "addressRegion": "West-Vlaanderen",
+    "addressCountry": "BE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 50.7797,
+    "longitude": 3.0396
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "09:00",
+    "closes": "17:00"
+  },
+  "sameAs": [
+    "https://linkedin.com/company/onatech-bv"
+  ],
+  "areaServed": [
     {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "OnaTech BV",
-      "image": "https://onatech.eu/assets/images/Onatech_Logo.png",
-      "logo": "https://onatech.eu/assets/images/Onatech_Logo.png",
-      "@id": "https://onatech.eu",
-      "url": "https://onatech.eu",
-      "telephone": "+32-123-456-789",
-      "priceRange": "€€€",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Mesenstraat 86",
-        "addressLocality": "Wervik",
-        "postalCode": "8940",
-        "addressCountry": "BE"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 50.7797,
-        "longitude": 3.0396
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "09:00",
-        "closes": "17:00"
-      },
-      "sameAs": [
-        "https://facebook.com/onatech",
-        "https://linkedin.com/company/onatech",
-        "https://twitter.com/onatech"
-      ],
-      "areaServed": {
-        "@type": "GeoCircle",
-        "geoMidpoint": {
-          "@type": "GeoCoordinates",
-          "latitude": 50.7797,
-          "longitude": 3.0396
-        },
-        "geoRadius": "50000"
-      },
-      "serviceType": [
-        "IT/OT Integration",
-        "SCADA Development",
-        "Data Integration",
-        "Industrial Automation",
-        "Energy Management"
-      ]
+      "@type": "City",
+      "name": "Wervik"
+    },
+    {
+      "@type": "City", 
+      "name": "Kortrijk"
+    },
+    {
+      "@type": "City",
+      "name": "Gent"
+    },
+    {
+      "@type": "City",
+      "name": "Brugge"
+    },
+    {
+      "@type": "State",
+      "name": "West-Vlaanderen"
+    },
+    {
+      "@type": "State",
+      "name": "Oost-Vlaanderen"
     }
-    </script>
+  ],
+  "serviceType": [
+    "IT/OT Integration",
+    "SCADA Development",
+    "Data Integration",
+    "Industrial Automation",
+    "Energy Management",
+    "Cybersecurity OT"
+  ],
+  "knowsAbout": [
+    "SCADA",
+    "OPC UA",
+    "Grafana",
+    "InfluxDB",
+    "Industrial Automation",
+    "Open Source",
+    "IT/OT Convergence"
+  ]
+}
+</script>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -139,6 +165,289 @@
     gtag('js', new Date());
     gtag('config', 'G-F7V45R50GE'); // Replace with your actual ID
   </script>
+
+ <!-- Service Schema 1: OT Cybersecurity -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "OT Cybersecurity",
+  "name": "Cybersecurity voor OT-netwerken",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "OnaTech BV",
+    "url": "https://onatrack.onatech.eu"
+  },
+  "areaServed": [
+    {
+      "@type": "State",
+      "name": "West-Vlaanderen"
+    },
+    {
+      "@type": "State",
+      "name": "Oost-Vlaanderen"
+    }
+  ],
+  "description": "Beveiligingsoplossingen voor operationele technologie (OT) en industriële netwerken. Netwerksegmentatie, toegangscontrole, monitoring en incident response planning volgens IEC 62443 standaarden.",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "areaServed": {
+      "@type": "Country",
+      "name": "BE"
+    }
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Industrial Companies"
+  },
+  "category": "Cybersecurity",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "OT Cybersecurity Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Netwerksegmentatie",
+          "description": "Implementatie van gelaagde netwerkarchitectuur volgens Purdue Model"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Security Monitoring",
+          "description": "Continue monitoring en threat detection voor OT-omgevingen"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Incident Response Planning",
+          "description": "OT-specifieke incident response plannen en training"
+        }
+      }
+    ]
+  },
+  "url": "https://onatrack.onatech.eu/blog/cybersecurity-ot-netwerken.html"
+}
+</script>
+
+<!-- Service Schema 2: Data Platform & Integration -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Data Platform Development",
+  "name": "Open-source Data Platform met Airflow, Airbyte, DBT en Superset",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "OnaTech BV",
+    "url": "https://onatrack.onatech.eu"
+  },
+  "areaServed": [
+    {
+      "@type": "State",
+      "name": "West-Vlaanderen"
+    },
+    {
+      "@type": "State",
+      "name": "Oost-Vlaanderen"
+    }
+  ],
+  "description": "Implementatie van moderne open-source data stacks met Apache Airflow, Airbyte, DBT en Superset. Data pipeline orchestration, ETL processen en business intelligence zonder hoge licentiekosten.",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "areaServed": {
+      "@type": "Country",
+      "name": "BE"
+    }
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Data-driven Organizations"
+  },
+  "category": "Data Engineering",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Data Platform Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Apache Airflow Orchestration",
+          "description": "Workflow scheduling en monitoring voor data pipelines"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Data Integration met Airbyte",
+          "description": "350+ connectoren voor databases, APIs en SaaS tools"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "DBT Transformaties",
+          "description": "Data transformatie met version control en testing"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Superset Dashboards",
+          "description": "Business intelligence en data visualisatie"
+        }
+      }
+    ]
+  },
+  "url": "https://onatrack.onatech.eu/blog/data-platform.html"
+}
+</script>
+
+<!-- Service Schema 3: Grafana & Data Visualization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Industrial Data Visualization",
+  "name": "Grafana Dashboards voor Industriële Data",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "OnaTech BV",
+    "url": "https://onatrack.onatech.eu"
+  },
+  "areaServed": [
+    {
+      "@type": "State",
+      "name": "West-Vlaanderen"
+    },
+    {
+      "@type": "State",
+      "name": "Oost-Vlaanderen"
+    }
+  ],
+  "description": "Implementatie van Grafana dashboards voor real-time monitoring van industriële processen. OEE tracking, energiebeheer, kwaliteitscontrole en productie-analytics met InfluxDB, TimescaleDB en andere data sources.",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "areaServed": {
+      "@type": "Country",
+      "name": "BE"
+    }
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Manufacturing Companies"
+  },
+  "category": "Data Analytics",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Grafana Visualization Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "OEE Monitoring Dashboards",
+          "description": "Real-time Overall Equipment Effectiveness tracking"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Energie Monitoring",
+          "description": "Energieverbruik visualisatie en optimalisatie"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Productie Analytics",
+          "description": "Kwaliteitscontrole en proces monitoring dashboards"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Custom Dashboard Development",
+          "description": "Maatwerk Grafana dashboards voor specifieke use cases"
+        }
+      }
+    ]
+  },
+  "url": "https://onatrack.onatech.eu/blog/grafana-industrie.html"
+}
+</script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wat is het verschil tussen IT en OT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "IT (Information Technology) richt zich op gegevensverwerking, netwerken en bedrijfssystemen. OT (Operational Technology) betreft de hardware en software die fysieke apparaten, processen en infrastructuur monitoren en besturen. Wij specialiseren ons in het verbinden van beide werelden voor maximale efficiëntie."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Waarom kiezen voor open-source oplossingen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Open-source oplossingen bieden aanzienlijke kostenbesparingen (geen licentiekosten), volledige transparantie, flexibiliteit voor maatwerk en een grote community voor ondersteuning. Bovendien voorkomt u vendor lock-in en heeft u volledige controle over uw systemen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hoe lang duurt een typisch project?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "De duur varieert afhankelijk van de complexiteit. Een eenvoudig dashboard project kan binnen 2-4 weken gerealiseerd worden, terwijl een volledige IT/OT infrastructuur modernisering 3-6 maanden kan duren. We starten altijd met een grondige analyse om een realistisch tijdschema op te stellen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bieden jullie ook ondersteuning na oplevering?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, wij bieden verschillende onderhoudscontracten aan, van basis support tot 24/7 monitoring en direct ingrijpen. Ook kunnen wij uw personeel trainen om zelfstandig met de systemen te werken."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wat zijn de kosten van een IT/OT integratie project?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kosten zijn sterk afhankelijk van scope, complexiteit en gewenste functionaliteit. Een eenvoudig monitoring dashboard start vanaf €5.000, terwijl complete SCADA-implementaties variëren van €20.000 tot €100.000+. We maken altijd eerst een gedetailleerde offerte na een gratis intakegesprek."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Welke industrieën bedienen jullie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wij werken met diverse sectoren: procesindustrie (chemie, voedsel), discrete manufacturing, energiesector, waterbeheer en logistiek. Onze open-source aanpak is universeel toepasbaar."
+          }
+        }
+      ]
+    }
+    </script>
 
 </head>
 
