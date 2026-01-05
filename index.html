@@ -166,8 +166,8 @@
     gtag('config', 'G-F7V45R50GE'); // Replace with your actual ID
   </script>
 
- <!-- Service Schema 1: OT Cybersecurity -->
-<script type="application/ld+json">
+  <!-- Service Schema 1: OT Cybersecurity -->
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -236,8 +236,8 @@
 }
 </script>
 
-<!-- Service Schema 2: Data Platform & Integration -->
-<script type="application/ld+json">
+  <!-- Service Schema 2: Data Platform & Integration -->
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -314,8 +314,8 @@
 }
 </script>
 
-<!-- Service Schema 3: Grafana & Data Visualization -->
-<script type="application/ld+json">
+  <!-- Service Schema 3: Grafana & Data Visualization -->
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -392,7 +392,7 @@
 }
 </script>
 
-    <script type="application/ld+json">
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -673,6 +673,8 @@
       </div>
     </section>
 
+
+    <!--
     <section class="portfolio-section" id="portfolio" aria-labelledby="portfolio-heading">
       <div class="portfolio">
         <h2 id="portfolio-heading">Ons werk in actie</h2>
@@ -747,7 +749,7 @@
         </div>
       </div>
     </section>
-    <!--
+
     <section class="testimonials-section" aria-labelledby="testimonials-heading">
       <div class="testimonials">
         <h2 id="testimonials-heading">Wat onze klanten zeggen</h2>
@@ -900,7 +902,6 @@
               <span class="blog-category">Cybersecurity</span>
             </div>
             <div class="blog-content">
-              <time datetime="2025-01-15" class="blog-date">15 januari 2025</time>
               <h3>5 essentiële cybersecurity maatregelen voor OT-netwerken</h3>
               <p>Operationele technologie wordt steeds vaker doelwit van cyberaanvallen. Ontdek de belangrijkste
                 beveiligingsmaatregelen die elk industrieel bedrijf moet implementeren.</p>
@@ -908,50 +909,112 @@
             </div>
           </article>
 
-            <article class="blog-card">
-              <div class="blog-image">
-                <picture>
-                  <source srcset="assets/images/data_platform.jpg" type="image/webp">
-                  <img src="assets/images/data_platform.jpg"
-                    alt="Modern data platform architectuur met Airflow, Airbyte, DBT en Superset" width="400"
-                    height="220" loading="lazy">
-                </picture>
-                <span class="blog-category">Data Platform</span>
-              </div>
-              <div class="blog-content">
-                <time datetime="2025-01-22" class="blog-date">22 januari 2025</time>
-                <h3>De moderne data stack: Open-source alternatieven</h3>
-                <p>Ontdek hoe Airflow, Airbyte, DBT en Superset samen een krachtig data platform vormen. Kostenbesparing
-                  tot 95% zonder in te boeten op functionaliteit.</p>
-                <a href="blog/data-platform.html" class="blog-link">Lees meer →</a>
-              </div>
-            </article>
+          <article class="blog-card">
+            <div class="blog-image">
+              <picture>
+                <source srcset="assets/images/data_platform.webp" type="image/webp">
+                <img src="assets/images/data_platform.png"
+                  alt="Modern data platform architectuur met Airflow, Airbyte, DBT en Superset" width="400" height="220"
+                  loading="lazy">
+              </picture>
+              <span class="blog-category">Data Platform</span>
+            </div>
+            <div class="blog-content">
+              <h3>De moderne data stack: Open-source alternatieven</h3>
+              <p>Ontdek hoe Airflow, Airbyte, DBT en Superset samen een krachtig data platform vormen. Kostenbesparing
+                tot 95% zonder in te boeten op functionaliteit.</p>
+              <a href="blog/data-platform.html" class="blog-link">Lees meer →</a>
+            </div>
+          </article>
 
-            <article class="blog-card">
-              <div class="blog-image">
-                <picture>
-                  <source srcset="assets/images/data_visualisation.webp" type="image/webp">
-                  <img src="assets/images/data_visualisation.jpg"
-                    alt="Data analytics dashboard met grafieken en KPI visualisaties" width="400" height="220"
-                    loading="lazy">
-                </picture>
-                <span class="blog-category">Data Analytics</span>
-              </div>
-              <div class="blog-content">
-                <time datetime="2024-12-20" class="blog-date">20 december 2024</time>
-                <h3>Van data naar inzicht: Grafana in de industrie</h3>
-                <p>Leer hoe Grafana industriële data omzet in bruikbare inzichten. Praktische voorbeelden en tips voor
-                  effectieve dashboards in productieomgevingen.</p>
-                <a href="blog/grafana-industrie.html" class="blog-link">Lees meer →</a>
-              </div>
-            </article>
-          </div>
+          <article class="blog-card">
+            <div class="blog-image">
+              <picture>
+                <source srcset="assets/images/data_visualisation.webp" type="image/webp">
+                <img src="assets/images/data_visualisation.jpg"
+                  alt="Data analytics dashboard met grafieken en KPI visualisaties" width="400" height="220"
+                  loading="lazy">
+              </picture>
+              <span class="blog-category">Data Analytics</span>
+            </div>
+            <div class="blog-content">
+              <h3>Van data naar inzicht: Grafana in de industrie</h3>
+              <p>Leer hoe Grafana industriële data omzet in bruikbare inzichten. Praktische voorbeelden en tips voor
+                effectieve dashboards in productieomgevingen.</p>
+              <a href="blog/grafana-industrie.html" class="blog-link">Lees meer →</a>
+            </div>
+          </article>
 
-          <!--        <div class="blog-cta">
+          <article class="blog-card">
+            <div class="blog-image">
+              <picture>
+                <source srcset="assets/images/bottleneck.webp" type="image/webp">
+                <img src="assets/images/bottleneck.jpg" alt="XXX" width="400" height="220" loading="lazy">
+              </picture>
+              <span class="blog-category">grafana-bottleneck-analyse</span>
+            </div>
+            <div class="blog-content">
+              <h3>Bottleneckanalyse met Grafana: Van data naar productiewinst</h3>
+              <p>In complexe productieomgevingen met gedeelde resources is het identificeren van bottlenecks een uitdaging. Ontdek hoe Grafana, gecombineerd met InfluxDB en MES-integratie, realtime inzicht geeft in productieknelpunten en stilstanden. </p>
+              <a href="blog/Grafana voor Bottleneckanalyse.html" class="blog-link">Lees meer →</a>
+            </div>
+          </article>
+
+<!--          <article class="blog-card">
+            <div class="blog-image">
+              <picture>
+                <source srcset="assets/images/maalderij.webp" type="image/webp">
+                <img src="assets/images/maalderij.png" alt="XXX" width="400" height="220" loading="lazy">
+              </picture>
+              <span class="blog-category">maalderij-automatisering</span>
+            </div>
+            <div class="blog-content">
+              <h3>Moderne automatisering voor maalderijen: Van PCS7 naar intelligente productiebesturing</h3>
+              <p>Ontdek hoe moderne PLC-sturing met WinCC visualisatie de volledige productieketen van een maalderij optimaliseert - van het lossen van grondstoffen tot de geautomatiseerde besturing van hamermolens met geavanceerde PID-regelaars en veiligheidssystemen.</p>
+              <a href="blog/PCS7 Automatisering voor Maalderijen.html" class="blog-link">Lees meer →</a>
+            </div>
+          </article>
+        -->
+          <article class="blog-card">
+            <div class="blog-image">
+              <picture>
+                <source srcset="assets/images/AS400.webp" type="image/webp">
+                <img src="assets/images/AS400.jpg" alt="XXX" width="400" height="220" loading="lazy">
+              </picture>
+              <span class="blog-category">AS400-erp-migratie</span>
+            </div>
+            <div class="blog-content">
+              <h3>Van AS400 naar modern ERP/MES: Een succesvolle migratie met minimale productie-impact</h3>
+              <p>Hoe vervang je een 30 jaar oud legacy systeem dat het hart vormt van je productie, zonder de operatie stil te leggen? Een praktijkcase over de succesvolle migratie van AS400 naar een modern ERP/MES-systeem bij Vanden Avenne. </p>
+              <a href="blog/AS400 naar Modern ERP-MES.html" class="blog-link">Lees meer →</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-image">
+              <picture>
+                <source srcset="assets/images/OT.webp" type="image/webp">
+                <img src="assets/images/OT.jpg" alt="XXX" width="400" height="220" loading="lazy">
+              </picture>
+              <span class="blog-category">ot-infrastructuur-vernieuwing</span>
+            </div>
+            <div class="blog-content">
+              <h3>Moderne OT-infrastructuur met zone-based security: Van legacy naar toekomstbestendig</h3>
+              <p>Een verouderde OT-infrastructuur vormt niet alleen een cybersecurity risico, maar belemmert ook digitalisering. Ontdek hoe Vanden Avenne hun complete OT-omgeving vernieuwde met Palo Alto firewalls, VMware virtualisatie en gestructureerde segmentatie over twee productieplants.</p>
+              <a href="blog/OT-Infrastructuur & Cybersecurity Vernieuwing.html" class="blog-link">Lees meer →</a>
+            </div>
+          </article>
+
+
+
+
+        </div>
+
+        <!--        <div class="blog-cta">
           <a href="/blog" class="cta-button secondary">Bekijk alle artikelen</a>
         </div>
       -->
-        </div>
+      </div>
     </section>
 
     <section class="contact-section" id="contact" aria-labelledby="contact-heading">

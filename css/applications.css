@@ -3,7 +3,7 @@
     max-width: 1400px;
     margin: 60px auto;
     padding: 60px 40px;
-    background: #f1f5f9;
+/*    background: #f1f5f9; */
     border-radius: 24px;
 }
 
@@ -136,11 +136,11 @@
         font-size: 1.8rem;
         margin-bottom: 30px;
     }
-    
+
     .application-card {
         padding: 30px 20px;
     }
-    
+
     .application-card h3 {
         font-size: 1.3rem;
     }
@@ -187,117 +187,5 @@
     .advantages li {
         font-size: 0.85rem;
     }
-}/* Applications Section */
-.applications {
-    max-width: 1400px;
-    margin: 60px auto;
-    padding: 60px 40px;
-    background: #f1f5f9;
-    border-radius: 24px;
 }
 
-.applications h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #1c1c1c;
-    margin-bottom: 50px;
-    text-align: left;
-}
-
-.applications-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-}
-
-.application-card {
-    background: #fff;
-    padding: 40px;
-    border-radius: 20px;
-    border: 1px solid #e2e8f0;
-    transition: all 0.3s ease;
-}
-
-.application-card:hover {
-    transform: translateY(-5px);
-}
-
-.application-card h3 {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #1c1c1c;
-    margin-bottom: 20px;
-}
-
-.application-card p {
-    font-size: 1rem;
-    color: #64748b;
-    line-height: 1.7;
-    margin-bottom: 15px;
-}
-
-.advantages {
-    margin-top: 30px;
-    padding-top: 25px;
-    border-top: 1px solid #e2e8f0;
-}
-
-.advantages h4 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #1c1c1c;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.advantages h4::before {
-    content: '→';
-    color: #22d3ee;
-    font-size: 1.2rem;
-}
-
-.advantages ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.advantages li {
-    font-size: 1rem;
-    color: #64748b;
-    line-height: 1.6;
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
-}
-
-.advantages li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: #22d3ee;
-    font-weight: bold;
-}
-
-/* Mobile Responsive */
-@media (max-width: 1024px) {
-    .applications-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    .applications h2 {
-        font-size: 2rem;
-    }
-    
-    .application-card {
-        padding: 30px;
-    }
-    
-    .application-card h3 {
-        font-size: 1.4rem;
-    }
-}

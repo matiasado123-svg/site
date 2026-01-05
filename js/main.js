@@ -352,4 +352,110 @@ if ('loading' in HTMLImageElement.prototype) {
     lazyImages.forEach(img => imageObserver.observe(img));
 }
 
+// Blog Show More Functionality
+(function() {
+  'use strict';
+
+  const blogGrid = document.querySelector('.blog-grid');
+  const blogSection = document.querySelector('.blog-section');
+  
+  if (!blogGrid || !blogSection) {
+    console.log('Blog section not found');
+    return;
+  }
+
+  const blogCards = Array.from(blogGrid.querySelectorAll('.blog-card'));
+  const INITIAL_VISIBLE = 3; // Number of blogs to show initially
+  
+  // Only proceed if there are more blogs than the initial visible count
+  if (blogCards.length <= INITIAL_VISIBLE) {
+    console.log('Not enough blogs to require show more button');
+    return;
+  }
+
+  // Hide blogs after the initial count
+  blogCards.forEach((card, index) => {
+    if (index >= INITIAL_VISIBLE) {
+      card.style.display = 'none';
+      card.classList.add('blog-hidden');
+    }
+  });
+
+  // Create the "Show More" button
+  const showMoreBtn = document.createElement('button');
+  showMoreBtn.className = 'cta-button secondary blog-show-more';
+  showMoreBtn.textContent = `Toon meer artikelen (${blogCards.length - INITIAL_VISIBLE})`;
+  showMoreBtn.setAttribute('aria-label', `Toon ${blogCards.length - INITIAL_VISIBLE} meer blog artikelen`);
+  
+  // Create wrapper for centering
+  const btnWrapper = document.createElement('div');
+  btnWrapper.className = 'blog-cta';
+  btnWrapper.appendChild(showMoreBtn);
+  
+  // Insert after blog grid
+  blogGrid.parentNode.insertBefore(btnWrapper, blogGrid.nextSibling);
+
+  // Show more functionality
+  showMoreBtn.addEventListener('click', function() {
+    const hiddenCards = blogGrid.querySelectorAll('.blog-hidden');
+    
+    if (hiddenCards.length > 0) {
+      // Show all hidden cards with animation
+      hiddenCards.forEach((card, index) => {
+        setTimeout(() => {
+          card.style.display = '';
+          card.classList.remove('blog-hidden');
+          
+          // Trigger reflow for animation
+          card.offsetHeight;
+          
+          // Add fade-in animation
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(20px)';
+          
+          setTimeout(() => {
+            card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 10);
+        }, index * 100); // Stagger animation
+      });
+      
+      // Update button text to "Show Less"
+      showMoreBtn.textContent = 'Toon minder';
+      showMoreBtn.setAttribute('aria-label', 'Verberg extra blog artikelen');
+      showMoreBtn.classList.add('active');
+      
+    } else {
+      // Hide blogs after initial count
+      blogCards.forEach((card, index) => {
+        if (index >= INITIAL_VISIBLE) {
+          card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(20px)';
+          
+          setTimeout(() => {
+            card.style.display = 'none';
+            card.classList.add('blog-hidden');
+            card.style.transition = '';
+          }, 300);
+        }
+      });
+      
+      // Reset button text
+      showMoreBtn.textContent = `Toon meer artikelen (${blogCards.length - INITIAL_VISIBLE})`;
+      showMoreBtn.setAttribute('aria-label', `Toon ${blogCards.length - INITIAL_VISIBLE} meer blog artikelen`);
+      showMoreBtn.classList.remove('active');
+      
+      // Scroll back to blog section
+      setTimeout(() => {
+        blogSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 300);
+    }
+  });
+
+  console.log('✓ Blog show more functionality loaded');
+})();
+
+
 console.log('✓ OnaTech website loaded successfully');

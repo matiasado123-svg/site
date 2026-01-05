@@ -1,12 +1,11 @@
 header {
-  background:#0ea5e9 ;
-  padding:30px 40px;
-  color:#fff;
-  max-width:1400px;
-  margin:20px auto;
-  border-radius:12px;
-  position:relative
-
+    background: #0ea5e9;
+    padding: 30px 40px;
+    color: #fff;
+    max-width: 1400px;
+    margin: 20px auto;
+    border-radius: 12px;
+    position: relative
 }
 
 .header {
@@ -55,6 +54,8 @@ header {
     max-width: 1400px;
     margin: 60px auto;
     padding: 40px;
+    background: #f1f5f9;
+    border-radius: 24px;
 }
 
 .hero-image {

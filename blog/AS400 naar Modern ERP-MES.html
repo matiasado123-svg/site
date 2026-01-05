@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Van AS400 naar modern ERP/MES: Een succesvolle migratie met minimale productie-impact | OnaTech</title>
+    <meta name="title" content="Van AS400 naar modern ERP/MES: Een succesvolle migratie met minimale productie-impact | OnaTech">
+    <meta name="description" content="Praktijkcase: succesvolle migratie van legacy AS400 naar modern ERP/MES systeem. Van planning tot big bang go-live met minimale downtime en volledige traceability.">
+    <meta name="keywords" content="AS400 migratie, ERP implementatie, MES upgrade, legacy systeem vervanging, productiesysteem migratie, big bang go-live, masterdata validatie">
+    <meta name="author" content="OnaTech BV">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://onatech.onatrack.eu/blog/as400-erp-migratie.html">
+    <meta property="og:title" content="Van AS400 naar modern ERP/MES: Een succesvolle migratie">
+    <meta property="og:description" content="Praktijkcase: hoe  succesvol migreren van AS400 naar een modern ERP/MES systeem zonder productieverlies.">
+    <meta property="og:image" content="https://onatech.onatrack.eu/assets/images/IT_OT.jpg">
+    <meta property="og:locale" content="nl_BE">
+    <meta property="og:article:published_time" content="2025-01-28T11:00:00+01:00">
+    <meta property="og:article:author" content="OnaTech BV">
+    <meta property="og:article:section" content="ERP/MES">
+    <meta property="og:article:tag" content="AS400">
+    <meta property="og:article:tag" content="ERP Migratie">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://onatech.onatrack.eu/blog/as400-erp-migratie.html">
+    <meta name="twitter:title" content="Van AS400 naar modern ERP/MES: Een succesvolle migratie">
+    <meta name="twitter:description" content="Praktijkcase: succesvolle legacy system migratie met minimale productie-impact.">
+    <meta name="twitter:image" content="https://onatech.onatrack.eu/assets/images/IT_OT.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://onatech.onatrack.eu/blog/as400-erp-migratie.html">
+    
+    <link rel="stylesheet" href="../css/style.min.css">
+    <link rel="icon" type="image/png" href="../assets/images/Onatech_Logo.png">
+
+    <!-- Structured Data - Blog Post -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Van AS400 naar modern ERP/MES: Een succesvolle migratie met minimale productie-impact",
+      "description": "Praktijkcase: succesvolle migratie van legacy AS400 naar modern ERP/MES systeem.",
+      "image": "https://onatech.onatrack.eu/assets/images/IT_OT.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "OnaTech BV",
+        "url": "https://onatech.onatrack.eu"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "OnaTech BV",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://onatech.onatrack.eu/assets/images/Onatech_Logo.png"
+        }
+      },
+      "datePublished": "2025-01-28T11:00:00+01:00",
+      "dateModified": "2025-01-28T11:00:00+01:00",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://onatech.onatrack.eu/blog/as400-erp-migratie.html"
+      },
+      "keywords": ["AS400 migratie", "ERP implementatie", "MES upgrade", "legacy system"]
+    }
+    </script>
+
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://onatech.onatrack.eu/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://onatech.onatrack.eu/#blog"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "AS400 naar ERP/MES Migratie",
+        "item": "https://onatech.onatrack.eu/blog/as400-erp-migratie.html"
+      }]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F7V45R50GE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-F7V45R50GE');
+    </script>
+
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" role="navigation">
+        <div class="nav-container">
+            <a href="../index.html#top" class="nav-logo">
+                <img src="../assets/images/Onatech_Logo.png" alt="OnaTech logo">
+                <span class="nav-logo-text">OnaTech</span>
+            </a>
+            <div class="hamburger" id="hamburger" role="button" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#info">About us</a></li>
+                <li><a href="../index.html#services">Services</a></li>
+                <li><a href="../index.html#faq">FAQ</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav aria-label="Breadcrumb" style="max-width: 900px; margin: 100px auto 0; padding: 0 40px;">
+        <ol style="display: flex; gap: 10px; list-style: none; padding: 0; font-size: 0.9rem; color: #64748b;">
+            <li><a href="../index.html" style="color: #0ea5e9; text-decoration: none;">Home</a></li>
+            <li aria-hidden="true">›</li>
+            <li><a href="../index.html#blog" style="color: #0ea5e9; text-decoration: none;">Blog</a></li>
+            <li aria-hidden="true">›</li>
+            <li aria-current="page" style="color: #334155;">as400-erp-migratie</li>
+        </ol>
+    </nav>
+
+    <article class="blog-article">
+        <a href="../index.html#blog" class="back-link">← Terug naar blog</a>
+
+        <div class="blog-header">
+            <div class="blog-meta">
+                <span class="blog-category-tag">ERP/MES Migratie</span>
+            </div>
+            <h1>Van AS400 naar modern ERP/MES: Een succesvolle migratie met minimale productie-impact</h1>
+            <p class="blog-intro">
+                Hoe vervang je een 30 jaar oud legacy systeem dat het hart vormt van je productie, zonder de operatie stil te leggen? Een praktijkcase over de succesvolle migratie van AS400 naar een modern ERP/MES-systeem.
+            </p>
+        </div>
+
+        <div class="featured-image">
+            <img src="../assets/images/AS400.jpg" alt="Moderne ERP/MES integratie met PLC-systemen ter vervanging van AS400 legacy systeem" width="900" height="400">
+        </div>
+
+        <div class="blog-content">
+            <h2>De uitdaging van legacy systems</h2>
+            <p>
+                In de procesindustrie zijn AS400-systemen (ook bekend als IBM System i) nog altijd wijdverspreid. Deze mainframes werden vanaf de jaren '80 ingezet en hebben bewezen uiterst betrouwbaar te zijn.
+            </p>
+            <p>
+                Maar zelfs de meest betrouwbare systemen hebben een einddatum. De verouderde technologie, de schaarste aan experts die RPG-programmering beheersen, en vooral het nakende pensioen van de interne verantwoordelijke maakten een migratie onvermijdelijk.
+            </p>
+
+            <h2>Waarom AS400 vervangen zo complex is</h2>
+            <p>
+                Het vervangen van een AS400 is geen simpele software-upgrade. Het systeem is vaak zo diep geworteld in de organisatie dat het eigenlijk het zenuwstelsel van de fabriek vormt.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Wat maakt AS400-migraties complex?</h4>
+                <ul>
+                    <li><strong>Centrale rol:</strong> Het AS400 is vaak het enige "source of truth" voor productie, voorraad en planning</li>
+                    <li><strong>Diepe PLC-integratie:</strong> Directe koppelingen met tientallen PLC's voor real-time productiebesturing</li>
+                    <li><strong>Jarenlange business logic:</strong> Processen en regels die nooit gedocumenteerd zijn, maar "gewoon zo werken"</li>
+                    <li><strong>Kritieke uptime:</strong> Productie mag niet stilliggen - elke uur downtime kost tienduizenden euro's</li>
+                    <li><strong>Kennisloss risico:</strong> Vaak is er nog maar één persoon die het systeem echt begrijpt</li>
+                </ul>
+            </div>
+
+            <h2>Context</h2>
+            <p>
+                Er fungeerde een AS400 als het centrale MES (Manufacturing Execution System). Het stuurde het volledige productieproces aan, van ontvangst van grondstoffen tot expeditie van eindproducten.
+            </p>
+
+            <h3>Wat deed het AS400?</h3>
+            <ul>
+                <li><strong>Productieaansturing:</strong> Geautomatiseerde opdrachten naar PLC's voor het starten van maalprocessen, transportroutes en losoperaties</li>
+                <li><strong>Voorraadbeheer:</strong> Real-time tracking van alle silo's, bunkers en tussenopslagen met automatische voorraadmutaties</li>
+                <li><strong>Receptenbeheer:</strong> Duizenden artikelen en recepturen met parameters voor productspecificaties</li>
+                <li><strong>Traceability:</strong> Complete tracking van batches van grondstof tot eindproduct</li>
+                <li><strong>Planning:</strong> Productie- en maalpanning op basis van orders en voorraadniveaus</li>
+                <li><strong>Kwaliteitscontrole:</strong> Registratie van labresultaten en vrijgave procedures</li>
+            </ul>
+
+            <h3>De PLC-koppelingen</h3>
+            <p>
+                Het AS400 was gekoppeld aan verschillende Siemens PLC's (S7-400 en S7-1500 systemen) die de fysieke productie aanstuurden. Deze koppelingen waren cruciaal:
+            </p>
+
+            <ul>
+                <li>AS400 stuurde productieorders naar de PLC</li>
+                <li>PLC rapporteerde status, alarmen en productievoortgang terug</li>
+                <li>Real-time synchronisatie van voorraadniveaus op basis van PLC-metingen</li>
+                <li>Automatische berekening van cyclustijden en OEE-data</li>
+            </ul>
+
+            <p>
+                Deze bidirectionele communicatie moest volledig herbouwd worden in het nieuwe systeem, zonder de bestaande PLC-code te hoeven herschrijven.
+            </p>
+
+            <h2>De keuze voor een nieuw ERP/MES-systeem</h2>
+            <p>
+                In samenwerking met een externe integrator werd gekozen voor een modern ERP/MES-platform. De selectiecriteria waren:
+            </p>
+
+            <div class="highlight-box">
+                <h4>Selectiecriteria nieuw systeem:</h4>
+                <ul>
+                    <li><strong>Moderne technologie:</strong> Web-based interface, geen client installaties nodig</li>
+                    <li><strong>Flexibiliteit:</strong> Aanpasbaar aan specifieke bedrijfsprocessen</li>
+                    <li><strong>PLC-integratie:</strong> Native support voor Siemens S7-communicatie</li>
+                    <li><strong>Schaalbaarheid:</strong> Geschikt voor toekomstige groei en uitbreidingen</li>
+                    <li><strong>Vendor support:</strong> Gegarandeerde ondersteuning en updates voor minimaal 10 jaar</li>
+                    <li><strong>Training en documentatie:</strong> Goede opleidingsmogelijkheden voor operatoren en IT</li>
+                </ul>
+            </div>
+
+            <h2>De omvang van het project</h2>
+            <p>
+                Een migratie van deze omvang raakt elk aspect van de operatie. Laten we de verschillende dimensies bekijken:
+            </p>
+
+            <h3>1. Productieaansturing</h3>
+            <p>
+                Alle automatische productielogica moest worden gemigreerd. Dit omvatte:
+            </p>
+            <ul>
+                <li>Start- en stopsequenties van maallijnen</li>
+                <li>Automatische routering van producten door het machinepark</li>
+                <li>Lossingslogica voor vrachtwagens en schepen</li>
+                <li>Silovulling en -extractie algoritmes</li>
+                <li>Dosering en toevoegingen (zoals zuren en toevoegmiddelen)</li>
+            </ul>
+
+            <h3>2. Voorraadbeheer</h3>
+            <p>
+                Het beheer van tientallen silo's, bunkers en tussenopslagen moest foutloos worden overgenomen:
+            </p>
+            <ul>
+                <li>Voorraadniveaus van alle opslaglocaties</li>
+                <li>Batchnummers en LOT-tracking</li>
+                <li>FIFO-logica (First In, First Out) per product</li>
+                <li>Automatische herallocatie bij voorraadwijzigingen</li>
+                <li>Minimumvoorraad alarmen</li>
+            </ul>
+
+            <h3>3. Recepturen en artikels</h3>
+            <p>
+                De productdatabase was enorm en complex:
+            </p>
+
+            <div class="highlight-box">
+                <h4>Masterdata migratie omvang:</h4>
+                <ul>
+                    <li><strong>2.500+ actieve artikelen</strong> met technische specificaties</li>
+                    <li><strong>800+ recepturen</strong> met ingrediënten en procesinstellingen</li>
+                    <li><strong>150+ machinespecifieke parameters</strong> per receptuur</li>
+                    <li><strong>500+ leveranciers en klanten</strong> met bijbehorende contracten</li>
+                    <li><strong>30+ silo's en opslaglocaties</strong> met capaciteiten en restricties</li>
+                </ul>
+            </div>
+
+            <h3>4. Datastromen tussen systemen</h3>
+            <p>
+                Het AS400 was de hub waar alle data samenkomt. Deze moest worden herbouwd:
+            </p>
+
+            <ul>
+                <li><strong>Van ERP naar MES:</strong> Productieorders, receptuur-aanpassingen, klantspecificaties</li>
+                <li><strong>Van MES naar PLC:</strong> Start/stop commando's, setpoints, routing instructies</li>
+                <li><strong>Van PLC naar MES:</strong> Status updates, alarmen, tellingen, metingen</li>
+                <li><strong>Van MES naar ERP:</strong> Productievolledigmeldingen, voorraadmutaties, verbruiken</li>
+                <li><strong>Van MES naar externe systemen:</strong> Traceability data, kwaliteitsdata, energieverbruik</li>
+            </ul>
+
+            <h2>De aanpak: gefaseerde voorbereiding, big bang go-live</h2>
+            <p>
+                De migratie volgde een hybride strategie: maandenlange voorbereiding en validatie, gevolgd door één weekend waarin de definitieve omschakeling plaatsvond.
+            </p>
+
+            <h3>Fase 1: Analyse en procesdesign (3 maanden)</h3>
+            <p>
+                De eerste fase richtte zich op het begrijpen van alle processen en datastromen:
+            </p>
+
+            <ul>
+                <li><strong>Process mapping:</strong> Documenteren van alle productieprocessen en beslissingspunten</li>
+                <li><strong>As-is documentatie:</strong> Vastleggen van hoe het AS400 precies werkte (vaak voor het eerst!)</li>
+                <li><strong>Gap analyse:</strong> Identificeren van verschillen tussen AS400 functionaliteit en nieuwe systeem</li>
+                <li><strong>Custom ontwikkeling:</strong> Specificeren van maatwerk voor bedrijfsspecifieke processen</li>
+                <li><strong>Integratie architectuur:</strong> Ontwerpen van nieuwe datacommunicatie tussen alle systemen</li>
+            </ul>
+
+            <h3>Fase 2: Ontwikkeling en configuratie (4 maanden)</h3>
+            <p>
+                De integrator ontwikkelde en configureerde het nieuwe systeem:
+            </p>
+
+            <ul>
+                <li>Opzetten van ERP/MES omgeving</li>
+                <li>Configureren van alle masterdata structuren</li>
+                <li>Programmeren van PLC-interfaces</li>
+                <li>Ontwikkelen van custom functionaliteit</li>
+                <li>Bouwen van gebruikersinterfaces voor verschillende rollen</li>
+                <li>Implementeren van rapportages en dashboards</li>
+            </ul>
+
+            <h3>Fase 3: Migratie en validatie masterdata (2 maanden)</h3>
+            <p>
+                Dit was waarschijnlijk de meest kritieke fase. Alle data moest worden gemigreerd en gevalideerd:
+            </p>
+
+            <div class="highlight-box">
+                <h4>Masterdata validatie proces:</h4>
+                <ol>
+                    <li><strong>Extractie:</strong> Data uit AS400 halen via queries en exports</li>
+                    <li><strong>Transformatie:</strong> Converteren naar nieuwe datastructuur</li>
+                    <li><strong>Cleaning:</strong> Opschonen van inconsistenties en duplicaten</li>
+                    <li><strong>Loading:</strong> Importeren in nieuwe systeem</li>
+                    <li><strong>Validatie:</strong> Systematisch vergelijken van oude vs. nieuwe data</li>
+                    <li><strong>Correctie:</strong> Aanpassen van fouten en herhalen van import</li>
+                </ol>
+            </div>
+
+            <p>
+                <strong>Specifieke aandacht voor:</strong>
+            </p>
+            <ul>
+                <li><strong>Recepturen:</strong> Exact overnemen van alle parameters en toleranties</li>
+                <li><strong>Silo's:</strong> Correct configureren van capaciteiten, locaties en restricties</li>
+                <li><strong>Badges en toegangen:</strong> Alle operators moeten vanaf dag 1 kunnen inloggen</li>
+                <li><strong>Historische data:</strong> Bepalen wat mee moest (batches laatste 2 jaar) en wat kon blijven (oudere data blijft in AS400 voor rapportage)</li>
+            </ul>
+
+            <h3>Fase 4: Testweekends (3 weekends)</h3>
+            <p>
+                De echte test kwam tijdens speciaal ingerichte testweekends waarbij het nieuwe systeem in de productieomgeving werd getest zonder het AS400 uit te schakelen.
+            </p>
+
+            <p>
+                <strong>Weekend 1: Basis functionaliteit</strong>
+            </p>
+            <ul>
+                <li>Kan het systeem opstarten en verbinden met PLC's?</li>
+                <li>Werken de basisschermen en navigation?</li>
+                <li>Kunnen operatoren inloggen en orders inzien?</li>
+            </ul>
+
+            <p>
+                <strong>Weekend 2: Productie simulatie</strong>
+            </p>
+            <ul>
+                <li>Volledige productie simuleren (zonder fysieke productie)</li>
+                <li>Testen van alle automatische sequenties</li>
+                <li>Valideren van voorraadmutaties en berekeningen</li>
+                <li>Performance testing onder belasting</li>
+            </ul>
+
+            <p>
+                <strong>Weekend 3: Dress rehearsal</strong>
+            </p>
+            <ul>
+                <li>Echte productie draaien met nieuw systeem (AS400 monitoring parallel)</li>
+                <li>Alle afwijkingen minutieus documenteren</li>
+                <li>Final sign-off van key users</li>
+            </ul>
+
+            <h3>Fase 5: Big bang go-live (1 weekend - februari 2025)</h3>
+            <p>
+                Na maanden van voorbereiding kwam het moment van de waarheid: het definitieve go-live weekend.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Go-live planning:</h4>
+                <p><strong>Vrijdagavond 22:00:</strong></p>
+                <ul>
+                    <li>Laatste productie afgerond en AS400 in "read-only" mode</li>
+                    <li>Final data sync: alle voorraadstanden, open orders, batch info</li>
+                    <li>Backup van AS400 en nieuwe systeem</li>
+                </ul>
+                
+                <p><strong>Zaterdag 06:00 - 18:00:</strong></p>
+                <ul>
+                    <li>Switchover naar nieuw systeem</li>
+                    <li>Smoke tests: alle basis functionaliteit checken</li>
+                    <li>Eerste productieruns onder begeleiding</li>
+                    <li>Continuous monitoring door volledig team</li>
+                </ul>
+                
+                <p><strong>Zondag:</strong></p>
+                <ul>
+                    <li>Normale productie met intensive support</li>
+                    <li>Finetuning van kleine issues</li>
+                    <li>Training van alle shifts</li>
+                </ul>
+                
+                <p><strong>Maandag:</strong></p>
+                <ul>
+                    <li>Reguliere productie met standby support</li>
+                    <li>Debrief en lessons learned sessie</li>
+                </ul>
+            </div>
+
+            <h2>Mijn rol: de technische schakel</h2>
+            <p>
+                Binnen dit project fungeerde ik als de technische en inhoudelijke schakel tussen de werkvloer en de integrator. Deze rol was cruciaal omdat je iemand nodig hebt die beide werelden begrijpt en kan vertalen.
+            </p>
+
+            <h3>Waarom deze rol essentieel was</h3>
+            <p>
+                De integrator was expert in hun software, maar kende het productieproces niet in detail. De operatoren kenden het proces door en door, maar niet de technische mogelijkheden en beperkingen van het nieuwe systeem.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Concrete taken in mijn rol:</h4>
+                <ul>
+                    <li><strong>Procesanalyse:</strong> Documenteren van hoe processen écht werken, niet hoe ze op papier staan</li>
+                    <li><strong>Requirements vertaling:</strong> Operationele wensen vertalen naar technische specificaties</li>
+                    <li><strong>PLC-integratie:</strong> Zorgen dat communicatie tussen MES en PLC's correct verloopt</li>
+                    <li><strong>Validatie:</strong> Systematisch checken of recepturen, parameters en routing correct zijn overgenomen</li>
+                    <li><strong>Troubleshooting:</strong> Tijdens testweekends snel issues identificeren en oplossen</li>
+                    <li><strong>Training:</strong> Operatoren en engineers wegwijs maken in het nieuwe systeem</li>
+                    <li><strong>Change management:</strong> Mensen begeleiden in de overgang naar nieuwe werkwijze</li>
+                </ul>
+            </div>
+
+            <h3>De waarde van dubbele achtergrond</h3>
+            <p>
+                Mijn achtergrond in zowel elektrische als mechanische engineering bleek onschatbaar. Je moet begrijpen:
+            </p>
+
+            <ul>
+                <li><strong>Mechanisch:</strong> Hoe de machines fysiek werken, wat de beperkingen zijn, waarom bepaalde sequenties nodig zijn</li>
+                <li><strong>Elektrisch:</strong> Hoe de PLC-sturing werkt, welke I/O's beschikbaar zijn, hoe interlocks functioneren</li>
+                <li><strong>Software:</strong> Hoe databases werken, wat API's kunnen en niet kunnen, hoe data flows te ontwerpen</li>
+                <li><strong>Proces:</strong> Waarom operatoren bepaalde handelingen doen, wat de kritieke beslismomenten zijn</li>
+            </ul>
+
+            <p>
+                Deze combinatie maakte dat ik effectief kon communiceren met alle partijen: van operator tot PLC-programmeur, van productiemanager tot softwareontwikkelaar.
+            </p>
+
+            <h2>Kritieke succesfactoren</h2>
+            <p>
+                Wat maakte deze migratie succesvol? Achteraf gezien zijn dit de belangrijkste factoren:
+            </p>
+
+            <h3>1. Gedegen voorbereiding</h3>
+            <p>
+                We hebben geen shortcuts genomen. Maanden van voorbereiding, meerdere testweekends, systematische validatie van alle data. Dit kostte tijd en geld, maar voorkwam chaos tijdens go-live.
+            </p>
+
+            <h3>2. Sterke samenwerking</h3>
+            <p>
+                Productie, IT, integrator en externe consultants werkten als één team. Er was open communicatie, gedeelde verantwoordelijkheid en wederzijds respect voor elkaars expertise.
+            </p>
+
+            <h3>3. Management commitment</h3>
+            <p>
+                Het management stond volledig achter het project. Ze begrepen het strategische belang en stelden de benodigde resources beschikbaar (tijd, budget, mensen).
+            </p>
+
+            <h3>4. Realistische planning</h3>
+            <p>
+                We hebben geen onrealistische deadlines gesteld. Toen bleek dat we meer testtijd nodig hadden, werd de go-live verschoven. Beter een maand later live met een stabiel systeem dan te vroeg met chaos.
+            </p>
+
+            <h3>5. Goede documentatie</h3>
+            <p>
+                Alles werd gedocumenteerd: procesflows, beslisbomen, validatieresultaten, known issues en workarounds. Deze documentatie bleek onmisbaar tijdens troubleshooting.
+            </p>
+
+            <h3>6. Change management</h3>
+            <p>
+                Mensen werden vanaf het begin betrokken. Operatoren werden gehoord, hun feedback werd serieus genomen, en ze kregen goede training. Hierdoor voelden ze zich eigenaar van het nieuwe systeem.
+            </p>
+
+            <h2>Uitdagingen en hoe we ze oplosten</h2>
+            <p>
+                Natuurlijk verliep niet alles vlekkeloos. Dit waren de belangrijkste uitdagingen:
+            </p>
+
+            <h3>Uitdaging 1: Impliciete business logic</h3>
+            <p>
+                Veel regels waren nooit gedocumenteerd maar "zaten in het systeem". Bijvoorbeeld: product X mag niet in silo Y als er al product Z in zit, tenzij het binnen 24 uur verwerkt wordt.
+            </p>
+            <p>
+                <strong>Oplossing:</strong> Intensieve interviews met operatoren en analyse van historische data om alle regels te achterhalen. Deze werden vervolgens expliciet geconfigureerd in het nieuwe systeem.
+            </p>
+
+            <h3>Uitdaging 2: Performance van het nieuwe systeem</h3>
+            <p>
+                Tijdens het tweede testweekend bleek dat het nieuwe systeem trager was dan verwacht bij het verwerken van grote batches met veel transacties.
+            </p>
+            <p>
+                <strong>Oplossing:</strong> De integrator optimaliseerde de database queries en implementeerde caching voor frequently accessed data. Ook werd de hardware opgeschaald (meer RAM, snellere storage). Na deze aanpassingen was de performance acceptabel.
+            </p>
+
+            <h3>Uitdaging 3: PLC-communicatie timing</h3>
+            <p>
+                Sommige PLC's verwachtten een response binnen een bepaalde tijd. Het nieuwe systeem had een andere communicatie-architectuur, waardoor timeouts optraden.
+            </p>
+            <p>
+                <strong>Oplossing:</strong> We implementeerden een buffering mechanism in de middleware tussen MES en PLC. Dit zorgde voor snellere acknowledgements terwijl de processing in de achtergrond gebeurde.
+            </p>
+
+            <h3>Uitdaging 4: Gebruikersacceptatie</h3>
+            <p>
+                Ondanks training waren sommige operatoren onzeker over het nieuwe systeem. De angst om fouten te maken tijdens de kritieke go-live periode was groot.
+            </p>
+            <p>
+                <strong>Oplossing:</strong> We creëerden "super users" - ervaren operatoren die extra training kregen en tijdens go-live op de werkvloer aanwezig waren om collega's te helpen. Dit zorgde voor vertrouwen en snelle probleemoplossing.
+            </p>
+
+            <h2>Resultaten en impact</h2>
+            <p>
+                Na de succesvolle go-live in februari 2025 zijn de resultaten duidelijk zichtbaar:
+            </p>
+
+            <div class="highlight-box">
+                <h4>Directe voordelen:</h4>
+                <ul>
+                    <li><strong>✓ Stabiele productieomgeving:</strong> Geen onverwachte downtime, alle processen lopen zoals verwacht</li>
+                    <li><strong>✓ Moderne technologie:</strong> Web-based interface toegankelijk vanaf elk device</li>
+                    <li><strong>✓ Betere traceability:</strong> Verbeterde tracking van batches en kwaliteitsdata</li>
+                    <li><strong>✓ Toekomstzekerheid:</strong> Platform geschikt voor minimaal 10-15 jaar</li>
+                    <li><strong>✓ Kennisbehoud:</strong> Alle processen zijn nu gedocumenteerd en transparant</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h4>Operationele verbeteringen:</h4>
+                <ul>
+                    <li><strong>15% snellere orderverwerking</strong> door gestroomlijnde workflows</li>
+                    <li><strong>Betere voorraadcontrole</strong> met real-time inzicht in alle locaties</li>
+                    <li><strong>Minder manuele fouten</strong> door automatische validaties en checks</li>
+                    <li><strong>Flexibelere planning</strong> door geavanceerde scheduling tools</li>
+                    <li><strong>Betere rapportage</strong> voor management en kwaliteitsafdeling</li>
+                </ul>
+            </div>
+
+            <h2>Lessons learned</h2>
+            <p>
+                Wat zouden we anders doen bij een volgende migratie? Hier zijn de belangrijkste lessen:
+            </p>
+
+            <h3>1. Start nóg eerger met change management</h3>
+            <p>
+                Hoewel we veel aandacht hadden voor training, had er nog meer focus mogen zijn op het voorbereiden van mensen op de verandering. Begin al 6 maanden voor go-live met regelmatige updates en betrokkenheid.
+            </p>
+
+            <h3>2. Investeer in goede test data</h3>
+            <p>
+                We hadden meer realistische testscenario's kunnen voorbereiden met echte edge cases. Sommige issues kwamen pas na go-live aan het licht omdat ze zich in test niet voordeden.
+            </p>
+
+            <h3>3. Plan meer buffer tijd</h3>
+            <p>
+                Ondanks realistische planning liepen we tegen onverwachte vertragingen aan. Bij een volgende migratie zou ik 20-30% meer tijd inplannen als buffer.
+            </p>
+
+            <h3>4. Documenteer alles real-time</h3>
+            <p>
+                We documenteerden veel, maar soms achteraf. Bij een volgend project zou ik een dedicated documentatie-verantwoordelijke hebben die tijdens meetings en ontwikkeling alles direct vastlegt.
+            </p>
+
+            <h3>5. Zorg voor een rollback plan</h3>
+            <p>
+                We hadden een rollback scenario voorbereid (terug naar AS400 als alles mislukt), maar gelukkig niet nodig gehad. Wel een geruststelling voor management en team dat dit plan er was.
+            </p>
+
+            <h2>De rol van de juiste expertise</h2>
+            <p>
+                Deze case illustreert het belang van iemand die kan schakelen tussen verschillende domeinen. De succesfactoren die dit mogelijk maakten:
+            </p>
+
+            <div class="highlight-box">
+                <h4>Vereiste competenties voor deze rol:</h4>
+                <ul>
+                    <li><strong>Technisch inzicht:</strong> Begrijpen van PLC's, databases, netwerken en software architectuur</li>
+                    <li><strong>Proceskennis:</strong> Weten hoe productieprocessen werken en waarom ze zo werken</li>
+                    <li><strong>Communicatie:</strong> Kunnen vertalen tussen operatoren, engineers en softwareontwikkelaars</li>
+                    <li><strong>Projectmanagement:</strong> Overzicht houden, prioriteiten stellen, risico's beheersen</li>
+                    <li><strong>Change management:</strong> Mensen meenemen in de verandering</li>
+                    <li><strong>Pragmatisme:</strong> Weten wanneer "good enough" beter is dan "perfect"</li>
+                </ul>
+            </div>
+
+            <p>
+                Het is deze combinatie van technische kennis, proceskennis en soft skills die het verschil maakt tussen een succesvolle migratie en een mislukte.
+            </p>
+
+            <h2>Verder engagement en toekomst</h2>
+            <p>
+                De migratie is succesvol afgerond, maar het werk is niet af. Ik blijf hen ondersteunen bij:
+            </p>
+
+            <ul>
+                <li><strong>Optimalisaties:</strong> Continue verbetering van processen en workflows</li>
+                <li><strong>Nieuwe functionaliteit:</strong> Uitbreiding van het systeem met additional features</li>
+                <li><strong>Training:</strong> Opleiden van nieuwe medewerkers en refresher training</li>
+                <li><strong>Support:</strong> Assistentie bij complexe issues of proceswijzigingen</li>
+                <li><strong>Toekomstige projecten:</strong> Verdere digitalisering en automatisering</li>
+            </ul>
+
+            <h2>Conclusie: Legacy vervangen vraagt de juiste aanpak</h2>
+            <p>
+                Het vervangen van een AS400 of ander legacy systeem is een complex maar haalbaar project. De sleutels tot succes zijn:
+            </p>
+
+            <ol>
+                <li><strong>Gedegen voorbereiding:</strong> Neem de tijd om alles goed voor te bereiden</li>
+                <li><strong>Sterke samenwerking:</strong> Zorg voor een goed team met complementaire skills</li>
+                <li><strong>Realistische planning:</strong> Gun jezelf voldoende tijd en budget</li>
+                <li><strong>Goede communicatie:</strong> Houd alle stakeholders informed en involved</li>
+                <li><strong>De juiste expertise:</strong> Zorg voor iemand die de brug kan slaan tussen verschillende werelden</li>
+            </ol>
+
+            <p>
+                Met deze ingrediënten kun je zelfs de meest complexe legacy systemen succesvol vervangen, zonder productieverlies en met enthousiaste gebruikers.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Staat uw bedrijf voor een soortgelijke uitdaging?</h4>
+                <p>
+                    Bij OnaTech begeleiden we industriële bedrijven bij technische integraties, systeemmigraties en procesverbeteringen. Onze focus ligt op betrouwbaarheid en praktische haalbaarheid, met respect voor de realiteit van productiebedrijven.
+                </p>
+                <p>
+                    Of het nu gaat om een AS400 migratie, PLC-modernisering, of MES-implementatie - wij kunnen de schakel zijn tussen uw werkvloer en technische implementatiepartners.
+                </p>
+                <a href="../index.html#contact" class="cta-button" style="margin-top: 20px;">Neem contact op</a>
+            </div>
+        </div>
+    </article>
+
+    <footer role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p><strong>Bedrijf:</strong> OnaTech BV</p>
+                <p><strong>Adres:</strong> Mesenstraat 86, 8940 Wervik, België</p>
+                <p><strong>BTW:</strong> BE1023047122</p>
+                <p><strong>Email:</strong> info@onatech.be</p>
+            </div>
+            <div class="footer-social">
+                <h4>Volg ons</h4>
+                <div class="social-links">
+                    <a href="https://linkedin.com/company/onatech" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 OnaTech. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

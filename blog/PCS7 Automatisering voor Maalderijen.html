@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Moderne automatisering voor maalderijen: Van PCS7 naar intelligente productiebesturing | OnaTech</title>
+    <meta name="title" content="Moderne automatisering voor maalderijen: Van PCS7 naar intelligente productiebesturing | OnaTech">
+    <meta name="description" content="Ontdek hoe moderne PLC-sturing en WinCC visualisatie de efficiëntie van maalprocessen verhoogt. Van grondstoflenossing tot hamermolens met automatische regeling en preventieve monitoring.">
+    <meta name="keywords" content="maalderij automatisering, PCS7, WinCC, hamermolen besturing, SCADA graan, silo management, PID regelaars, produktieoptimalisatie voeding">
+    <meta name="author" content="OnaTech BV">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://onatech.onatrack.eu/blog/maalderij-automatisering.html">
+    <meta property="og:title" content="Moderne automatisering voor maalderijen: Van PCS7 naar intelligente productiebesturing">
+    <meta property="og:description" content="Praktijkvoorbeeld: complete automatisering van grondstoflenossing, silo-management en hamermolens met geavanceerde regelingen en veiligheidsystemen.">
+    <meta property="og:image" content="https://onatech.onatrack.eu/assets/images/scada.jpg">
+    <meta property="og:locale" content="nl_BE">
+    <meta property="article:published_time" content="2025-01-28T10:00:00+01:00">
+    <meta property="article:author" content="OnaTech BV">
+    <meta property="article:section" content="Automatisering">
+    <meta property="article:tag" content="PCS7">
+    <meta property="article:tag" content="SCADA">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://onatech.onatrack.eu/blog/maalderij-automatisering.html">
+    <meta name="twitter:title" content="Moderne automatisering voor maalderijen: Van PCS7 naar intelligente productiebesturing">
+    <meta name="twitter:description" content="Complete automatisering van maalprocessen met geavanceerde PLC-sturing en intelligente regelingen.">
+    <meta name="twitter:image" content="https://onatech.onatrack.eu/assets/images/scada.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://onatech.onatrack.eu/blog/maalderij-automatisering.html">
+    
+    <link rel="stylesheet" href="../css/style.min.css">
+    <link rel="icon" type="image/png" href="../assets/images/Onatech_Logo.png">
+
+    <!-- Structured Data - Blog Post -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Moderne automatisering voor maalderijen: Van PCS7 naar intelligente productiebesturing",
+      "description": "Ontdek hoe moderne PLC-sturing en WinCC visualisatie de efficiëntie van maalprocessen verhoogt.",
+      "image": "https://onatech.onatrack.eu/assets/images/scada.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "OnaTech BV",
+        "url": "https://onatech.onatrack.eu"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "OnaTech BV",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://onatech.onatrack.eu/assets/images/Onatech_Logo.png"
+        }
+      },
+      "datePublished": "2025-01-28T10:00:00+01:00",
+      "dateModified": "2025-01-28T10:00:00+01:00",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://onatech.onatrack.eu/blog/maalderij-automatisering.html"
+      },
+      "keywords": ["maalderij automatisering", "PCS7", "WinCC", "hamermolen besturing", "SCADA"]
+    }
+    </script>
+
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://onatech.onatrack.eu/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://onatech.onatrack.eu/#blog"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Maalderij Automatisering",
+        "item": "https://onatech.onatrack.eu/blog/maalderij-automatisering.html"
+      }]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F7V45R50GE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-F7V45R50GE');
+    </script>
+
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" role="navigation">
+        <div class="nav-container">
+            <a href="../index.html#top" class="nav-logo">
+                <img src="../assets/images/Onatech_Logo.png" alt="OnaTech logo">
+                <span class="nav-logo-text">OnaTech</span>
+            </a>
+            <div class="hamburger" id="hamburger" role="button" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#info">About us</a></li>
+                <li><a href="../index.html#services">Services</a></li>
+                <li><a href="../index.html#faq">FAQ</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav aria-label="Breadcrumb" style="max-width: 900px; margin: 100px auto 0; padding: 0 40px;">
+        <ol style="display: flex; gap: 10px; list-style: none; padding: 0; font-size: 0.9rem; color: #64748b;">
+            <li><a href="../index.html" style="color: #0ea5e9; text-decoration: none;">Home</a></li>
+            <li aria-hidden="true">›</li>
+            <li><a href="../index.html#blog" style="color: #0ea5e9; text-decoration: none;">Blog</a></li>
+            <li aria-hidden="true">›</li>
+            <li aria-current="page" style="color: #334155;">maalderij-automatisering</li>
+        </ol>
+    </nav>
+
+    <article class="blog-article">
+        <a href="../index.html#blog" class="back-link">← Terug naar blog</a>
+
+        <div class="blog-header">
+            <div class="blog-meta">
+                <span class="blog-category-tag">Industriële Automatisering</span>
+                <time datetime="2025-01-28">28 januari 2025</time>
+            </div>
+            <h1>Moderne automatisering voor maalderijen: Van PCS7 naar intelligente productiebesturing</h1>
+            <p class="blog-intro">
+                Ontdek hoe moderne PLC-sturing met WinCC visualisatie de volledige productieketen van een maalderij optimaliseert - van het lossen van grondstoffen tot de geautomatiseerde besturing van hamermolens met geavanceerde PID-regelaars en veiligheidssystemen.
+            </p>
+        </div>
+
+        <div class="featured-image">
+            <img src="../assets/images/maalderij.png" alt="Moderne SCADA-besturing voor maalderij met silo management en hamermolen automatisering" width="900" height="400">
+        </div>
+
+        <div class="blog-content">
+            <h2>De complexiteit van moderne maalderijen</h2>
+            <p>
+                Maalderijen in de voedingsmiddelenindustrie zijn complexe productieomgevingen waar granen en restmelen worden verwerkt tot hoogwaardige grondstoffen. Een moderne maalderij bestaat uit verschillende gebouwen met gedeelde infrastructuur: stortputten, lostorens, silosystemen, transportbanden, elevatoren en hamermolens.
+            </p>
+            <p>
+                De uitdaging ligt in het coördineren van deze interconnected systemen waarbij productveiligheid, energie-efficiëntie en maximale throughput centraal staan. In dit artikel bespreken we een praktijkvoorbeeld van een complete automatiseringsoplossing gebaseerd op Siemens PCS7 en WinCC.
+            </p>
+
+            <h2>Overzicht van het systeem</h2>
+            <p>
+                De PCS7-sturing omvat alle functionaliteiten voor het lossen en malen van grondstoffen binnen meerdere gebouwen. De bediening gebeurt via verschillende WinCC-clients die via netwerk verbonden zijn met de centrale S7-400 PLC.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Hoofdfunctionaliteiten van het systeem:</h4>
+                <ul>
+                    <li><strong>Gebouw 2:</strong> Lossingen van vrachtwagens en schepen via stortput en lostoren</li>
+                    <li><strong>Gebouw 3:</strong> Silo-extractie, transport en aanvoer naar hamermolens</li>
+                    <li><strong>Siloblok A:</strong> Opslag en beheer van verschillende grondstofsoorten</li>
+                    <li><strong>Hamermolens 11, 12 en 13:</strong> Maalproces met automatische regeling</li>
+                    <li><strong>MES-integratie:</strong> Koppeling met Titanium voor planning en traceability</li>
+                </ul>
+            </div>
+
+            <h2>Gebouw 2: Grondstoflossing met intelligente regeling</h2>
+            <p>
+                Het losproces is cruciaal voor de efficiëntie van de hele operatie. Alle lossingen vanuit de stortput en lostoren worden centraal gemonitord en geregeld.
+            </p>
+
+            <h3>Automatische lossnelheid regeling</h3>
+            <p>
+                Bij elke lossing kan de lossnelheid dynamisch worden aangepast. De snelheid bepaalt het setpunt van de frequentiesturing van de redlers onder de storttrechter en regelt zo de aanvoer naar elevatoren 02EL001 en 02EL002.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Drie besturingsmodi voor lossnelheid:</h4>
+                <ul>
+                    <li><strong>Manueel:</strong> Operator stelt gewenste snelheid in via HMI</li>
+                    <li><strong>Automatisch:</strong> Systeem regelt snelheid om elevatoren optimaal te belasten</li>
+                    <li><strong>Override:</strong> Operator kan altijd manueel ingrijpen bij noodsituaties</li>
+                </ul>
+            </div>
+
+            <h3>Innovatie: Gegroepeerde vrachtwagenlossingen</h3>
+            <p>
+                Een nieuwe functionaliteit die veel efficiency oplevert is het groeperen van meerdere vrachtwagens met hetzelfde product in één gezamenlijke losopdracht.
+            </p>
+
+            <p>
+                In de oude situatie moest elke vrachtwagen afzonderlijk als aparte opdracht in het MES-systeem (Titanium) worden ingegeven. Bij 7 vrachtwagens tarwe betekende dit 7 keer dezelfde handelingen, met verhoogde kans op fouten.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Nieuwe workflow voor gegroepeerde lossingen:</h4>
+                <ol>
+                    <li>Operator start één losopdracht voor meerdere vrachtwagens met hetzelfde product</li>
+                    <li>Operator configureert meerdere doelsilo's in vooraf bepaalde volgorde</li>
+                    <li>Systeem boekt automatisch op doelsilo 1 tot deze vol is</li>
+                    <li>Bij volle silo 1 schakelt systeem automatisch over naar doelsilo 2</li>
+                    <li>Boekingen gebeuren automatisch per vrachtwagen binnen één opdracht</li>
+                </ol>
+            </div>
+
+            <p>
+                <strong>Operationeel voordeel:</strong> De ontvangstoperator hoeft het Titanium-scherm niet continu te monitoren en kan zich focussen op het bewaken van de stortput via camerabeelden. Dit verhoogt efficiency, vermindert manuele handelingen en verlaagt het risico op fouten.
+            </p>
+
+            <h3>Slimme sequencing van lossingen</h3>
+            <p>
+                Het systeem moet intelligent kunnen omgaan met opeenvolgende lossingen. Zodra de redlers onder de storttrechter volledig leeggedraaid zijn, mag de volgende vrachtwagen beginnen lossen - ook als het achterliggende transport nog bezig is.
+            </p>
+
+            <p>
+                <strong>Voorbeeld:</strong> Een vrachtwagen lost maisvoermeel richting circulaire 1 of 2. Zodra de redlers onder de stortput leeg zijn, mag een volgende vrachtwagen met gerst al lossen, ook al is het transport van de maisvoermeel nog bezig. Het transport voor de gerstlossing start zodra trechter 03KT0013 leeggedraaid is.
+            </p>
+
+            <h3>Zuurtoevoeging met PID-regeling</h3>
+            <p>
+                Voor bepaalde producten wordt zuur toegevoegd tijdens het lossen. Deze toevoeging gebeurt via een PID-regelaar die de gedoseerde hoeveelheid bepaalt door de pompsnelheid aan te passen.
+            </p>
+
+            <div class="code-block">
+                # PID-regelaar voor zuurdosering
+                # Setpoint: Gewenste zuurconcentratie (%)
+                # Process Value: Gemeten flow grondstof (ton/uur)
+                # Output: Pompsnelheid (0-100%)
+                
+                Kp = 2.5      # Proportional gain
+                Ti = 120      # Integral time (seconds)
+                Td = 0        # Derivative time (niet gebruikt)
+                
+                # Output berekening
+                Error = Setpoint - ProcessValue
+                Output = Kp * (Error + (1/Ti) * Integral_Error)
+            </div>
+
+            <p>
+                De instelling blijft aanpasbaar op WinCC-niveau, zodat operatoren dit real-time kunnen uitschakelen of aanpassen. De verbruikte hoeveelheid wordt automatisch afgemeld naar Titanium voor traceability.
+            </p>
+
+            <h3>Automatische zuurlossing in tanks</h3>
+            <p>
+                Het zuur wordt gelost in een tank die geautomatiseerd is. Een radarmeting op de tank meet continu de vullingsgraad, wat gebruikt wordt voor automatische bestellingen wanneer voorraad laag is. De vrijgave tot ledigen kan geïntegreerd worden met Titanium, analoog aan andere vloeistoflossingen.
+            </p>
+
+            <h3>Gewichtsmeting en validatie</h3>
+            <p>
+                Accurate gewichtsmeting is essentieel voor kwaliteitsborging en administratie. Het systeem gebruikt verschillende metingen afhankelijk van het type lossing:
+            </p>
+
+            <div class="highlight-box">
+                <h4>Gewichtsmetingen:</h4>
+                <ul>
+                    <li><strong>Indicatieve meting:</strong> kWh-tellers op elevatoren geven ruwe indicatie van tonnage</li>
+                    <li><strong>Vrachtwagenlossingen:</strong> Weegbrug als referentie voor exacte gewichten</li>
+                    <li><strong>Scheepslossingen:</strong> Automatische bunkerweger (Precia Molen) gekoppeld aan Titanium</li>
+                </ul>
+            </div>
+
+            <h2>Gebouw 3: Silo-extractie en transport</h2>
+            <p>
+                In Gebouw 3 worden orders aangemaakt om product te malen of te transporteren naar andere gebouwen. De complexiteit zit in de vele mogelijke routes en combinaties.
+            </p>
+
+            <h3>Flexibele routing via twee elevatoren</h3>
+            <p>
+                Het systeem werkt met twee hoofd-elevatoren (03EL0001 en 03EL0002) die product kunnen oppakken van verschillende redlers en het kunnen afvoeren naar diverse bestemmingen.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Elevator 1 (03EL0001) mogelijkheden:</h4>
+                <ul>
+                    <li>Silo-extractie via redlers 03KT0001 t/m 03KT0006</li>
+                    <li>Afvoer naar magneet/weegplaat</li>
+                    <li>Afvoer naar hamermolens 11, 12 of 13</li>
+                    <li>Afvoer naar bunkers 13 en 21</li>
+                    <li>Afvoer naar andere gebouwen via 04KT0014/015</li>
+                    <li>Afvoer naar silodek A (exclusief silo's 22-25)</li>
+                    <li>Rondsteken mogelijk voor cleaning of mixing</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h4>Elevator 2 (03EL0002) mogelijkheden:</h4>
+                <ul>
+                    <li>Silo-extractie via redlers 03KT0001 t/m 03KT0004 en 03KT0006</li>
+                    <li>Afvoer naar magneet/weegplaat</li>
+                    <li>Afvoer naar hamermolens 11, 12 of 13</li>
+                    <li>Afvoer naar bunker 22</li>
+                    <li>Afvoer naar gebouw 4 en silodek A</li>
+                </ul>
+            </div>
+
+            <p>
+                <strong>Belangrijke opmerking:</strong> Silo's 22, 23, 24 en 25 zijn (nog) niet bereikbaar vanuit de elevatoren omdat daar geen redler aanwezig is op het silodek. Ook silo's 7, 14 en 21 zijn niet bereikbaar vanuit gebouw 2 om dezelfde reden.
+            </p>
+
+            <h3>Motorische regelkleppen voor flow control</h3>
+            <p>
+                De siloextractie wordt geregeld met motorische regelkleppen per silo. Dit zijn wormwielen die gegroepeerd zijn per redler (KT1 t/m KT6). Hiermee kan de aanvoersnelheid naar de elevatoren nauwkeurig geregeld worden.
+            </p>
+
+            <div class="code-block">
+                # PID-regelaar voor siloextractie regelkleppen
+                # Gebruikt in PCS7 met integrator tussen 0-100%
+                
+                Ti = 15              # Integration time
+                Sample_Time = 0.2    # Sample time in seconds
+                
+                # Integrator telt op/af op basis van:
+                # - Gewenste elevator load (setpoint)
+                # - Actuele elevator current (process value)
+                # - Bunker niveau (constraint)
+                
+                IF (Elevator_Current < Setpoint - Deadband) THEN
+                    Valve_Position := Valve_Position + (Step_Size * Sample_Time / Ti)
+                ELSIF (Elevator_Current > Setpoint + Deadband) THEN
+                    Valve_Position := Valve_Position - (Step_Size * Sample_Time / Ti)
+                END_IF
+                
+                # Clamp tussen 0-100%
+                Valve_Position := MAX(0, MIN(100, Valve_Position))
+            </div>
+
+            <p>
+                De regeling gebruikt een integrator met Ti = 15 en een sample time van 0.2 seconden. Deze instelling zorgt voor stabiele regeling zonder oscillatie, maar met voldoende snelheid om te reageren op veranderingen.
+            </p>
+
+            <h2>Hamermolens: Het hart van het maalproces</h2>
+            <p>
+                De hamermolens zijn de meest complexe en kritieke machines in de maalderij. Ze vereisen geavanceerde automatisering met meerdere regelkringen, uitgebreide veiligheden en nauwkeurige procescontrole.
+            </p>
+
+            <h3>Verschillen tussen de drie molens</h3>
+
+            <div class="highlight-box">
+                <h4>Hamermolen 13 (Meest geavanceerd):</h4>
+                <ul>
+                    <li>250 kW motor met frequentiesturing (4-20mA signaal)</li>
+                    <li>Toerental automatisch instelbaar via Titanium (productafhankelijk)</li>
+                    <li>Manuele override mogelijk bij ruststap (niet tijdens draaien met product)</li>
+                    <li>Kan standalone draaien met dedicated aanvoer via 03EL0001</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h4>Hamermolens 11 en 12:</h4>
+                <ul>
+                    <li>Momenteel elektrisch gevoed via softstarters</li>
+                    <li>Gepland voor ombouw naar frequentiesturingen (toekomst)</li>
+                    <li>Verplichte aanvoer via magneet/weegplaat</li>
+                    <li>Gezamenlijke afvoer via 03KT0015</li>
+                </ul>
+            </div>
+
+            <h3>Intelligente aanvoerlogica</h3>
+            <p>
+                De aanvoer naar de hamermolens is complex door gedeelde resources. Het systeem moet intelligent bepalen welke routes mogelijk zijn op basis van welke molens actief zijn.
+            </p>
+
+            <p>
+                <strong>Standalone werking HM13:</strong> Wanneer alleen HM13 draait, moet deze standaard aangevoerd worden via 03EL0001. Reden: aanvoer via de weegplaat zou de route naar HM11/12 blokkeren, omdat HM11/12 verplicht via magneet/weegplaat moeten.
+            </p>
+
+            <p>
+                <strong>Standalone werking HM11/12:</strong> Wanneer alleen HM11/12 draaien, moeten deze standaard aangevoerd worden via 03EL0002. Als ze via 03EL0001 zouden worden aangevoerd, kan HM13 niet meer bediend worden omdat bunker 13 uitsluitend via 03EL0001 bereikbaar is.
+            </p>
+
+            <p>
+                <strong>Uitzondering:</strong> Alle aanvoermogelijkheden blijven technisch beschikbaar voor uitzonderlijke situaties, zoals bij uitval of onderhoud van een elevator. Silo's 29-33 (bereikbaar via 03KT0005) kunnen alleen naar 03EL0001, wat betekent dat producten uit deze silo's voor HM11/12 altijd via 03EL0001 moeten, waardoor HM13 tijdelijk niet gebruikt kan worden.
+            </p>
+
+            <h3>Flexibele afvoermogelijkheden</h3>
+
+            <div class="highlight-box">
+                <h4>Hamermolen 13 afvoer opties:</h4>
+                <ul>
+                    <li><strong>HM11/12:</strong> Voor dubbel malen (extra fijnheid)</li>
+                    <li><strong>Bunker 21:</strong> Voor tijdelijke opslag</li>
+                    <li><strong>Zeef 03ZF0002:</strong> Voor productscheiding</li>
+                    <li><strong>Gebouw 4:</strong> Via 04KT0014/015 (Bord 24)</li>
+                    <li><strong>Silo 38:</strong> Direct naar opslag</li>
+                    <li><strong>03EL001/2:</strong> Voor rondmalen (theoretisch via gebouw 4)</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h4>Hamermolens 11/12 afvoer opties:</h4>
+                <ul>
+                    <li><strong>Gebouw 4:</strong> Via 04KT0014/015</li>
+                    <li><strong>Silo 33 of 38:</strong> Direct naar opslag</li>
+                    <li><strong>03EL0001/002:</strong> Rondmalen indien nodig</li>
+                </ul>
+            </div>
+
+            <h2>Automatische besturing van hamermolens</h2>
+            <p>
+                De automatische besturing van de hamermolens is een complex samespel van meerdere regelkringen, sensoren en actuatoren. Laten we de belangrijkste componenten bekijken.
+            </p>
+
+            <h3>Anatomie van een hamermolen</h3>
+
+            <div class="highlight-box">
+                <h4>Hoofdcomponenten:</h4>
+                <ul>
+                    <li><strong>Voedingsapparaat:</strong> Met elektropneumatische regelklep voor materiaaltoevoer</li>
+                    <li><strong>Toevoergoot:</strong> Met permanent magneet en ijzeren opvangbak voor metaaldetectie</li>
+                    <li><strong>Molenkamer:</strong> Molen met breekplaten, rotor met omkeerbare hamers, zeef en pneumatische zeefklemming</li>
+                    <li><strong>Fundatieplaat:</strong> Met trillingsdempers voor stabiliteit en geluidsreductie</li>
+                    <li><strong>Afzuigsysteem:</strong> Ventilator, cycloon en luchtfilter voor stofafscheiding</li>
+                </ul>
+            </div>
+
+            <h3>Het maalproces stap voor stap</h3>
+            <ol>
+                <li><strong>Invoer:</strong> Product wordt via inlooptrechter over een verdeelrol ingevoerd</li>
+                <li><strong>Dosering:</strong> Elektropneumatische regelklep regelt de laagdikte die uitstroomt</li>
+                <li><strong>Metaaldetectie:</strong> Product stroomt over permanent magneet die ijzeren stukken afscheidt</li>
+                <li><strong>Malen:</strong> Hamers breken het product en slaan het tegen breekplaten</li>
+                <li><strong>Zeving:</strong> Meel met gewenste fijnheid gaat door het zeef</li>
+                <li><strong>Transport:</strong> Ventilator zuigt lucht aan die meel naar cycloon transporteert</li>
+                <li><strong>Scheiding:</strong> In cycloon worden meel en lucht gescheiden</li>
+                <li><strong>Afvoer:</strong> Meel gaat via sluis verder, lucht gaat door stoffilter naar buiten</li>
+            </ol>
+
+            <h3>PID-regeling van de doseerklep</h3>
+            <p>
+                De stand van de regelklep boven de doseerrol wordt automatisch geregeld via een softwarematige PID-regelaar. Deze regelt de toevoer volgens het opgelegde stroomsetpunt van de hamermolen.
+            </p>
+
+            <div class="code-block">
+                # PID-regelaar voor hamermolen doseerklep
+                # Doel: Regelen van leegloop naar vollast in ~20 seconden
+                
+                Setpoint = Target_Current        # A (bijv. 180A voor vollast)
+                ProcessValue = Actual_Current    # A (gemeten motorstroom)
+                
+                Kp = 1.8      # Proportional gain
+                Ti = 8.0      # Integral time (sec)
+                Td = 0.5      # Derivative time (sec)
+                
+                Error = Setpoint - ProcessValue
+                P_term = Kp * Error
+                I_term = Kp * (1/Ti) * Integral(Error)
+                D_term = Kp * Td * Derivative(Error)
+                
+                Valve_Output = P_term + I_term + D_term
+                
+                # Clamp output 0-100%
+                Valve_Output = MAX(0, MIN(100, Valve_Output))
+                
+                # Anti-windup: stop integreren bij saturatie
+                IF (Valve_Output >= 100 OR Valve_Output <= 0) THEN
+                    Stop_Integration()
+                END_IF
+            </div>
+
+            <p>
+                De regelaar moet robuust zijn en snel reageren zonder te oscilleren. De tijdsconstante van ongeveer 20 seconden is een balans tussen snelle respons en stabiliteit. Te snel zou leiden tot overmatige slijtage van de klep, te traag zou de productiviteit verminderen.
+            </p>
+
+            <h3>Bunker management en aanvoerregeling</h3>
+            <p>
+                Boven elke hamermolen bevindt zich een bunker: bunker 13 bij HM13 en bunker 11 bij HM11/12. Deze bunkers fungeren als buffer en zijn uitgerust met leeg- en volmelders.
+            </p>
+
+            <p>
+                <strong>Logica voor bunker management:</strong>
+            </p>
+            <ul>
+                <li>Bunker wordt gevuld met gecontroleerde snelheid via elevator</li>
+                <li>Bij volmelder: aanvoer stopt (elevator en achterliggend transport blijven draaien)</li>
+                <li>Zodra volmelder wegvalt: aanvoer mag hervatten</li>
+                <li>Bij leegmelder: PID-regelaar start met regelen</li>
+                <li>Operator bewaakt dat bunker met voldoende snelheid gevuld blijft</li>
+            </ul>
+
+            <p>
+                De operator moet ook regelmatig afstemmen met de mechanieker voor preventief onderhoud:
+            </p>
+            <ul>
+                <li>Controle van hamerslijtage (hamergewicht daalt door slijtage)</li>
+                <li>Controle van zeeftoestand (gaten verstoppen of vergroten)</li>
+                <li>Controle van magneetvervuiling (verzamelt ijzeren deeltjes)</li>
+            </ul>
+
+            <h2>Veiligheidsystemen en interlocks</h2>
+            <p>
+                De hamermolens zijn uitgerust met uitgebreide veiligheidsystemen. Deze zijn essentieel omdat maalprocessen met explosiegevaar gepaard gaan door fijn stof.
+            </p>
+
+            <h3>Explosiepanelen met veiligheidsrelais</h3>
+            <p>
+                Op kritieke punten zijn explosiepanelen gemonteerd die openen bij overdruk. Deze zijn gekoppeld aan veiligheidsrelais die de installatie direct stilleggen.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Explosiepanelen locaties:</h4>
+                <ul>
+                    <li><strong>Bord 6:</strong> EXBU13 (aanvoer HM13) - PLC input via Digmon</li>
+                    <li><strong>Bord 6:</strong> EXBU12 (afvoer HM13) - PLC input via Digmon</li>
+                    <li><strong>Bord 5:</strong> EXBU11 (aanvoer HM11/12) - PLC input via Digmon</li>
+                    <li><strong>Bord 5:</strong> EXBU10 (afvoer HM11/12) - PLC input via Digmon</li>
+                </ul>
+            </div>
+
+            <p>
+                Bij activatie van een explosiepaneel moet de complete sectie direct stoppen en mag pas opnieuw gestart worden na inspectie en goedkeuring.
+            </p>
+
+            <h3>Vonkdetectie met Grecon-systeem</h3>
+            <p>
+                Het Grecon vonkdetectiesysteem bewaakt op meerdere locaties of er vonken of hete deeltjes in de productstroom zitten. Dit kan ontstaan door metallische deeltjes die door de hamers worden geraakt.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Vonkdetectie locaties:</h4>
+                <ul>
+                    <li>Tussen bunker 10 en transportbanden KT14-KT15</li>
+                    <li>Boven zeef (zift)</li>
+                    <li>Filter HM11, HM12 en HM13</li>
+                </ul>
+            </div>
+
+            <p>
+                <strong>Bij vonkdetectie worden automatisch gestopt:</strong>
+            </p>
+            <ul>
+                <li>03ST0001 (stofafzuiging)</li>
+                <li>03KT0015 en 03KT0016 (transportbanden)</li>
+                <li>03ZF0001 (zeef)</li>
+                <li>03HM11, 03HM12, 03HM13 en hun filters</li>
+            </ul>
+
+            <p>
+                Daarnaast wordt een alarm naar de brandcentrale in de stuurkamer gestuurd. De SMS-uitgang wordt niet meer gebruikt maar blijft beschikbaar voor toekomstige implementaties.
+            </p>
+
+            <h3>Temperatuurbewakingen</h3>
+            <p>
+                Meerdere PT100 temperatuursensoren bewaken kritieke onderdelen:
+            </p>
+
+            <div class="highlight-box">
+                <h4>Temperatuurbewaking lagers:</h4>
+                <ul>
+                    <li>Instelbaar tussen 65°C en 85°C</li>
+                    <li>Bij overschrijding: directe stop van hamermolen</li>
+                    <li>Herstart pas mogelijk na afkoeling tot normale temperatuur</li>
+                    <li>Automatische logging van temperature events</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h4>Temperatuurbewaking maalkamer:</h4>
+                <ul>
+                    <li>Instelbaar tussen 30°C en 50°C</li>
+                    <li>Lagere threshold omdat productveiligheid (voedingsmiddelen)</li>
+                    <li>Zelfde stop-logica als lagerbewaking</li>
+                </ul>
+            </div>
+
+            <p>
+                <strong>Toekomstig idee:</strong> Trillingssensoren (IFM) toevoegen aan lagers voor predictive maintenance. Dit kan slijtage detecteren voordat temperatuur stijgt.
+            </p>
+
+            <h3>Scheeflopen en elektrische beveiliging</h3>
+            <p>
+                Transportbanden zijn uitgerust met scheefloopregelaars die detecteren wanneer de band niet meer recht loopt. Dit voorkomt schade aan de band en installatie.
+            </p>
+
+            <p>
+                Elevatoren hebben stroombeveiliging: bij te hoge stroom wordt de aanvoer (extractiezone) automatisch gestopt. Dit voorkomt overbelasting en beschadiging.
+            </p>
+
+            <h3>Onaanvaardbare situaties die instabiliteit veroorzaken</h3>
+            <p>
+                De volgende situaties zijn absoluut onaanvaardbaar omdat ze leiden tot instabiliteit en explosierisico:
+            </p>
+
+            <ul>
+                <li><strong>Verkeerd opstarten:</strong> Machines in verkeerde volgorde starten</li>
+                <li><strong>Leegdraaien:</strong> Hamermolen zonder product laten draaien</li>
+                <li><strong>Overbelasten:</strong> Te veel product invoeren (te hoge stroom)</li>
+                <li><strong>Vergeten kleppen:</strong> Kleppen in verkeerde stand laten staan</li>
+            </ul>
+
+            <p>
+                Instabiliteit = explosierisico. Daarom is de automatische besturing zo belangrijk: het voorkomt deze menselijke fouten.
+            </p>
+
+            <h2>Lokale bediening voor onderhoud</h2>
+            <p>
+                Bij elke hamermolen is een lokaal bedieningspaneel aanwezig voor onderhoudswerkzaamheden zoals het wisselen van hamers en zeven.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Functies lokaal bedieningspaneel:</h4>
+                <ul>
+                    <li><strong>Noodstop:</strong> Directe stop van alle bewegende delen</li>
+                    <li><strong>Stilstandsindicatie:</strong> Visuele bevestiging dat molen stil staat</li>
+                    <li><strong>Start/Stop molen:</strong> Volgt ingestelde snelheid van WinCC</li>
+                    <li><strong>Molenkamer open/sluiten:</strong> Alleen toegestaan bij stilstand</li>
+                    <li><strong>Zift klemmen/lossen:</strong> Pneumatische zeefklemming bedienen</li>
+                    <li><strong>Toelating ziftwissel:</strong> Safety interlock voor zeefwissel</li>
+                    <li><strong>Zeefwissel 1 & 2:</strong> Motorisch intrekken/uitduwen/rust</li>
+                    <li><strong>Magneet open/sluiten:</strong> Alleen bij stilstand (voor reiniging)</li>
+                </ul>
+            </div>
+
+            <p>
+                <strong>Typische onderhoudsprocedure:</strong>
+            </p>
+            <ol>
+                <li>Molen tot stilstand brengen via lokaal paneel</li>
+                <li>Wachten op stilstandsbevestiging (alle beweging gestopt)</li>
+                <li>Pneumatische zeefklemming lossen</li>
+                <li>Via gemotoriseerde zeefwissel: zeven uit zeefhouder duwen</li>
+                <li>Zeef vervangen of reinigen</li>
+                <li>Zeef terugplaatsen en klemmen</li>
+                <li>Magneet openen om ijzeropvangbak te legen</li>
+                <li>Systeem testen voordat productie hervat wordt</li>
+            </ol>
+
+            <h2>Productie parameters voor MES-koppeling</h2>
+            <p>
+                Voor optimale integratie met het MES-systeem (Titanium) moeten verschillende parameters worden uitgewisseld:
+            </p>
+
+            <div class="highlight-box">
+                <h4>Van MES naar PLC (setpoints):</h4>
+                <ul>
+                    <li><strong>RPM molens:</strong> Toerental HM13 (productafhankelijk)</li>
+                    <li><strong>Stroom setpoint:</strong> Gewenste belasting per molen</li>
+                    <li><strong>Aanvoersnelheid:</strong> Gewenste extractiesnelheid per silo</li>
+                    <li><strong>Routing:</strong> Welke transportroute te gebruiken</li>
+                    <li><strong>Kwaliteitsparameters:</strong> Gewenste fijnheid/zeefmaat</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h4>Van PLC naar MES (actuele waarden):</h4>
+                <ul>
+                    <li><strong>Actuele RPM:</strong> Real-time toerental molens</li>
+                    <li><strong>Actuele stroom:</strong> Gemeten motorstroom</li>
+                    <li><strong>Tonnage:</strong> Verwerkte hoeveelheid (via weegplaat)</li>
+                    <li><strong>Status:</strong> Running/Idle/Alarm per machine</li>
+                    <li><strong>Alarmen:</strong> Active warnings en errors</li>
+                    <li><strong>Temperaturen:</strong> Lagers en maalkamer</li>
+                    <li><strong>Afzuigsnelheid filters:</strong> (momenteel nog niet frequentiegestuurd)</li>
+                </ul>
+            </div>
+
+            <h2>Weekendmaling: planning via smartphone</h2>
+            <p>
+                Tot op heden kan de maalplanning in Titanium enkel worden bediend via een Windows-PC. Voor weekendmalingen zou het handiger zijn als de operator de planning ook via smartphone kan raadplegen en aanpassen.
+            </p>
+
+            <p>
+                Tijdens weekendmalingen wordt gestreefd om zoveel mogelijk in één keer te malen om energie te besparen. Daarom wordt meestal gewerkt rond silo A, waar alle functionaliteit dicht bij elkaar staat.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Voorgestelde mobiele interface:</h4>
+                <ul>
+                    <li><strong>Dashboard:</strong> Overzicht van geplande en actieve orders</li>
+                    <li><strong>Order wizard:</strong> Stap-voor-stap aanmaken van maalorders</li>
+                    <li><strong>Status monitoring:</strong> Real-time voortgang per order</li>
+                    <li><strong>Alarmen:</strong> Push notifications bij issues</li>
+                    <li><strong>Quick actions:</strong> Start/stop/pause functies</li>
+                </ul>
+            </div>
+
+            <p>
+                De wizard zou werken met vooraf gedefinieerde keuzemenu's om fouten te voorkomen:
+            </p>
+            <ol>
+                <li>Selecteer bronsilo(s)</li>
+                <li>Selecteer product/receptuur</li>
+                <li>Selecteer hamermolen(s)</li>
+                <li>Selecteer doellocatie</li>
+                <li>Opgeven gewenste tonnage</li>
+                <li>Review en bevestig</li>
+            </ol>
+
+            <h2>Interface met Bord 24: softwarematige koppeling</h2>
+            <p>
+                De bestaande koppeling tussen de PLC van Silo A (PCS7 op S7-400) en Bord 24 (S7-1500) bestaat uit elektrische contactoren. Deze hardware-koppeling kan vervangen worden door een moderne softwarematige koppeling.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Voordelen van softwarematige koppeling:</h4>
+                <ul>
+                    <li><strong>Flexibiliteit:</strong> Eenvoudig aanpassen van logica zonder bedrading</li>
+                    <li><strong>Diagnostiek:</strong> Betere troubleshooting door logging van communicatie</li>
+                    <li><strong>Betrouwbaarheid:</strong> Geen mechanische slijtage van contactoren</li>
+                    <li><strong>Uitbreidbaarheid:</strong> Eenvoudig extra signalen toevoegen</li>
+                    <li><strong>Monitoring:</strong> Real-time inzicht in communicatiestatus</li>
+                </ul>
+            </div>
+
+            <p>
+                De implementatie zou gebruik maken van Profinet of OPC UA voor de communicatie tussen beide PLC's. Alle huidige functies blijven behouden, maar worden robuuster en beter beheersbaar.
+            </p>
+
+            <h2>Dataplatform koppeling en alerting</h2>
+            <p>
+                Een belangrijke toevoeging is de koppeling met het dataplatform (zoals beschreven in onze andere blog posts over Grafana). Dit maakt geavanceerde monitoring en alerting mogelijk.
+            </p>
+
+            <h3>Automatische email alerts voor leegdraaiende molens</h3>
+            <p>
+                Een concrete implementatie is het detecteren van leegdraaiende hamermolens. Dit verspilt energie en verhoogt onnodige slijtage.
+            </p>
+
+            <div class="code-block">
+                # Grafana alert rule: Hamermolen draait leeg
+                
+                SELECT mean("motor_current") 
+                FROM "hammermill_data"
+                WHERE mill_id = 'HM13'
+                AND $timeFilter
+                GROUP BY time(5m)
+                
+                # Alert conditie:
+                # IF motor_current > 10A AND motor_current < 120A
+                # FOR duration > 60 minutes
+                # THEN send email alert
+                
+                Alert message:
+                "Hamermolen 13 draait mogelijk leeg
+                 Stroom: {current}A (normaal: >120A bij product)
+                 Duur: {duration} minuten
+                 Actie: Controleer productaanvoer of stop molen"
+            </div>
+
+            <p>
+                Deze alert stuurt automatisch een email naar de productiemanager en operators wanneer een molen langer dan 1 uur in het "idle range" draait (tussen 10A en 120A). Dit voorkomt energieverspilling en onnodige slijtage.
+            </p>
+
+            <h2>Implementatie roadmap</h2>
+            <p>
+                De ombouw van de PCS7-sturing is een complex project dat gefaseerd wordt aangepakt:
+            </p>
+
+            <div class="highlight-box">
+                <h4>Fase 1: Analyse en ontwerp (2 maanden)</h4>
+                <ul>
+                    <li>Documentatie van bestaande functionaliteit</li>
+                    <li>Identificatie van verbeterpunten</li>
+                    <li>Ontwerp nieuwe WinCC-schermen</li>
+                    <li>Specificatie van MES-interfaces</li>
+                    <li>Planning van testscenario's</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h4>Fase 2: Ontwikkeling en simulatie (3 maanden)</h4>
+                <ul>
+                    <li>Programmeren van nieuwe PLC-logica</li>
+                    <li>Ontwikkeling van WinCC-visualisatie</li>
+                    <li>Opzetten van simulatieomgeving</li>
+                    <li>Testen van regelaars en interlocks</li>
+                    <li>Validatie van veiligheidslogica</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h4>Fase 3: Implementatie en commissioning (2 maanden)</h4>
+                <ul>
+                    <li>Gefaseerde uitrol per gebouw/sectie</li>
+                    <li>Parallel draaien oud/nieuw systeem</li>
+                    <li>Grondige testen met productie</li>
+                    <li>Training van operators en techniekers</li>
+                    <li>Final acceptance en go-live</li>
+                </ul>
+            </div>
+
+            <h2>Verwachte resultaten en ROI</h2>
+            <p>
+                Wat levert deze modernisering op?
+            </p>
+
+            <div class="highlight-box">
+                <h4>Operationele verbeteringen:</h4>
+                <ul>
+                    <li><strong>Hogere efficiency:</strong> Automatische regeling optimaliseert doorvoer</li>
+                    <li><strong>Minder stilstand:</strong> Betere coördinatie tussen systemen</li>
+                    <li><strong>Energiebesparing:</strong> Detectie en preventie van leegdraaien</li>
+                    <li><strong>Betere kwaliteit:</strong> Consistentere procesvoering</li>
+                    <li><strong>Veiligheid:</strong> Moderne interlocks en alarmsystemen</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h4>Beheer en onderhoud:</h4>
+                <ul>
+                    <li><strong>Moderne technologie:</strong> Gemakkelijker te onderhouden</li>
+                    <li><strong>Betere diagnostiek:</strong> Snellere troubleshooting</li>
+                    <li><strong>Remote access:</strong> Support op afstand mogelijk</li>
+                    <li><strong>Documentatie:</strong> Duidelijke en actuele documentatie</li>
+                    <li><strong>Toekomstbestendig:</strong> Klaar voor verdere automatisering</li>
+                </ul>
+            </div>
+
+            <h2>Conclusie: van legacy naar state-of-the-art</h2>
+            <p>
+                De modernisering van de PCS7-sturing transformeert een bestaande, functionele maar verouderde installatie naar een state-of-the-art geautomatiseerde maalderij.
+            </p>
+
+            <p>
+                Door gebruik te maken van moderne WinCC-visualisatie, geavanceerde PID-regelaars, uitgebreide veiligheidsystemen en integratie met MES en dataplatforms, ontstaat een productieomgeving die niet alleen veiliger en efficiënter is, maar ook klaar voor de uitdagingen van de toekomst.
+            </p>
+
+            <p>
+                De combinatie van elektrische en mechanische engineering expertise is essentieel voor een succesvol project. Het gaat niet alleen om het programmeren van PLC's, maar om het begrijpen van het volledige proces, de machines, en de operationele realiteit.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Staat uw maalderij toe aan modernisering?</h4>
+                <p>
+                    Bij OnaTech hebben we uitgebreide ervaring met de automatisering van maalprocessen en andere industriële installaties. Van PLC-programmering tot SCADA-visualisatie, van regeltechniek tot veiligheidsystemen.
+                </p>
+                <p>
+                    <strong>Onze diensten omvatten:</strong>
+                </p>
+                <ul>
+                    <li>Analyse van bestaande installaties</li>
+                    <li>Ontwerp van moderne besturingsconcepten</li>
+                    <li>PLC-programmering (Siemens, Allen-Bradley, etc.)</li>
+                    <li>HMI/SCADA-ontwikkeling (WinCC, Ignition, etc.)</li>
+                    <li>Regeltechnische optimalisatie</li>
+                    <li>Veiligheidsystemen en interlocks</li>
+                    <li>MES-integratie en dataplatforms</li>
+                    <li>Training en documentatie</li>
+                </ul>
+                <a href="../index.html#contact" class="cta-button" style="margin-top: 20px;">Bespreek uw project</a>
+            </div>
+        </div>
+    </article>
+
+    <footer role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p><strong>Bedrijf:</strong> OnaTech BV</p>
+                <p><strong>Adres:</strong> Mesenstraat 86, 8940 Wervik, België</p>
+                <p><strong>BTW:</strong> BE1023047122</p>
+                <p><strong>Email:</strong> info@onatech.be</p>
+            </div>
+            <div class="footer-social">
+                <h4>Volg ons</h4>
+                <div class="social-links">
+                    <a href="https://linkedin.com/company/onatech" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 OnaTech. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

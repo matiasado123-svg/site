@@ -133,6 +133,58 @@
   color: #fff
 }
 
+/* Blog Show More Button Styles */
+.blog-show-more {
+  margin-top: 40px;
+  transition: all 0.3s ease;
+}
+
+.blog-show-more:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+}
+
+.blog-show-more.active {
+  background: transparent;
+  border: 2px solid #0ea5e9;
+  color: #0ea5e9;
+}
+
+.blog-show-more.active:hover {
+  background: #f8fafc;
+}
+
+/* Animation for hidden blogs */
+.blog-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Ensure blog grid spacing looks good */
+.blog-grid {
+  margin-bottom: 0;
+}
+
+.blog-cta {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .blog-show-more {
+    width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .blog-cta {
+    padding: 0 20px;
+  }
+}
+
+
 @media (max-width:1024px) {
   .blog {
     padding: 0 30px
