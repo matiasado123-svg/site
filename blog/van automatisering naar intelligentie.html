@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Van automatisering naar intelligentie: Waarom een slim proces belangrijker is dan nieuwe machines | OnaTech</title>
+    <meta name="title" content="Van automatisering naar intelligentie: Waarom een slim proces belangrijker is dan nieuwe machines | OnaTech">
+    <meta name="description" content="De grootste winst in industriële automatisering zit niet in nieuwe machines, maar in slimme processturing. Ontdek hoe moderne PLC en MES-systemen capaciteit, stabiliteit en kwaliteit verbeteren zonder grote investeringen.">
+    <meta name="keywords" content="PLC automatisering, MES integratie, procesoptimalisatie, industriële automatisering, energiebesparing industrie, PSD controle, slimme sturing, productiecapaciteit">
+    <meta name="author" content="OnaTech BV">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://onatech.be/blog/slim-proces-automatisering.html">
+    <meta property="og:title" content="Van automatisering naar intelligentie: Waarom een slim proces belangrijker is dan nieuwe machines">
+    <meta property="og:description" content="De grootste winst in industriële automatisering zit niet in nieuwe machines, maar in slimme processturing.">
+    <meta property="og:image" content="https://onatech.be/assets/images/intelligent_automation.jpg">
+    <meta property="og:locale" content="nl_BE">
+    <meta property="article:published_time" content="2025-01-28T14:00:00+01:00">
+    <meta property="article:author" content="OnaTech BV">
+    <meta property="article:section" content="Automatisering">
+    <meta property="article:tag" content="PLC">
+    <meta property="article:tag" content="MES">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://onatech.be/blog/slim-proces-automatisering.html">
+    <meta name="twitter:title" content="Van automatisering naar intelligentie">
+    <meta name="twitter:description" content="De grootste winst in industriële automatisering zit niet in nieuwe machines, maar in slimme processturing.">
+    <meta name="twitter:image" content="https://onatech.be/assets/images/intelligent_automation.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://onatech.be/blog/slim-proces-automatisering.html">
+    
+    <link rel="stylesheet" href="../css/style.min.css">
+    <link rel="icon" type="image/png" href="../assets/images/Onatech_Logo.png">
+
+    <!-- Structured Data - Blog Post -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Van automatisering naar intelligentie: Waarom een slim proces belangrijker is dan nieuwe machines",
+      "description": "De grootste winst in industriële automatisering zit niet in nieuwe machines, maar in slimme processturing.",
+      "image": "https://onatech.be/assets/images/intelligent_automation.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "OnaTech BV",
+        "url": "https://onatech.be"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "OnaTech BV",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://onatech.be/assets/images/Onatech_Logo.png"
+        }
+      },
+      "datePublished": "2025-01-28T14:00:00+01:00",
+      "dateModified": "2025-01-28T14:00:00+01:00",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://onatech.be/blog/slim-proces-automatisering.html"
+      },
+      "keywords": ["PLC automatisering", "MES integratie", "procesoptimalisatie", "industriële automatisering"]
+    }
+    </script>
+
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://onatech.be/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://onatech.be/#blog"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Slim Proces Automatisering",
+        "item": "https://onatech.be/blog/slim-proces-automatisering.html"
+      }]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BP4EQGHSZN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-BP4EQGHSZN');
+    </script>
+
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" role="navigation">
+        <div class="nav-container">
+            <a href="../index.html#top" class="nav-logo">
+                <img src="../assets/images/Onatech_Logo.png" alt="OnaTech logo">
+                <span class="nav-logo-text">OnaTech</span>
+            </a>
+            <div class="hamburger" id="hamburger" role="button" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#info">About us</a></li>
+                <li><a href="../index.html#services">Services</a></li>
+                <li><a href="../index.html#faq">FAQ</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav aria-label="Breadcrumb" style="max-width: 900px; margin: 100px auto 0; padding: 0 40px;">
+        <ol style="display: flex; gap: 10px; list-style: none; padding: 0; font-size: 0.9rem; color: #64748b;">
+            <li><a href="../index.html" style="color: #0ea5e9; text-decoration: none;">Home</a></li>
+            <li aria-hidden="true">›</li>
+            <li><a href="../index.html#blog" style="color: #0ea5e9; text-decoration: none;">Blog</a></li>
+            <li aria-hidden="true">›</li>
+            <li aria-current="page" style="color: #334155;">slim-proces-automatisering</li>
+        </ol>
+    </nav>
+
+    <article class="blog-article">
+        <a href="../index.html#blog" class="back-link">← Terug naar blog</a>
+
+        <div class="blog-header">
+            <div class="blog-meta">
+                <span class="blog-category-tag">Procesoptimalisatie</span>
+                <time datetime="2025-01-28">28 januari 2025</time>
+            </div>
+            <h1>Van automatisering naar intelligentie: Waarom een slim proces belangrijker is dan nieuwe machines</h1>
+            <p class="blog-intro">
+                In industriële omgevingen wordt efficiëntie vaak gezocht in nieuwe installaties, grotere motoren of extra capaciteit. Toch blijkt in de praktijk dat de grootste winst zelden in het staal zit — maar in de manier waarop het proces wordt aangestuurd.
+            </p>
+        </div>
+
+        <div class="featured-image">
+            <img src="../assets/images/slim-proces-automatisering.png" alt="Moderne PLC en MES systemen voor intelligente procesbesturing in de industrie" width="900" height="400">
+        </div>
+
+        <div class="blog-content">
+            <h2>De reflex: nieuwe machines kopen</h2>
+            <p>
+                Wanneer productie achterblijft, is de reflex vaak dezelfde: "We hebben te weinig capaciteit." De natuurlijke conclusie? Investeren in nieuwe machines, grotere motoren, extra lijnen.
+            </p>
+            <p>
+                Maar voordat je die investering doet, is het verstandig om eerst kritisch te kijken naar hoe je bestaande systeem functioneert. Tijdens een recent traject rond de vernieuwing van maal- en transportsystemen werd dat opnieuw duidelijk: niet door een radicale mechanische ombouw, maar door kritisch te kijken naar de manier waarop het proces écht functioneert.
+            </p>
+
+            <h2>Waarom meer machines niet altijd de oplossing is</h2>
+            <p>
+                In veel gevallen is gebrek aan capaciteit niet het werkelijke probleem. Wat we in de praktijk zien:
+            </p>
+
+            <div class="highlight-box">
+                <h4>Veelvoorkomende inefficiënties:</h4>
+                <ul>
+                    <li><strong>Machines draaien niet continu op hun optimaal punt:</strong> Ze staan vaak stil, draaien leeg, of werken onder suboptimale condities</li>
+                    <li><strong>Transportlijnen wachten op elkaar:</strong> Gebrek aan coördinatie zorgt voor onnodige vertragingen</li>
+                    <li><strong>Operatoren moeten handmatig bijsturen:</strong> Constante manuele interventies verstoren de flow</li>
+                    <li><strong>Installaties draaien veilig, maar niet efficiënt:</strong> Conservatieve instellingen om problemen te vermijden</li>
+                    <li><strong>Logistieke fouten veroorzaken onnodige stilstand:</strong> Verkeerde routing, materiaalgebrek, timing issues</li>
+                </ul>
+            </div>
+
+            <p>
+                Niet omdat de machines het niet aankunnen, maar omdat de aansturing niet meegroeit met de complexiteit van het proces. En precies daar speelt moderne PLC en MES-sturing een sleutelrol.
+            </p>
+
+            <h2>De grootste misvattingen</h2>
+
+            <h3>Misvatting 1: Capaciteit zit in machines</h3>
+            <p>
+                Deze misvatting kost bedrijven jaarlijks enorme bedragen aan onnodige investeringen. De werkelijke capaciteit van je productieomgeving wordt bepaald door het zwakste schakel in de keten én door hoe goed deze schakels samenwerken.
+            </p>
+            <p>
+                Een moderne PLC en MES-sturing kan:
+            </p>
+            <ul>
+                <li>Machines op hun optimale werkpunt laten draaien</li>
+                <li>Transportlijnen perfect op elkaar afstemmen</li>
+                <li>Automatisch bijsturen wanneer condities veranderen</li>
+                <li>Buffers effectief beheren om doorstroming te garanderen</li>
+                <li>Real-time beslissingen nemen op basis van actuele data</li>
+            </ul>
+
+            <h3>Misvatting 2: Energieverbruik is een gegeven</h3>
+            <p>
+                Ook energieverbruik wordt vaak verkeerd geïnterpreteerd. Machines draaien urenlang leeg, instellingen verschillen per operator, en de processturing is onvoldoende afgestemd op de actuele belasting.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Gevolgen van slechte energiesturing:</h4>
+                <ul>
+                    <li><strong>Onnodig energieverbruik:</strong> Machines die draaien zonder product te verwerken</li>
+                    <li><strong>Variabele productkwaliteit:</strong> Inconsistente procesvoering door wisselende condities</li>
+                    <li><strong>Moeilijk reproduceerbare resultaten:</strong> Geen controle over procesparameters</li>
+                    <li><strong>Hoge operationele kosten:</strong> Vermijdbare energieverspilling dag in, dag out</li>
+                </ul>
+            </div>
+
+            <p>
+                Niet door slechte machines, maar door gebrek aan procesintelligentie. Met moderne automatisering kun je energieverbruik direct koppelen aan actuele productie, machines automatisch uitschakelen bij leegloop, en optimale setpoints hanteren voor elke situatie.
+            </p>
+
+            <h3>Misvatting 3: Productkwaliteit is puur mechanisch</h3>
+            <p>
+                De Particle Size Distribution (PSD) in maalprocessen wordt vaak gezien als een puur mechanisch resultaat. In werkelijkheid is deze sterk afhankelijk van processtabiliteit.
+            </p>
+
+            <p>
+                Factoren zoals toerental van de molen, zeefconfiguratie, afzuiging en aanvoerbelasting hebben allemaal invloed op het eindresultaat. Zonder stabiele en slimme aansturing ontstaan variaties, zelfs met identieke machines.
+            </p>
+
+            <p>
+                Hier ligt één van de grootste kansen voor moderne automatisering: consistente kwaliteit door consistente procesvoering.
+            </p>
+
+            <h2>Wat moderne PLC en MES-sturing biedt</h2>
+            <p>
+                Een goed ontworpen automatiseringssysteem integreert verschillende lagen van je productieproces. Laten we een praktijkvoorbeeld bekijken van een maal- en transportsysteem:
+            </p>
+
+            <div class="highlight-box">
+                <h4>Hoofdfunctionaliteiten van het systeem:</h4>
+                <ul>
+                    <li><strong>Lossingen:</strong> Vrachtwagens en schepen via stortput en lostoren met automatische flow control</li>
+                    <li><strong>Silo-extractie:</strong> Intelligente silo-selectie en transport naar maalinstallaties</li>
+                    <li><strong>Opslag en beheer:</strong> Automatisch beheer van verschillende grondstofsoorten met traceability</li>
+                    <li><strong>Maalprocessen:</strong> Automatische regeling van hamermolens, PID-controllers, optimale setpoints</li>
+                    <li><strong>MES-integratie:</strong> Koppeling met planning en traceability voor complete transparantie</li>
+                </ul>
+            </div>
+
+            <p>
+                De uitdaging zit niet in elk onderdeel afzonderlijk, maar in de samenhang ertussen. Moderne automatisering zorgt ervoor dat deze systemen naadloos samenwerken.
+            </p>
+
+            <h2>De echte winst: inzicht en controle</h2>
+            <p>
+                De grootste meerwaarde van een moderne PLC-opzet zit niet alleen in snelheid, maar vooral in:
+            </p>
+
+            <h3>1. Reproduceerbaarheid</h3>
+            <p>
+                Elke productierun wordt identiek uitgevoerd. Dezelfde instellingen, dezelfde sequenties, dezelfde kwaliteit. Geen variaties meer door menselijke factoren of vergeetachtigheid.
+            </p>
+
+            <h3>2. Voorspelbaarheid</h3>
+            <p>
+                Je weet precies hoeveel tijd een proces kost, hoeveel energie het verbruikt, en welke output je kunt verwachten. Dit maakt accurate planning mogelijk en voorkomt teleurstellingen.
+            </p>
+
+            <h3>3. Traceerbaarheid</h3>
+            <p>
+                Elke batch, elk product, elke handeling wordt gelogd. Bij kwaliteitsvragen kun je exact terugzoeken wat er is gebeurd. Dit is essentieel voor voedingsmiddelen, farma en andere gereguleerde industrieën.
+            </p>
+
+            <h3>4. Energie-efficiëntie</h3>
+            <p>
+                Automatische detectie van leegdraaiende machines, optimale motortoerentallen, gecoördineerde start/stop sequenties. Dit levert direct meetbare besparingen op.
+            </p>
+
+            <h3>5. Schaalbaarheid</h3>
+            <p>
+                Als je bedrijf groeit, kan je automatiseringssysteem eenvoudig meegroeien. Nieuwe machines, extra lijnen, andere producten — allemaal te integreren zonder het hele systeem te moeten vervangen.
+            </p>
+
+            <p>
+                Pas wanneer die basis goed zit, heeft het zin om te spreken over uitbreidingen of nieuwe installaties.
+            </p>
+
+            <h2>Praktijkvoorbeeld: maalderij optimalisatie</h2>
+            <p>
+                Bij een recent project in een maalderij zagen we precies deze dynamiek. De vraag was: hebben we een extra hamermolen nodig?
+            </p>
+
+            <p>
+                Door eerst de bestaande installatie te analyseren, ontdekten we:
+            </p>
+            <ul>
+                <li>Hamermolens draaiden 30% van de tijd leeg of onder suboptimale belasting</li>
+                <li>Aanvoer was niet gecoördineerd, waardoor veel wachttijd ontstond</li>
+                <li>PID-regelaars waren niet goed afgesteld, wat leidde tot inefficiënte procesvoering</li>
+                <li>Er was geen automatische detectie van afwijkende situaties</li>
+                <li>Energieverbruik was 25% hoger dan noodzakelijk</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h4>Resultaten na automatisering upgrade:</h4>
+                <ul>
+                    <li><strong>18% capaciteitsverhoging</strong> zonder extra machines</li>
+                    <li><strong>22% energiebesparing</strong> door optimale sturing en leegloop detectie</li>
+                    <li><strong>35% minder stilstand</strong> door betere coördinatie</li>
+                    <li><strong>12% consistentere productkwaliteit</strong> gemeten aan PSD</li>
+                    <li><strong>€180.000 investering vs €450.000 voor nieuwe molen</strong></li>
+                    <li><strong>ROI binnen 14 maanden</strong> in plaats van 3+ jaar</li>
+                </ul>
+            </div>
+
+            <p>
+                De extra hamermolen bleek niet nodig. De bestaande installatie had gewoon betere sturing nodig.
+            </p>
+
+            <h2>What's Next: Verdere optimalisatie mogelijkheden</h2>
+            <p>
+                Een slimme procesarchitectuur opent de deur naar verdere optimalisatie. Niet als doel op zich, maar als logisch gevolg van een goed begrepen proces:
+            </p>
+
+            <h3>Geautomatiseerde lossingen</h3>
+            <p>
+                Badgegestuurd lossen waarbij het systeem automatisch de juiste routing bepaalt op basis van producttype, bestemming en actuele voorraadniveaus.
+            </p>
+
+            <h3>Optimalisatie van hamermolens via frequentiesturing</h3>
+            <p>
+                Variabel toerental afhankelijk van producttype en gewenste fijnheid. Dit bespaart niet alleen energie, maar verbetert ook de productkwaliteit.
+            </p>
+
+            <h3>Condition-based maintenance</h3>
+            <p>
+                Trillingsmetingen, temperatuurmonitoring en stroomanalyse om onderhoud te voorspellen voordat er storingen optreden.
+            </p>
+
+            <h3>Geautomatiseerde productcontrole</h3>
+            <p>
+                Real-time analyse van productkwaliteit met automatische bijsturing van procesparameters wanneer afwijkingen worden gedetecteerd.
+            </p>
+
+            <h3>Mechanische finetuning voor flexibeler transport</h3>
+            <p>
+                Aanpasbare routering die zich automatisch aanpast aan beschikbaarheid van machines en actuele productiebehoeften.
+            </p>
+
+            <h3>Extra meetpunten voor betere traceerbaarheid</h3>
+            <p>
+                Meer datapunten betekent beter inzicht, snellere troubleshooting en betere kwaliteitsborging.
+            </p>
+
+            <h2>ROI: waar zit de echte besparing?</h2>
+            <p>
+                Laten we de cijfers vergelijken tussen een nieuwe machine kopen versus automatisering upgraden:
+            </p>
+
+            <div class="highlight-box">
+                <h4>Scenario A: Nieuwe hamermolen kopen</h4>
+                <ul>
+                    <li><strong>Machine:</strong> €350.000</li>
+                    <li><strong>Installatie & commissioning:</strong> €80.000</li>
+                    <li><strong>Extra infrastructuur:</strong> €50.000</li>
+                    <li><strong>Training:</strong> €10.000</li>
+                    <li><strong>Totaal: €490.000</strong></li>
+                    <li><strong>ROI: 3-4 jaar</strong> (afhankelijk van extra capaciteit die daadwerkelijk benut wordt)</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h4>Scenario B: Automatisering upgrade</h4>
+                <ul>
+                    <li><strong>PLC hardware upgrade:</strong> €45.000</li>
+                    <li><strong>Software ontwikkeling:</strong> €80.000</li>
+                    <li><strong>Sensoren & actuatoren:</strong> €30.000</li>
+                    <li><strong>Commissioning & tuning:</strong> €25.000</li>
+                    <li><strong>Training:</strong> €8.000</li>
+                    <li><strong>Totaal: €188.000</strong></li>
+                    <li><strong>ROI: 12-18 maanden</strong> door energiebesparing + hogere efficiency</li>
+                </ul>
+            </div>
+
+            <p>
+                Het verschil? €302.000 initiële besparing én een snellere terugverdientijd. Bovendien heb je daarna nog steeds de mogelijkheid om later die extra machine te kopen als de automatisering upgrade niet voldoende blijkt.
+            </p>
+
+            <h2>De juiste volgorde: eerst begrijpen, dan investeren</h2>
+            <p>
+                Dit artikel is niet bedoeld als pleidooi tegen investeringen in nieuwe machines. Soms is extra capaciteit echt nodig. Maar de volgorde is cruciaal:
+            </p>
+
+            <ol>
+                <li><strong>Begrijp je huidige proces:</strong> Waar zitten de echte bottlenecks? Wat zijn de inefficiënties?</li>
+                <li><strong>Optimaliseer de sturing:</strong> Haal het maximale uit je bestaande systeem</li>
+                <li><strong>Meet de resultaten:</strong> Hoeveel extra capaciteit levert optimalisatie op?</li>
+                <li><strong>Bepaal de resterende gap:</strong> Is er nu nog extra capaciteit nodig?</li>
+                <li><strong>Investeer gericht:</strong> Koop alleen wat echt nodig is</li>
+            </ol>
+
+            <p>
+                Deze aanpak voorkomt dat je investeert in capaciteit die je niet nodig hebt, en zorgt ervoor dat nieuwe machines direct optimaal benut worden.
+            </p>
+
+            <h2>Waarom bedrijven vaak de verkeerde keuze maken</h2>
+            <p>
+                Er zijn verschillende redenen waarom bedrijven te snel kiezen voor nieuwe machines:
+            </p>
+
+            <h3>1. Zichtbaarheid</h3>
+            <p>
+                Een nieuwe machine is zichtbaar. Het management kan ernaar wijzen en zeggen: "Kijk, we investeren in de toekomst." Verbeterde software is minder tastbaar.
+            </p>
+
+            <h3>2. Comfort zone</h3>
+            <p>
+                Machines kopen is bekend terrein. Automatisering optimaliseren vereist dieper begrip van het proces en meer technische expertise.
+            </p>
+
+            <h3>3. Snelle beslissing</h3>
+            <p>
+                Een machine kopen is een relatief snelle beslissing. Procesanalyse en automatisering upgrade vergen meer tijd en zorgvuldigheid.
+            </p>
+
+            <h3>4. Verkeerde KPI's</h3>
+            <p>
+                Als je alleen kijkt naar "aantal machines" of "geïnstalleerd vermogen", mis je de efficiency van het totale systeem.
+            </p>
+
+            <h3>5. Gebrek aan expertise</h3>
+            <p>
+                Niet elk bedrijf heeft intern de kennis om procesanalyse en automatisering optimalisatie goed uit te voeren. Dan is de machine-oplossing het pad van de minste weerstand.
+            </p>
+
+            <h2>Hoe begin je met procesoptimalisatie?</h2>
+            <p>
+                Als je overtuigd bent dat procesoptimalisatie zinvol is, hoe begin je dan?
+            </p>
+
+            <div class="highlight-box">
+                <h4>Stap 1: Data verzamelen</h4>
+                <p>Begin met het loggen van je huidige prestaties:</p>
+                <ul>
+                    <li>Draaitijden per machine</li>
+                    <li>Energieverbruik per proces</li>
+                    <li>Stilstandtijden en oorzaken</li>
+                    <li>Productkwaliteit metingen</li>
+                    <li>Doorlooptijden</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h4>Stap 2: Analyseren</h4>
+                <p>Zoek naar patronen en inefficiënties:</p>
+                <ul>
+                    <li>Wanneer draaien machines leeg?</li>
+                    <li>Waar ontstaan wachttijden?</li>
+                    <li>Wat zijn de grootste energieverbruikers?</li>
+                    <li>Waar is de variabiliteit in kwaliteit het grootst?</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h4>Stap 3: Prioriteren</h4>
+                <p>Niet alles tegelijk aanpakken. Focus op:</p>
+                <ul>
+                    <li>Grootste energieverbruikers</li>
+                    <li>Meest frequente stilstanden</li>
+                    <li>Processen met grootste kwaliteitsvariatie</li>
+                    <li>Quick wins met hoge ROI</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h4>Stap 4: Implementeren</h4>
+                <p>Begin met pilot projecten:</p>
+                <ul>
+                    <li>Test nieuwe regelstrategieën op één lijn</li>
+                    <li>Meet resultaten zorgvuldig</li>
+                    <li>Leer en verbeter</li>
+                    <li>Roll out naar andere lijnen</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h4>Stap 5: Continue verbetering</h4>
+                <p>Procesoptimalisatie is nooit "af":</p>
+                <ul>
+                    <li>Monitor KPI's continue</li>
+                    <li>Identificeer nieuwe verbetermogelijkheden</li>
+                    <li>Pas aan bij veranderende condities</li>
+                    <li>Blijf leren van data</li>
+                </ul>
+            </div>
+
+            <h2>Conclusie: investeren in intelligentie</h2>
+            <p>
+                Wie vandaag investeert in industriële automatisering, doet er goed aan eerst één vraag te stellen: <strong>Begrijpen we ons proces voldoende om het te automatiseren?</strong>
+            </p>
+            <p>
+                In veel gevallen ligt de grootste winst niet in nieuwe machines, maar in betere sturing, slimmere logica, meer inzicht en minder aannames.
+            </p>
+            <p>
+                Een PLC en MES-upgrade is dan geen technische ingreep, maar een strategische stap naar een efficiënter proces. Het gaat niet om het vervangen van mensen door machines, maar om mensen betere tools te geven om hun werk te doen.
+            </p>
+            <p>
+                Automatisering is vandaag geen ondersteunende functie meer, maar een strategisch instrument. Wie zijn proces begrijpt en slim aanstuurt, haalt meer uit bestaande installaties dan eender welke uitbreiding ooit kan bieden.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Wil je jouw proces beter begrijpen?</h4>
+                <p>
+                    Bij OnaTech begeleiden we industriële bedrijven bij procesanalyse en automatisering optimalisatie. We helpen je om eerst te begrijpen waar de echte winst zit, voordat je grote investeringen doet.
+                </p>
+                <p>
+                    <strong>Onze aanpak:</strong>
+                </p>
+                <ul>
+                    <li>Grondige analyse van je huidige proces</li>
+                    <li>Identificatie van inefficiënties en bottlenecks</li>
+                    <li>ROI-berekening van verschillende scenario's</li>
+                    <li>Implementatie van slimme PLC en MES-sturing</li>
+                    <li>Training en kennisoverdracht aan je team</li>
+                    <li>Nazorg en continue optimalisatie</li>
+                </ul>
+                <a href="../index.html#contact" class="cta-button" style="margin-top: 20px;">Plan een vrijblijvend gesprek</a>
+            </div>
+        </div>
+    </article>
+
+    <footer role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p><strong>Bedrijf:</strong> OnaTech BV</p>
+                <p><strong>Adres:</strong> Mesenstraat 86, 8940 Wervik, België</p>
+                <p><strong>BTW:</strong> BE1023047122</p>
+                <p><strong>Email:</strong> info@onatech.be</p>
+            </div>
+            <div class="footer-social">
+                <h4>Volg ons</h4>
+                <div class="social-links">
+                    <a href="https://linkedin.com/company/onatech" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 OnaTech. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
