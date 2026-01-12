@@ -106,19 +106,10 @@ body.loading {
     color: #fff;
 }
 
-.cookie-btn.accept:hover {
-    transform: translateY(-2px);
-}
-
 .cookie-btn.decline {
     background: transparent;
     color: #cbd5e1;
     border: 2px solid #475569;
-}
-
-.cookie-btn.decline:hover {
-    background: #475569;
-    color: #fff;
 }
 
 @media (max-width: 768px) {

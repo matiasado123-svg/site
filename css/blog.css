@@ -41,10 +41,6 @@
   transition: all .4s ease
 }
 
-.blog-card:hover {
-  transform: translateY(-8px);
-}
-
 .blog-image {
   width: 100%;
   height: 220px;
@@ -58,10 +54,6 @@
   height: 100%;
   object-fit: cover;
   transition: transform .4s ease
-}
-
-.blog-card:hover .blog-image img {
-  transform: scale(1.08)
 }
 
 .blog-category {
@@ -112,11 +104,6 @@
   transition: all .3s ease
 }
 
-.blog-link:hover {
-  color: #22d3ee;
-  gap: 8px
-}
-
 .blog-cta {
   text-align: center;
   margin-top: 50px
@@ -128,30 +115,16 @@
   color: #0ea5e9;
 }
 
-.cta-button.secondary:hover {
-  background: #0ea5e9;
-  color: #fff
-}
-
 /* Blog Show More Button Styles */
 .blog-show-more {
   margin-top: 40px;
   transition: all 0.3s ease;
 }
 
-.blog-show-more:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
-}
-
 .blog-show-more.active {
   background: transparent;
   border: 2px solid #0ea5e9;
   color: #0ea5e9;
-}
-
-.blog-show-more.active:hover {
-  background: #f8fafc;
 }
 
 /* Animation for hidden blogs */

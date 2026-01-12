@@ -124,9 +124,6 @@ textarea {
     min-height: 44px;
 }
 
-.btn:hover {
-    transform: translateY(-2px);
-}
 
 .btn:active {
     transform: translateY(0);
@@ -136,10 +133,6 @@ textarea {
     background: transparent;
     color: #0ea5e9;
     border: 2px solid #0ea5e9;
-}
-
-.btn.secondary:hover {
-    background: #f8fafc;
 }
 
 .honeypot {

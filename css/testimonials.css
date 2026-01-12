@@ -32,10 +32,6 @@
     position: relative;
 }
 
-.testimonial-card:hover {
-    transform: translateY(-5px);
-}
-
 .testimonial-card::before {
     content: '"';
     position: absolute;

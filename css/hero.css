@@ -1,16 +1,16 @@
 header {
     background: #0ea5e9;
-    padding: 30px 40px;
+    padding: 40px;
     color: #fff;
     max-width: 1400px;
     margin: 20px auto;
     border-radius: 12px;
-    position: relative
+    position: relative;
 }
 
 .header {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -29,20 +29,16 @@ header {
     text-decoration: none;
     font-weight: 700;
     transition: all 0.3s ease;
-    position: absolute;
-    right: 40px;
-    top: 50%;
-    transform: translateY(-50%);
+    position: static;
+    right: auto;
+    top: auto;
+    transform: none;
     white-space: nowrap;
     min-width: 44px;
     min-height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.header-cta:hover {
-    transform: translateY(-50%) translateY(-3px);
 }
 
 /* Hero Content Section */
@@ -139,10 +135,6 @@ header {
     justify-content: center;
 }
 
-.cta-button:hover {
-    transform: translateY(-3px);
-}
-
 /* Tablet Responsive */
 @media (max-width: 1024px) {
     header {
@@ -193,10 +185,6 @@ header {
         transform: none;
         font-size: 1rem;
         padding: 14px 32px;
-    }
-
-    .header-cta:hover {
-        transform: translateY(-3px);
     }
 
     .hero-section {

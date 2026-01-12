@@ -3,14 +3,14 @@
 // ===================================
 
 // Remove loading class when page is loaded
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     document.body.classList.remove('loading');
 });
 
 // ===================================
 // COOKIE CONSENT MANAGEMENT
 // ===================================
-(function() {
+(function () {
     const cookieBanner = document.getElementById('cookieConsent');
     const acceptBtn = document.getElementById('acceptCookies');
     const declineBtn = document.getElementById('declineCookies');
@@ -24,7 +24,7 @@ window.addEventListener('load', function() {
     }
 
     if (acceptBtn) {
-        acceptBtn.addEventListener('click', function() {
+        acceptBtn.addEventListener('click', function () {
             localStorage.setItem('cookieConsent', 'accepted');
             cookieBanner.classList.remove('show');
             enableAnalytics();
@@ -32,7 +32,7 @@ window.addEventListener('load', function() {
     }
 
     if (declineBtn) {
-        declineBtn.addEventListener('click', function() {
+        declineBtn.addEventListener('click', function () {
             localStorage.setItem('cookieConsent', 'declined');
             cookieBanner.classList.remove('show');
             disableAnalytics();
@@ -63,7 +63,7 @@ window.addEventListener('load', function() {
 // ===================================
 // HAMBURGER MENU - FIXED
 // ===================================
-(function() {
+(function () {
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
 
@@ -71,7 +71,7 @@ window.addEventListener('load', function() {
 
     function toggleMenu() {
         const isActive = hamburger.classList.contains('active');
-        
+
         if (isActive) {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
@@ -80,7 +80,7 @@ window.addEventListener('load', function() {
             hamburger.classList.add('active');
             navMenu.classList.add('active');
             hamburger.setAttribute('aria-expanded', 'true');
-            
+
             // Focus first menu item when opening
             setTimeout(() => {
                 const firstLink = navMenu.querySelector('a');
@@ -93,7 +93,7 @@ window.addEventListener('load', function() {
     hamburger.addEventListener('click', toggleMenu);
 
     // Keyboard handler
-    hamburger.addEventListener('keydown', function(e) {
+    hamburger.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
             toggleMenu();
@@ -103,7 +103,7 @@ window.addEventListener('load', function() {
     // Close menu when clicking on a link
     const menuLinks = navMenu.querySelectorAll('a');
     menuLinks.forEach(link => {
-        link.addEventListener('click', function() {
+        link.addEventListener('click', function () {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
             hamburger.setAttribute('aria-expanded', 'false');
@@ -111,7 +111,7 @@ window.addEventListener('load', function() {
     });
 
     // Close menu on Escape key
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && navMenu.classList.contains('active')) {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
@@ -130,24 +130,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const targetId = this.getAttribute('href');
-        
+
         if (targetId === '#') {
             window.scrollTo({ top: 0, behavior: 'smooth' });
             return;
         }
-        
+
         const target = document.querySelector(targetId);
         if (target) {
             target.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
-            
+
             const originalTabindex = target.getAttribute('tabindex');
             if (!originalTabindex) {
                 target.setAttribute('tabindex', '-1');
             }
-            
+
             setTimeout(() => {
                 target.focus();
                 if (!originalTabindex) {
@@ -185,74 +185,74 @@ document.querySelectorAll('.service-card, .application-card, .expertise-item').f
 // ===================================
 // FAQ ACCORDION - FIXED VERSION
 // ===================================
-(function() {
-  const faqQuestions = document.querySelectorAll('.faq-question');
+(function () {
+    const faqQuestions = document.querySelectorAll('.faq-question');
 
-  if (faqQuestions.length === 0) {
-    console.log('⚠ No FAQ questions found');
-    return;
-  }
-
-  function toggleFAQ(question) {
-    const faqItem = question.parentElement;
-    const answer = question.nextElementSibling;
-    const isExpanded = question.getAttribute('aria-expanded') === 'true';
-
-    // Close all other FAQ items
-    faqQuestions.forEach(q => {
-      const otherAnswer = q.nextElementSibling;
-      q.setAttribute('aria-expanded', 'false');
-      q.parentElement.classList.remove('active');
-      otherAnswer.classList.remove('open');
-      otherAnswer.setAttribute('hidden', '');
-    });
-
-    // Toggle current item
-    if (!isExpanded) {
-      question.setAttribute('aria-expanded', 'true');
-      faqItem.classList.add('active');
-      answer.classList.add('open');
-      answer.removeAttribute('hidden');
-    }
-  }
-
-  // Initialize all answers as closed
-  faqQuestions.forEach(question => {
-    const answer = question.nextElementSibling;
-    if (answer) {
-      answer.setAttribute('hidden', '');
+    if (faqQuestions.length === 0) {
+        console.log('⚠ No FAQ questions found');
+        return;
     }
 
-    // Click handler
-    question.addEventListener('click', e => {
-      e.preventDefault();
-      toggleFAQ(question);
+    function toggleFAQ(question) {
+        const faqItem = question.parentElement;
+        const answer = question.nextElementSibling;
+        const isExpanded = question.getAttribute('aria-expanded') === 'true';
+
+        // Close all other FAQ items
+        faqQuestions.forEach(q => {
+            const otherAnswer = q.nextElementSibling;
+            q.setAttribute('aria-expanded', 'false');
+            q.parentElement.classList.remove('active');
+            otherAnswer.classList.remove('open');
+            otherAnswer.setAttribute('hidden', '');
+        });
+
+        // Toggle current item
+        if (!isExpanded) {
+            question.setAttribute('aria-expanded', 'true');
+            faqItem.classList.add('active');
+            answer.classList.add('open');
+            answer.removeAttribute('hidden');
+        }
+    }
+
+    // Initialize all answers as closed
+    faqQuestions.forEach(question => {
+        const answer = question.nextElementSibling;
+        if (answer) {
+            answer.setAttribute('hidden', '');
+        }
+
+        // Click handler
+        question.addEventListener('click', e => {
+            e.preventDefault();
+            toggleFAQ(question);
+        });
+
+        // Keyboard handler
+        question.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleFAQ(question);
+            }
+        });
     });
 
-    // Keyboard handler
-    question.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleFAQ(question);
-      }
-    });
-  });
-
-  console.log('✓ FAQ accordion loaded - ' + faqQuestions.length + ' questions found');
+    console.log('✓ FAQ accordion loaded - ' + faqQuestions.length + ' questions found');
 })();
 
 
 // ===================================
 // CONTACT FORM
 // ===================================
-(function(){
+(function () {
     const form = document.getElementById('contactForm');
     const msgSuccess = document.getElementById('msg-success');
     const honeypot = document.getElementById('website');
 
     if (!form) return;
 
-    form.addEventListener('submit', function(evt){
+    form.addEventListener('submit', function (evt) {
         evt.preventDefault();
 
         if (honeypot && honeypot.value.trim() !== '') {
@@ -304,9 +304,9 @@ function announceToScreenReader(message, priority = 'polite') {
     announcement.setAttribute('aria-atomic', 'true');
     announcement.className = 'sr-only';
     announcement.textContent = message;
-    
+
     document.body.appendChild(announcement);
-    
+
     setTimeout(() => {
         document.body.removeChild(announcement);
     }, 1000);
@@ -336,7 +336,7 @@ if ('loading' in HTMLImageElement.prototype) {
     console.log('✓ Native lazy loading supported');
 } else {
     console.log('⚠ Loading lazy loading polyfill');
-    
+
     const lazyImages = document.querySelectorAll('img[loading="lazy"]');
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -348,114 +348,127 @@ if ('loading' in HTMLImageElement.prototype) {
             }
         });
     });
-    
+
     lazyImages.forEach(img => imageObserver.observe(img));
 }
 
 // Blog Show More Functionality
-(function() {
-  'use strict';
+(function () {
+    'use strict';
 
-  const blogGrid = document.querySelector('.blog-grid');
-  const blogSection = document.querySelector('.blog-section');
-  
-  if (!blogGrid || !blogSection) {
-    console.log('Blog section not found');
-    return;
-  }
+    const blogGrid = document.querySelector('.blog-grid');
+    const blogSection = document.querySelector('.blog-section');
 
-  const blogCards = Array.from(blogGrid.querySelectorAll('.blog-card'));
-  const INITIAL_VISIBLE = 3; // Number of blogs to show initially
-  
-  // Only proceed if there are more blogs than the initial visible count
-  if (blogCards.length <= INITIAL_VISIBLE) {
-    console.log('Not enough blogs to require show more button');
-    return;
-  }
-
-  // Hide blogs after the initial count
-  blogCards.forEach((card, index) => {
-    if (index >= INITIAL_VISIBLE) {
-      card.style.display = 'none';
-      card.classList.add('blog-hidden');
+    if (!blogGrid || !blogSection) {
+        console.log('Blog section not found');
+        return;
     }
-  });
 
-  // Create the "Show More" button
-  const showMoreBtn = document.createElement('button');
-  showMoreBtn.className = 'cta-button secondary blog-show-more';
-  showMoreBtn.textContent = `Toon meer artikelen (${blogCards.length - INITIAL_VISIBLE})`;
-  showMoreBtn.setAttribute('aria-label', `Toon ${blogCards.length - INITIAL_VISIBLE} meer blog artikelen`);
-  
-  // Create wrapper for centering
-  const btnWrapper = document.createElement('div');
-  btnWrapper.className = 'blog-cta';
-  btnWrapper.appendChild(showMoreBtn);
-  
-  // Insert after blog grid
-  blogGrid.parentNode.insertBefore(btnWrapper, blogGrid.nextSibling);
+    const blogCards = Array.from(blogGrid.querySelectorAll('.blog-card'));
+    const INITIAL_VISIBLE = 3; // Number of blogs to show initially
 
-  // Show more functionality
-  showMoreBtn.addEventListener('click', function() {
-    const hiddenCards = blogGrid.querySelectorAll('.blog-hidden');
-    
-    if (hiddenCards.length > 0) {
-      // Show all hidden cards with animation
-      hiddenCards.forEach((card, index) => {
-        setTimeout(() => {
-          card.style.display = '';
-          card.classList.remove('blog-hidden');
-          
-          // Trigger reflow for animation
-          card.offsetHeight;
-          
-          // Add fade-in animation
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(20px)';
-          
-          setTimeout(() => {
-            card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-          }, 10);
-        }, index * 100); // Stagger animation
-      });
-      
-      // Update button text to "Show Less"
-      showMoreBtn.textContent = 'Toon minder';
-      showMoreBtn.setAttribute('aria-label', 'Verberg extra blog artikelen');
-      showMoreBtn.classList.add('active');
-      
-    } else {
-      // Hide blogs after initial count
-      blogCards.forEach((card, index) => {
+    // Only proceed if there are more blogs than the initial visible count
+    if (blogCards.length <= INITIAL_VISIBLE) {
+        console.log('Not enough blogs to require show more button');
+        return;
+    }
+
+    // Hide blogs after the initial count
+    blogCards.forEach((card, index) => {
         if (index >= INITIAL_VISIBLE) {
-          card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(20px)';
-          
-          setTimeout(() => {
             card.style.display = 'none';
             card.classList.add('blog-hidden');
-            card.style.transition = '';
-          }, 300);
         }
-      });
-      
-      // Reset button text
-      showMoreBtn.textContent = `Toon meer artikelen (${blogCards.length - INITIAL_VISIBLE})`;
-      showMoreBtn.setAttribute('aria-label', `Toon ${blogCards.length - INITIAL_VISIBLE} meer blog artikelen`);
-      showMoreBtn.classList.remove('active');
-      
-      // Scroll back to blog section
-      setTimeout(() => {
-        blogSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 300);
-    }
-  });
+    });
 
-  console.log('✓ Blog show more functionality loaded');
+    // Create the "Show More" button
+    const showMoreBtn = document.createElement('button');
+    showMoreBtn.className = 'cta-button secondary blog-show-more';
+    showMoreBtn.textContent = `Toon meer artikelen (${blogCards.length - INITIAL_VISIBLE})`;
+    showMoreBtn.setAttribute('aria-label', `Toon ${blogCards.length - INITIAL_VISIBLE} meer blog artikelen`);
+
+    // Create wrapper for centering
+    const btnWrapper = document.createElement('div');
+    btnWrapper.className = 'blog-cta';
+    btnWrapper.appendChild(showMoreBtn);
+
+    // Insert after blog grid
+    blogGrid.parentNode.insertBefore(btnWrapper, blogGrid.nextSibling);
+
+    // Show more functionality
+    showMoreBtn.addEventListener('click', function () {
+        const hiddenCards = blogGrid.querySelectorAll('.blog-hidden');
+
+        if (hiddenCards.length > 0) {
+            // Show all hidden cards with animation
+            hiddenCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.display = '';
+                    card.classList.remove('blog-hidden');
+
+                    // Trigger reflow for animation
+                    card.offsetHeight;
+
+                    // Add fade-in animation
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+
+                    setTimeout(() => {
+                        card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 10);
+                }, index * 100); // Stagger animation
+            });
+
+            // Update button text to "Show Less"
+            showMoreBtn.textContent = 'Toon minder';
+            showMoreBtn.setAttribute('aria-label', 'Verberg extra blog artikelen');
+            showMoreBtn.classList.add('active');
+
+        } else {
+            // Hide blogs after initial count
+            blogCards.forEach((card, index) => {
+                if (index >= INITIAL_VISIBLE) {
+                    card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                        card.classList.add('blog-hidden');
+                        card.style.transition = '';
+                    }, 300);
+                }
+            });
+
+            // Reset button text
+            showMoreBtn.textContent = `Toon meer artikelen (${blogCards.length - INITIAL_VISIBLE})`;
+            showMoreBtn.setAttribute('aria-label', `Toon ${blogCards.length - INITIAL_VISIBLE} meer blog artikelen`);
+            showMoreBtn.classList.remove('active');
+
+            // Scroll back to blog section
+            setTimeout(() => {
+                blogSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 300);
+        }
+    });
+
+    console.log('✓ Blog show more functionality loaded');
 })();
 
 
 console.log('✓ OnaTech website loaded successfully');
+
+
+
+// Real Formspree submission
+const response = await fetch('https://formspree.io/f/xkoonowg', {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+});
+
+if (!response.ok) {
+    throw new Error('Form submission failed');
+}

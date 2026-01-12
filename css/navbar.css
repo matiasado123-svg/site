@@ -34,9 +34,13 @@
     transition: transform 0.3s ease;
 }
 
-.nav-logo img:hover {
-    transform: scale(1.05);
+
+#faq,
+#contact,
+#services {
+    scroll-margin-top: 120px;
 }
+
 
 /* Company name next to logo */
 .nav-logo-text {
@@ -46,10 +50,6 @@
     letter-spacing: 0.5px;
     text-transform: uppercase;
     transition: all 0.3s ease;
-}
-
-.nav-logo:hover .nav-logo-text {
-    color: #22d3ee;
 }
 
 .nav-menu {
@@ -82,14 +82,6 @@
     transition: width 0.3s ease;
 }
 
-.nav-menu li a:hover {
-    color: #22d3ee;
-}
-
-.nav-menu li a:hover::after {
-    width: 100%;
-}
-
 .nav-menu li a.nav-cta {
     background: #22d3ee;
     color: #fff;
@@ -104,10 +96,6 @@
 
 .nav-menu li a.nav-cta::after {
     display: none;
-}
-
-.nav-menu li a.nav-cta:hover {
-    transform: translateY(-3px);
 }
 
 /* Hamburger Menu */

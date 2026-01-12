@@ -42,10 +42,6 @@
     transition: all 0.3s ease;
 }
 
-.faq-item:hover {
-    border-color: #22d3ee;
-}
-
 .faq-item.active {
     border-color: #22d3ee;
 }
@@ -66,10 +62,6 @@
     transition: all 0.3s ease;
     position: relative;
     font-family: inherit;
-}
-
-.faq-question:hover {
-    color: #0ea5e9;
 }
 
 .faq-question:focus-visible {

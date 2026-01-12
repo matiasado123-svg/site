@@ -29,10 +29,6 @@
     transition: all 0.3s ease;
 }
 
-.application-card:hover {
-    transform: translateY(-5px);
-}
-
 .application-card h3 {
     font-size: 1.6rem;
     font-weight: 700;
